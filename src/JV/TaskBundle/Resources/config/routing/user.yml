@@ -1,0 +1,35 @@
+user_index:
+    path:     /
+    defaults: { _controller: "JVTaskBundle:User:index" }
+    methods:  GET
+
+user_list:
+    path:     /
+    defaults: { _controller: "JVTaskBundle:User:list" }
+    methods:  GET
+
+user_show:
+    path:     /{id}/show
+    defaults: { _controller: "JVTaskBundle:User:show" }
+    methods:  GET
+    requirements:
+        id:  \d+ 
+
+user_new:
+    path:     /new
+    defaults: { _controller: "JVTaskBundle:User:new" }
+    methods:  [GET, POST]
+
+user_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "JVTaskBundle:User:edit" }
+    methods:  [GET, POST]
+    requirements:
+        id:  \d+ 
+
+user_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "JVTaskBundle:User:delete" }
+    methods:  DELETE
+    requirements:
+        id:  \d+ 

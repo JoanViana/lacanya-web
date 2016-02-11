@@ -1,0 +1,106 @@
+{#<h2 class="padding-none">Person {{person.name}} (id: {{person.id}})</h2>#}
+{% extends 'DWSBundle::layout.html.twig' %}
+{% trans_default_domain 'DWSBundle' %} 
+{% block title %}DWS - {{ 'person.show.title'|trans({'%personname%' : person.name }) }}{% endblock %}
+
+{% block body %}
+    {{ parent() }}
+	<div class="container">
+		<div class="col-md-12">
+			<div class="page-header margin-none">
+				<h2 class="padding-none">{{ 'person.show.header'|trans({'%personname%' : person.name }) }}</h2>
+			</div>
+			<div class="table-responsive">
+				<table class="table table-striped table-hover">
+					<thead>
+						<tr>
+							<th>{{ 'person.id'|trans }}</th>
+                            <th>{{ 'person.name'|trans }}</th>
+                            <th>{{ 'person.age'|trans }}</th>
+                            <th>{{ 'person.birthDate'|trans }}</th>
+                            <th>{{ 'person.height'|trans }}</th>
+                            <th>{{ 'person.email'|trans }}</th>
+                            <th>{{ 'person.phone'|trans }}</th>
+                            <th>{{ 'person.gender'|trans }}</th>
+                            <th>{{ 'person.descends'|trans }}</th>
+                            <th>{{ 'person.vehicle'|trans }}</th>
+                            <th>{{ 'person.preferredLanguage'|trans }}</th>
+                            <th>{{ 'person.englishLevel'|trans }}</th>
+                            <th>{{ 'person.personalWebSite'|trans }}</th>
+                            <th>{{ 'person.cardNumber'|trans }}</th>
+                            <th>{{ 'person.iban'|trans }}</th>
+						</tr>
+					</thead>
+					<tbody>
+
+                            <tr>
+								<td> {{ person.id }} </td> 
+	                            <td> {{ person.name }} </td> 
+	                            <td> {{ person.age }} </td> 
+	                            <td> {{ person.birthDate|date('d-m-Y') }} </td> 
+	                            <td> {{ person.height }} </td> 
+	                            <td> {{ person.email }} </td> 
+	                            <td> {{ person.phone }} </td>
+	                            <td>
+                                    {% if person.gender == 'm' %}
+                                    	{{'form.ch.male'|trans}}
+                                    {% else %}
+                                        {{'form.ch.female'|trans}}
+                                    {% endif %}
+                                </td> 
+	                            <td> {{ person.descends }} </td>
+	                            <td>
+                                    {% if person.vehicle %}
+                                    	{{'exp.yes'|trans}}
+                                    {% else %}
+                                        {{'exp.no'|trans}}
+                                    {% endif %}
+                                </td> 
+	                            <td> {{ person.preferredLanguage }} </td> 
+                                <td> {% if person.englishLevel == 1 %}
+                                        	A1
+                                     {% elseif person.englishLevel == 2 %}
+                                        	A2
+                                     {% elseif person.englishLevel == 3 %}
+                                     	 	B1
+                                     {% elseif person.englishLevel == 4 %}
+                                        	B2
+                                     {% elseif person.englishLevel == 5 %}
+                                     	 	C1
+                                     {% elseif person.englishLevel == 6 %}
+                                        	C2
+                                     {% else %}
+                                        	None
+									 {% endif %}
+                                </td>
+	                            <td> {{ person.personalWebsite }} </td> 
+	                            <td> {{ person.cardNumber }} </td> 
+	                            <td> {{ person.IBAN }} </td> 
+                                <td class="actions">
+                                	{#
+			                        <a href="{{ path('per_list', {'id': person.id}) }}" class="btn btn-sm btn-info">
+			                            <th>{{ 'action.show'|trans }}</th>
+			                        </a>
+			                        #}
+			                        <a href="{{ path('per_edit', {'id': person.id}) }}" class="btn btn-sm btn-primary">
+			                            {{ 'action.edit'|trans }}
+			                        </a>
+			                        
+			                        <a href="{{ path('per_delete', {'id': person.id}) }}" class="btn btn-sm btn-danger">
+			                            {{ 'action.delete'|trans }}
+			                        </a>
+				                </td>
+                            </tr>                        
+					</tbody>
+				</table>
+			</div>
+		</div>
+				{#
+				<div class="row">
+					<div class="text-center"> 
+							<a href="{{ path('pro_create_def') }}"><button class="btn btn-primary btn-lg">Create default</button></a>
+					</div>
+				</div>
+				#}
+	</div>
+{% endblock %}

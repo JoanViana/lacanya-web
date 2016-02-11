@@ -1,0 +1,37 @@
+
+{% trans_default_domain 'FOSUserBundle' %}
+	<div class="main container">
+		<div class="row well">
+			<div class="col-md-6 col-md-offset-4">
+				<div class="page-header">
+					<h2>{{ 'user.show.header'|trans({}, 'DWSBundle') }}</h2>
+				</div>
+                   
+                    <form class="form-horizontal" role="form">
+                
+                    <fieldset>
+                        
+                        <div class="form-group text-left">
+                            <label class="col-md-3">{{ 'form.username'|trans({}, 'DWSBundle') }}</label>
+                            <p class="col-md-9 col-md-pull-1">{{ user.username }}</p>
+                        </div>
+                        
+                        <div class="form-group text-left">
+                            <label class="col-md-3">{{ 'form.email'|trans({}, 'DWSBundle') }}</label>
+                            <p class="col-md-9 col-md-pull-1">{{ user.email }}</p>
+                        </div>
+                        
+       				</fieldset>
+
+				<div class="row">
+					<div class="col-sm-offset-2 col-sm-10 col-md-9 col-md-pull-2">
+					    <p>
+					        <a class="btn btn-info" href="{{ path('fos_user_change_password') }}">{{ 'user.pass.title'|trans({}, 'DWSBundle') }}</a>
+                            <a class="btn btn-primary" href="{{ path('fos_user_profile_edit') }}">{{ 'action.edit'|trans({}, 'DWSBundle') }}</a>
+					    </p> 
+	                </div>
+				</div>
+            </form>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,35 @@
+assignment_index:
+    path:     /
+    defaults: { _controller: "JVTaskBundle:Assignment:index" }
+    methods:  GET
+    
+assignment_list:
+    path:     /
+    defaults: { _controller: "JVTaskBundle:Assignment:list" }
+    methods:  GET
+
+assignment_show:
+    path:     /{id}/show
+    defaults: { _controller: "JVTaskBundle:Assignment:show" }
+    methods:  GET
+    requirements:
+        id:  \d+ 
+
+assignment_new:
+    path:     /new
+    defaults: { _controller: "JVTaskBundle:Assignment:new" }
+    methods:  [GET, POST]
+
+assignment_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "JVTaskBundle:Assignment:edit" }
+    methods:  [GET, POST]
+    requirements:
+        id:  \d+ 
+
+assignment_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "JVTaskBundle:Assignment:delete" }
+    methods:  DELETE
+    requirements:
+        id:  \d+ 

@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Task list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Summary</th>
+                <th>Link</th>
+                <th>Status</th>
+                <th>Startdate</th>
+                <th>Enddate</th>
+                <th>Checked</th>
+                <th>Createdat</th>
+                <th>Updatedat</th>
+                <th>Enabled</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for task in tasks %}
+            <tr>
+                <td><a href="{{ path('task_show', { 'id': task.id }) }}">{{ task.id }}</a></td>
+                <td>{{ task.name }}</td>
+                <td>{{ task.summary }}</td>
+                <td>{{ task.link }}</td>
+                <td>{{ task.status }}</td>
+                <td>{% if task.startDate %}{{ task.startDate|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if task.endDate %}{{ task.endDate|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if task.checked %}Yes{% else %}No{% endif %}</td>
+                <td>{% if task.createdAt %}{{ task.createdAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if task.updatedAt %}{{ task.updatedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if task.enabled %}Yes{% else %}No{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('task_show', { 'id': task.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('task_edit', { 'id': task.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('task_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

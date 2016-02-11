@@ -1,0 +1,98 @@
+
+{% trans_default_domain 'DWSBundle' %} 
+
+	{% if flashproductremove is defined %}
+	    <div class="alert alert-success alert-dismissible" role="alert">
+	  		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	  		<strong>{{ 'flash.success' | trans }}</strong> {{ 'flash.product.remove'|trans({'%productname%' : product.name }) }}
+		</div> 
+	{% elseif flashproductadd is defined %}
+	    <div class="alert alert-success alert-dismissible" role="alert">
+	  		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	  		<strong>{{ 'flash.success' | trans }}</strong> {{ 'flash.product.add'|trans({'%productname%' : product.name }) }}
+		</div> 
+	{% elseif flashproductupdate is defined %}
+	    <div class="alert alert-success alert-dismissible" role="alert">
+	  		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	  		<strong>{{ 'flash.success' | trans }}</strong> {{ 'flash.product.update'|trans({'%productname%' : category.name }) }}
+		</div> 
+		
+
+	{% elseif flashpersonremove is defined %}
+	    <div class="alert alert-success alert-dismissible" role="alert">
+	  		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	  		<strong>{{ 'flash.success' | trans }}</strong> {{ 'flash.person.remove'|trans({'%personname%' : person.name }) }}
+		</div> 
+	{% elseif flashpersonadd is defined %}
+	    <div class="alert alert-success alert-dismissible" role="alert">
+	  		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	  		<strong>{{ 'flash.success' | trans }}</strong> {{ 'flash.person.add'|trans({'%personname%' : person.name }) }}
+		</div> 
+	{% elseif flashpersonupdate is defined %}
+	    <div class="alert alert-success alert-dismissible" role="alert">
+	  		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	  		<strong>{{ 'flash.success' | trans }}</strong> {{ 'flash.person.update'|trans({'%personname%' : person.name }) }}
+		</div>
+		
+		
+		
+	{% elseif flashcategoryremove is defined %}
+	    <div class="alert alert-success alert-dismissible" role="alert">
+	  		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	  		<strong>{{ 'flash.success' | trans }}</strong> {{ 'flash.category.remove'|trans({'%categoryname%' : category.name }) }}
+		</div> 
+	{% elseif flashcategoryadd is defined %}
+	    <div class="alert alert-success alert-dismissible" role="alert">
+	  		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	  		<strong>{{ 'flash.success' | trans }}</strong> {{ 'flash.category.add'|trans({'%categoryname%' : category.name }) }}
+		</div> 
+	{% elseif flashcategoryupdate is defined %}
+	    <div class="alert alert-success alert-dismissible" role="alert">
+	  		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	  		<strong>{{ 'flash.success' | trans }}</strong> {{ 'flash.category.update'|trans({'%categoryname%' : category.name }) }}
+		</div>
+	
+	
+	
+	{% elseif flashnocategoryid is defined %}
+	    <div class="alert alert-danger alert-dismissible" role="alert">
+	  		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	  		<strong>{{ 'flash.error' | trans }}</strong> {{ 'flash.no.category.id'|trans({'%categoryid%' : id }) }}
+		</div>
+	{% elseif flashnocategoryname is defined %}
+	    <div class="alert alert-danger alert-dismissible" role="alert">
+	  		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	  		<strong>{{ 'flash.error' | trans }}</strong> {{ 'flash.no.category.name'|trans({'%categoryname%' : name }) }}
+		</div> 
+	{% elseif flashno.personid is defined %}
+	    <div class="alert alert-danger alert-dismissible" role="alert">
+	  		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	  		<strong>{{ 'flash.error' | trans }}</strong> {{ 'flash.no.person.id'|trans({'%personid%' : id }) }}
+		</div> 
+	{% elseif flashnoproductid is defined %}
+	    <div class="alert alert-danger alert-dismissible" role="alert">
+	  		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	  		<strong>{{ 'flash.error' | trans }}</strong> {{ 'flash.no.product.id'|trans({'%productid%' : id }) }}
+		</div> 
+		{% elseif flashnocategoryid is defined %}
+	    <div class="alert alert-danger alert-dismissible" role="alert">
+	  		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	  		<strong>{{ 'flash.error' | trans }}</strong> {{ 'flash.no.category.id'|trans({'%categoryid%' : id }) }}
+		</div>
+		
+	{% elseif flashnocategories is defined %}
+	    <div class="alert alert-danger alert-dismissible" role="alert">
+	  		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	  		<strong>{{ 'flash.error' | trans }}</strong> {{ 'flash.no.categories'|trans }}
+		</div> 
+	{% elseif flashnopersons is defined %}
+	    <div class="alert alert-danger alert-dismissible" role="alert">
+	  		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	  		<strong>{{ 'flash.error' | trans }}</strong> {{ 'flash.no.persons'|trans }}
+		</div> 
+	{% elseif flashnoproducts is defined %}
+	    <div class="alert alert-danger alert-dismissible" role="alert">
+	  		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	  		<strong>{{ 'flash.error' | trans }}</strong> {{ 'flash.no.products'|trans }}
+		</div> 
+	{% endif %}

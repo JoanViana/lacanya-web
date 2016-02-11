@@ -1,0 +1,35 @@
+type_index:
+    path:     /
+    defaults: { _controller: "JVTaskBundle:Type:index" }
+    methods:  GET
+    
+type_list:
+    path:     /
+    defaults: { _controller: "JVTaskBundle:Type:list" }
+    methods:  GET
+
+type_show:
+    path:     /{id}/show
+    defaults: { _controller: "JVTaskBundle:Type:show" }
+    methods:  GET
+    requirements:
+        id:  \d+ 
+
+type_new:
+    path:     /new
+    defaults: { _controller: "JVTaskBundle:Type:new" }
+    methods:  [GET, POST]
+
+type_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "JVTaskBundle:Type:edit" }
+    methods:  [GET, POST]
+    requirements:
+        id:  \d+ 
+
+type_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "JVTaskBundle:Type:delete" }
+    methods:  DELETE
+    requirements:
+        id:  \d+ 

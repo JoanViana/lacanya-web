@@ -1,0 +1,125 @@
+{% extends 'DWSBundle::layout.html.twig' %}
+{% trans_default_domain 'DWSBundle' %} 
+{% block title %}DWS - {{ 'person.new.title'|trans }}{% endblock %}
+
+{% block body %}
+    {{ parent() }}
+	<div class="main container">
+		<div class="row well">
+			<div class="col-md-6">
+				<div class="page-header">
+					<h2>{{ 'person.new.header'|trans }}</h2>
+				</div>
+                {{ form_start(form, { 'attr' : {'novalidate': 'novalidate', 'role' : 'form'} }) }}
+                <fieldset>
+                <div class="form-group">
+                    {{ form_label(form.name) }}
+                    {{ form_widget(form.name, { 'attr' : {'class' : 'form-control'} }) }}
+                    <span class="text-danger">{{ form_errors(form.name) }}</span>
+                </div>
+
+			    <div class="form-group">
+			        {{ form_label(form.age) }}
+			        {{ form_widget(form.age, {'attr': {'class': 'form-control'}}) }}
+			        <span class="text-danger">{{ form_errors(form.age) }}</span>
+			    </div>
+
+			    <div class="form-group">
+			        {{ form_label(form.birthDate) }}
+			        {{ form_widget(form.birthDate) }}
+			        <span class="text-danger">{{ form_errors(form.birthDate) }}</span>
+			    </div>
+			    
+			   <div class="form-group">
+			        {{ form_label(form.height) }}
+			        {{ form_widget(form.height, {'attr': {'class': 'form-control'}}) }}
+			        <span class="text-danger">{{ form_errors(form.height) }}</span>
+			    </div>
+			    
+			    <div class="form-group">
+			        {{ form_label(form.email) }}
+			        {{ form_widget(form.email, {'attr': {'class': 'form-control'}}) }}
+			        <span class="text-danger">{{ form_errors(form.email) }}</span>
+			    </div>
+			    
+			    <div class="form-group">
+			        {{ form_label(form.phone) }}
+			        {{ form_widget(form.phone, {'attr': {'class': 'form-control'}}) }}
+			        <span class="text-danger">{{ form_errors(form.phone) }}</span>
+			    </div>
+			    
+			    <div class="form-group">
+			        {{ form_label(form.gender) }}
+			        {{ form_widget(form.gender, {'attr': {'class': 'form-control'}}) }}
+			        <span class="text-danger">{{ form_errors(form.gender) }}</span>
+			    </div>
+
+			    <div class="form-group">
+			        {{ form_label(form.descends) }}
+			        {{ form_widget(form.descends, {'attr': {'class': 'form-control'}}) }}
+			        <span class="text-danger">{{ form_errors(form.descends) }}</span>
+			    </div>
+				
+				<div class="form-group">
+						{{ form_widget(form.vehicle) }}
+					    {{ form_label(form.vehicle) }}
+						<span class="text-danger">{{ form_errors(form.vehicle) }}</span>	
+				</div>
+			    
+		    	<div class="form-group">
+			        {{ form_label(form.preferredLanguage) }}
+			        {{ form_widget(form.preferredLanguage, {'attr': {'class': 'form-control'}}) }}
+			        <span class="text-danger">{{ form_errors(form.preferredLanguage) }}</span>
+			    </div>
+	  
+				<div class="form-group form-inline">
+					{{ form_label(form.englishLevel) }}
+					<span class="text-danger">{{ form_errors(form.englishLevel) }}</span>	    
+			       	{% for choiceFormView in form.englishLevel %}
+			       		{{ form_label(choiceFormView) }}
+					    {{ form_widget(choiceFormView) }}
+					{% endfor %}
+				</div>
+					    
+			   	<div class="form-group">
+			        {{ form_label(form.personalWebSite) }}
+			        {{ form_widget(form.personalWebSite, {'attr': {'class': 'form-control'}}) }}
+			        <span class="text-danger">{{ form_errors(form.personalWebSite) }}</span>
+			    </div>
+		    
+			    <div class="form-group">
+			        {{ form_label(form.cardNumber) }}
+			        {{ form_widget(form.cardNumber, {'attr': {'class': 'form-control'}}) }}
+			        <span class="text-danger">{{ form_errors(form.cardNumber) }}</span>
+			    </div>
+	    
+			   <div class="form-group">
+			        {{ form_label(form.IBAN) }}
+			        {{ form_widget(form.IBAN, {'attr': {'class': 'form-control'}}) }}
+			        <span class="text-danger">{{ form_errors(form.IBAN) }}</span>
+			    </div>
+
+
+			</fieldset>
+				<div class="row">
+					<div class="col-sm-12">
+					    <p>
+					        {{ form_widget(form.save, {'attr': {'class': 'btn btn-success'}}) }}
+					        {{ form_widget(form.saveAndAdd, {'attr': {'class': 'btn btn-info'}}) }}
+
+					    </p>        
+			                {{ form_end(form) }}
+                	</div>
+				</div>
+			</div>
+		</div>
+				{#
+				<div class="row">
+					<div class="text-center"> 
+							<a href="{{ path('pro_create_def') }}"><button class="btn btn-primary btn-lg">Create default</button></a>
+					</div>
+				</div>
+				#}
+	</div>
+{% endblock %}
+

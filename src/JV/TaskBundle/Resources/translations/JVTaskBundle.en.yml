@@ -1,0 +1,186 @@
+#JVTaskBundle.es.yml 
+general:
+    product: 'Product'
+    category: 'Category'
+    person: 'Person'
+    user: 'User'
+    home: 'Home'
+action:
+    list: 'List'
+    listProducts: 'List Products'
+    new: 'New'
+    show: 'Details'
+    edit: 'Edit'
+    delete: 'Delete'
+    update: 'Update'
+    login: 'Login'
+    logout: 'Logout'
+    register: 'Register' 
+    save: 'Save' 
+    saveAndAdd: 'Save and continue'
+exp:
+    yes: 'Yes'
+    no: 'No'
+    by: 'by'
+flash:
+    success: 'Success!'
+    error: 'Error!'
+    info: 'Notification:'
+    no:
+        products: 'There is not any products stored, you can create a default one'
+        persons: 'There is not any person stored, you can create a default one'
+        categories: 'There is not any category stored, you can create a default one'
+        category:
+            id: 'There is not any category with id %categoryid%'
+            name: 'There is not any category with name %categoryname%'
+        product:
+            id: 'There is not any product stored with id %productid%'
+        person:
+            id: 'There is not any person stored with id %personid%'
+    product:
+        add: "Product %productname% stored"
+        remove: "Product %productname% removed"
+        update: "Product %productname% updated"
+    category:
+        add: "Category %categoryname% stored"
+        remove: "Category %categoryname% removed"
+        update: "Category %categoryname% updated"
+    person:
+        add: "Person %personname% stored"
+        remove: "Person %personname% removed"
+        update: "Person %personname% updated"
+      
+form:
+    emailUsername: 'Email or username'
+    password: 'Password'
+    category: 'Category'
+    username: 'User'
+    email: 'Email'
+    ch:
+        male: "Male"
+        female: "Female"
+link:
+    login:
+        email: 'Sign in by email'
+        username: 'Sign in by username'
+user:
+    register:
+        header: 'User registration'
+        title: 'User registration'
+    login:
+        header: 'Login'
+        title: 'Login'
+    confirmation:
+        header: 'Register confirmation'
+        title: 'Register confirmation'
+    edit:
+        header: 'Edit profile'
+        title: 'Edit profile'
+    show:
+        header: 'Profile'
+        title: 'Profile'
+    pass:
+        header: 'Change password'
+        title: 'Change password'
+    
+
+product: 
+    id:  'Id' 
+    name:  'Name' 
+    description: 'Description' 
+    price: 'Price' 
+    category: 'Category' 
+    list:
+        title: 'Product list' 
+        header: 'Product list'
+    new:
+        title: 'New product' 
+        header: 'New product'
+    edit:
+        title: 'Edit product %productname%' 
+        header: 'Edit product %productname%'
+    show:
+        title: 'Details of product %productname%' 
+        header: 'Details of product %productname%'    
+    listByCat:
+        title: 'List products of %categoryname% category' 
+        header: 'List products of %categoryname% category'
+    listAllByCat:
+        title: 'List products by category' 
+        header: 'List products by category' 
+    create:
+        title: 'Create default product'
+        header: 'Create default product'
+
+category: 
+    id:  'Id' 
+    name:  'Name' 
+    list:
+        title: 'Category list' 
+        header: 'Category list'
+    new:
+        title: 'New category' 
+        header: 'New category'
+    edit:
+        title: 'Edit category %categoryname%' 
+        header: 'Edit category %categoryname%'
+    show:
+        title: 'Details of category %categoryname%' 
+        header: 'Details of category %categoryname%' 
+    create:
+        title: 'Create default category'
+        header: 'Create default category'
+
+person: 
+    id:  'Id' 
+    name:  'Name' 
+    age: 'Age'
+    birthDate: 'Birth date'
+    height: 'Height'
+    email: 'Email'
+    phone: 'Phone'
+    gender: 'Gender'
+    descends: 'Descends'
+    vehicle: 'private vehicle'
+    preferredLanguage: 'Preferred language'
+    englishLevel: 'English Level'
+    personalWebSite: 'Personal website'
+    cardNumber: 'Card Number'
+    iban: 'IBAN'
+    list:
+        title: 'Person list' 
+        header: 'Person list'
+    new:
+        title: 'New person' 
+        header: 'New person'
+    edit:
+        title: 'Edit person %personname%' 
+        header: 'Edit person %personname%'
+    show:
+        title: 'Details of person %personname%' 
+        header: 'Details of person %personname%' 
+    create:
+        title: 'Create default person'
+        header: 'Create default person'
+
+user: 
+    id:  'Id' 
+    username:  'Username' 
+    password: 'Password'
+    role: 'Role'
+    role_user: 'User'
+    role_admin: 'Administrator'
+    email: 'Email'
+    list:
+        title: 'User list'
+        header: 'User list'
+    new:
+        title: 'New user' 
+        header: 'New user'
+    edit:
+        title: 'Edit user %username%' 
+        header: 'Edit user %username%'
+    show:
+        title: 'Details of user %username%' 
+        header: 'Details of user %username%'
+userdefaulttitle: 'Deafult credentials'

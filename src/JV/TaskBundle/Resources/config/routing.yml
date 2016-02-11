@@ -1,0 +1,43 @@
+jv_task_user:
+    resource: "@JVTaskBundle/Resources/config/routing/user.yml"
+    prefix:   /user
+    
+jv_task_assignment:
+    resource: "@JVTaskBundle/Resources/config/routing/assignment.yml"
+    prefix:   /assignment
+
+jv_task_project:
+    resource: "@JVTaskBundle/Resources/config/routing/project.yml"
+    prefix:   /project
+    
+jv_task_category:
+    resource: "@JVTaskBundle/Resources/config/routing/category.yml"
+    prefix:   /category
+    
+jv_task_task:
+    resource: "@JVTaskBundle/Resources/config/routing/task.yml"
+    prefix:   /task
+
+jv_task_type:
+    resource: "@JVTaskBundle/Resources/config/routing/type.yml"
+    prefix:   /type
+    
+jv_task_homepage:
+    path:     /
+    defaults: { _controller: JVTaskBundle:Default:index }
+
+jv_task_redirect:
+    path: /
+    defaults:
+        _controller: JVTaskBundle:Default:index
+        path: /index
+        permanent: true
+
+jv_task_admin:
+    path:     /admin
+    defaults: { _controller: JVTaskBundle:Default:admin }
+
+fos_user_security_login_username:
+    defaults: { _controller: JVTaskBundle:User:login }
+    path:     /login/username
+    methods:  [GET|POST]

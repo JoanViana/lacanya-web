@@ -1,0 +1,35 @@
+task_index:
+    path:     /
+    defaults: { _controller: "JVTaskBundle:Task:index" }
+    methods:  GET
+    
+task_list:
+    path:     /
+    defaults: { _controller: "JVTaskBundle:Task:list" }
+    methods:  GET
+
+task_show:
+    path:     /{id}/show
+    defaults: { _controller: "JVTaskBundle:Task:show" }
+    methods:  GET
+    requirements:
+        id:  \d+ 
+
+task_new:
+    path:     /new
+    defaults: { _controller: "JVTaskBundle:Task:new" }
+    methods:  [GET, POST]
+
+task_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "JVTaskBundle:Task:edit" }
+    methods:  [GET, POST]
+    requirements:
+        id:  \d+ 
+
+task_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "JVTaskBundle:Task:delete" }
+    methods:  DELETE
+    requirements:
+        id:  \d+ 

@@ -1,0 +1,52 @@
+{% extends 'DWSBundle::layout.html.twig' %}
+{% trans_default_domain 'DWSBundle' %} 
+{% block title %}DWS - {{ 'category.show.title'|trans({'%categoryname%' : category.name }) }}{% endblock %}
+{% block body %}
+    {{ parent() }}
+	<div class="container">
+			<div class="col-md-6 col-md-offset-3">
+			<div class="page-header margin-none">
+				<h2 class="padding-none">{{ 'category.show.header'|trans({'%categoryname%' : category.name }) }}</h2>
+			</div>
+			<div class="table-responsive">
+				<table class="table table-striped table-hover">
+					<thead>
+						<tr>
+							<th>{{ 'category.id'|trans }}</th>
+                            <th>{{ 'category.name'|trans }}</th>
+						</tr>
+					</thead>
+					<tbody>
+
+                            <tr>
+								<td> {{ category.id }} </td> 
+	                            <td> {{ category.name }} </td> 	                            
+                                <td class="actions">
+                                	{#
+                                	<a href="{{ path('pro_list_bycat', {'category': category.name}) }}" class="btn btn-sm btn-success">
+			                            {{ 'action.listAll' }}
+			                        </a>
+			                        #}
+			                        {% if is_granted('ROLE_APP_ADMIN') %}
+			                        <a href="{{ path('cat_edit', {'id': category.id}) }}" class="btn btn-sm btn-primary">
+			                            {{ 'action.edit'|trans }}
+			                        </a>
+			                        <a href="{{ path('cat_delete', {'id': category.id}) }}" class="btn btn-sm btn-danger btn-delete">
+			                            {{ 'action.delete'|trans }}
+			                        </a>
+			                        {% endif %}
+				                </td>
+                            </tr>                        
+					</tbody>
+				</table>
+			</div>
+		</div>
+		{#
+		<div class="row">
+			<div class="text-center"> 
+					<a href="{{ path('cat_list') }}"><button class="btn btn-primary btn-lg">List all</button></a>
+			</div>
+		</div>
+		#}
+	</div>
+{% endblock %}

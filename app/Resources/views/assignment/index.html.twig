@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Assignment list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Function</th>
+                <th>Isactive</th>
+                <th>Addedat</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for assignment in assignments %}
+            <tr>
+                <td><a href="{{ path('assignment_show', { 'id': assignment.id }) }}">{{ assignment.id }}</a></td>
+                <td>{{ assignment.function }}</td>
+                <td>{% if assignment.isActive %}Yes{% else %}No{% endif %}</td>
+                <td>{% if assignment.addedAt %}{{ assignment.addedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('assignment_show', { 'id': assignment.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('assignment_edit', { 'id': assignment.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('assignment_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}
