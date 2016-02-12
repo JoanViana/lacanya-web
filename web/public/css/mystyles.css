@@ -1,0 +1,938 @@
+/* 
+    Joan Viana Fons
+*/
+
+/*
+RGB
+141,167,58
+150,164,93
+244,182,8
+242,161,9
+192,107,3
+*/
+@import url(https://fonts.googleapis.com/css?family=Ubuntu+Condensed);
+@import url(https://fonts.googleapis.com/css?family=Medula+One);
+
+html {
+    background:#fff url(../files/banner/wallCanyadiff.jpg) no-repeat center center fixed; 
+    min-height:100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+body {
+    position: relative;
+    background:transparent;
+    padding-top: 70px;
+    min-height:100%; 	
+    -webkit-font-smoothing: antialiased;
+    -webkit-overflow-scrolling: touch;
+    line-height: 1.5em;
+    font-family: 'Ubuntu Condensed', sans-serif;
+    color:#fff; 
+    font-weight: normal;
+    text-shadow:0 1px 2px rgba(0,0,0,.2);
+}
+
+a { color:rgba(242,161,9,1) ; text-decoration: none; }
+a:hover, a:active { color:rgba(244,182,8,1); text-decoration: underline; }
+
+/*
+RGB
+141,167,58
+150,164,93
+244,182,8
+242,161,9
+192,107,3
+*/
+
+.section { 
+    z-index: 1;
+    min-height:420px;
+    width: 100%; 
+    height:100%;
+    padding-top:10px;
+    padding-bottom:0px; 
+    top:0;
+} 
+
+
+
+.breadcrumb{
+    background: rgba(255,255,255,.6);
+    border: 3px solid rgba(150,164,93,1);
+    font-size: 1.6em;
+    font-family: 'Medula One', cursive;
+    color: rgba(242,161,9,1) !important;    
+    text-shadow:2px 2px 2px rgba(0,0,0,1);
+}
+
+.breadcrumb .active{    
+    color: rgba(242,161,9,1) !important;
+    text-shadow:2px 2px 2px rgba(0,0,0,1);
+}
+
+.breadcrumb a{
+    color: rgba(0,0,0,.8);    
+    text-shadow:none;
+}
+
+.breadcrumb a:hover{
+    text-decoration: none;
+    color: rgba(242,161,9,1) !important;
+    text-shadow:2px 2px 2px rgba(0,0,0,1);
+}
+
+.project-body{
+    border-radius: 1em;
+    background: rgba(255,255,255,.6);
+    border: 3px solid rgba(150,164,93,1);
+    padding: 3em;
+    color: rgba(0,0,0,.8);
+}
+
+.quisom-body{
+    font-size: 1.2em;    
+    font-weight: 500;
+    border-radius: 1em;
+    background: rgba(255,255,255,.6);
+    border: 3px solid rgba(150,164,93,1);
+    padding: 3em;
+    color: rgba(0,0,0,.8);
+}
+
+.carousel{
+    border: 2px solid rgba(150,164,93,1);
+}
+
+.quisom-text{
+    margin-top: 2em;
+}
+
+.quisom-text a{
+    text-shadow:2px 2px 2px rgba(0,0,0,1);
+}
+.panel-transparent {
+    background: none;
+}
+
+.panel-transparent .panel-heading{
+    background: rgba(255,255,255,0.0)!important;
+    border-top: 3px solid rgba(150,164,93,1);
+}
+
+.panel-transparent .panel-heading h2{
+    font-family: 'Medula One', cursive;
+    color: rgba(255,255,255,1);
+    font-size: 2.5em;
+    text-shadow:2px 2px 2px rgba(0,0,0,1);
+}
+
+.panel-transparent a:hover,.panel-transparent a:active{
+    text-decoration: none;
+}
+
+.panel-transparent .panel-body{
+    font-size: 1.2em;
+    border-radius: 0 0 1em 1em;
+    background: rgba(255,255,255,.6);
+    border: 3px solid rgba(150,164,93,1);
+    padding: 3em;
+    color: rgba(0,0,0,.8);
+}
+
+.section-title{ 
+    font-family: 'Medula One', cursive;
+    font-size:9em;
+    color:rgba(255,255,255,1) !important; 
+    text-shadow:2px 2px 2px rgba(0,0,0,.4);
+    margin: .4em 0 .3em 0;
+    padding: 0;
+}
+
+.title{ 
+    font-family: 'Medula One', cursive;
+    font-size:12em;
+    margin: 5pt 0; 
+    color:rgba(255,255,255,1) !important;
+    text-shadow:0 2px 3px rgba(0,0,0,.4);
+}
+.subtitle { 
+    font-family: 'Medula One', cursive;
+    font-size: 5.5em;
+    margin: -30pt 0 5pt 5pt;
+    padding-left: 130pt !important;
+    text-decoration: underline;
+    z-index: 2;
+    color:rgba(242,161,9,1) !important; 
+    text-shadow:0 2px 3px rgba(0,0,0,.4);
+}
+
+.gallery{
+    padding: 1em;
+}
+
+.font-medula{
+    font-family: 'Medula One', cursive !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.navbar .navbar-nav {
+    display: inline-block;
+    float: none;
+    vertical-align: top;
+}
+
+.navbar .navbar-collapse {
+    text-align: center;
+}
+
+
+.bar{
+    position: relative;
+    margin: 0 auto;
+}
+
+.navbar-brand{
+    position: absolute;
+    font-weight: normal;
+}
+
+
+li.navhome{
+    background-color: rgba(255,255,255,.7);
+    border-bottom: 5px solid rgba(141,167,58,1);
+    border-top: 5px solid rgba(141,167,58,1);
+    border-radius: 0%;
+}
+
+li.navhome a{
+    color: rgba(0,0,0,0.8);    
+    margin-right: 0 !important;
+    border: 2px solid rgba(0,0,0,0);
+    border-radius: 0;
+}
+
+li.navhome a:hover{
+    background-color: rgba(255,255,255,.95);
+    color: rgba(0,0,0,.9);
+    border-left: 2px solid rgba(150,164,93,1);
+    border-right: 2px solid rgba(150,164,93,1);
+}
+
+li.navhome.active a{
+    background-color: rgba(255,255,255,0.95);
+    color: rgba(0,0,0,0.9);
+    border-left: 2px solid rgba(150,164,93,1);
+    border-right: 2px solid rgba(150,164,93,1);
+}
+
+.navbar{
+    font-size: 2em;
+    font-family: 'Medula One', cursive;    
+    font-weight:500;
+}
+
+.navbar-inverse {
+    background: rgba(255,255,255,0.6);
+    margin: 0 auto !important;
+}
+
+
+
+@media (max-width: 768px) {
+    .navbar-inverse a{
+        font-size: 0.8em;
+        margin: 0 !important;
+    }
+    .login{
+        position: absolute;
+        left:5%;
+        top:8%;
+        z-index: 999;
+    }
+}
+
+.navbar-toggle {
+    background: rgba(255,255,255,1);
+    padding: 1em .6em;
+    border-radius: 50%;
+    border: 3px solid rgba(242,161,9,1);
+}
+.navbar-toggle .icon-bar {
+    background: rgba(0,0,0,0.8);
+    width: 40px;
+    padding: 2px;
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.hidd{
+    display:none
+}
+
+cite {
+    font-style: italic;
+} 
+
+blockquote {
+    border-left: 5px solid rgba(0,0,0,0.8);
+}
+
+/*.targetDiv{display:none}*/
+
+
+
+
+/**FORM**/
+
+.modal-header h4{
+    color:rgba(0,0,0,.7);
+    text-shadow:0 2px 3px rgba(0,0,0,.4);
+    font-size: 3em;
+}
+.form-style{
+    font-size: 2em !important;
+    font-family: 'Medula One', cursive !important;
+    font-weight: bold;
+    margin: 1em;
+    color: rgba(0,0,0,.8) !important;
+    text-shadow:0 2px 3px rgba(0,0,0,.4);
+}
+
+.form-style button{
+    box-shadow: 0;
+    font-weight:500;
+    padding: 0.2em;
+    font-size: 2em;
+    /*position: absolute;
+    right: 5%;*/
+
+}
+
+.form-style button:hover{
+
+}
+
+.form-style input, .form-style textarea{
+    font-family: sans-serif;
+    width: 100%;
+    font-weight: normal;
+    font-size: 0.6em;
+    line-height:1em;
+    border: 2px solid rgba(0, 0, 0, 0.8) !important;
+    border-radius: 4px;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset;
+    background-color: rgba(255,255,255, 0.8);
+    background-image: none;
+    margin: 0.3em;
+    padding-left: 1em;
+    padding: 0.2em;
+    color: #000 !important;
+}
+
+.checkbox{
+    display: inline;
+    margin-left:-2em;
+}
+.checkbox label{
+    padding-left: 3.2em;
+}
+.form-control{
+    background: rgba(255,255,255,0.6)!important;
+    border: 2px solid rgba(0,0,0,0.8);
+    color: rgba(0,0,0,0.8) !important;
+}
+
+
+/**POST**/
+
+.title-post{
+    font-family: 'Medula One', cursive !important;
+    font-size: 2.5em;
+    font-weight: bold;
+    text-shadow:2px 2px 2px rgba(0,0,0,1);
+    /*text-decoration: underline;*/
+}
+
+.title-post a{    
+    color: rgba(0,0,0,.8);
+    text-shadow:0 2px 3px rgba(0,0,0,.4);
+}
+.body-post{
+    padding-right: 2em;
+    margin-right: 2em;
+    text-align: justify;
+}
+
+.body-post{
+    padding-right: 2em;
+    margin-right: 2em;
+    text-align: justify;
+}
+
+.body-post a{    
+    text-shadow:2px 2px 2px rgba(0,0,0,1);
+}
+
+.pic-post{
+    margin-top: 1.2em;
+}
+
+@media (max-width: 768px) {
+    .title-post{
+        font-family: 'Medula One', cursive !important;
+        font-size: 2em;
+        font-weight: bold;
+        /*text-decoration: underline;*/
+        margin: 0 auto;
+        padding:0;
+    }
+    .body-post{
+        padding-right: 0.2em;
+        margin-right: 0.2em;
+        text-align: justify;
+    }
+}
+
+.space{
+    margin-top: 3em; 
+    border-width: 0;
+}
+
+.space-small{
+    margin-top: 1em; 
+    border-width: 0;
+}
+
+.black{
+    color: rgba(0,0,0,0.8) !important;
+}
+
+.red{
+    color: rgba(180,4,4,1) !important;
+}
+
+.icon-sup{
+    width: 0.8em;
+    margin-bottom: 1em;
+}
+
+.reduce { 
+    -webkit-transition: all 0.35s ease-in-out ;
+    -moz-transition: all 0.35s ease-in-out ;
+    -ms-transition: all 0.35s ease-in-out ;
+    -o-transition: all 0.35s ease-in-out ;
+    transition: all 0.35s ease-in-out ;
+
+}
+.reduce:hover { 
+    -webkit-transform: scale(1.05) ;
+    -moz-transform: scale(1.05) ;
+    -ms-transform: scale(1.05) ;
+    -o-transform: scale(1.05) ;
+    transform: scale(1.05) ; 
+    z-index: 999;
+}
+
+.grow { 
+    -webkit-transition: all 0.35s ease-in-out ;
+    -moz-transition: all 0.35s ease-in-out ;
+    -ms-transition: all 0.35s ease-in-out ;
+    -o-transition: all 0.35s ease-in-out ;
+    transition: all 0.35s ease-in-out ;
+
+}
+.grow:hover { 
+    -webkit-transform: scale(.95) ;
+    -moz-transform: scale(.95) ;
+    -ms-transform: scale(.95) ;
+    -o-transform: scale(.95) ;
+    transform: scale(.95) ; 
+    z-index: 999;
+}
+
+.login{    
+    background: transparent;
+}
+#loginButton{
+    border: 4px solid rgba(150,164,93,1);
+    border-radius: 50%;
+    background: rgba(255,255,255,.8);
+}
+
+#loginButton a{  
+    color: rgba(0,0,0,.8);
+    font-size: .7em;    
+    padding:.8em;
+    border-radius: 50%;    
+    border: 3px solid rgba(150,164,93,0);
+}
+
+#loginButton a:hover{  
+    border: 3px solid rgba(150,164,93,1);
+    background: transparent;
+}
+
+.logout{    
+    background: transparent;
+}
+#logoutButton{
+    border: 4px solid rgba(180,4,4,.8) !important;
+    border-radius: 50%;
+    background: rgba(255,255,255,.8);
+}
+
+#logoutButton a{  
+    color: rgba(0,0,0,.8);
+    font-size: .7em;    
+    padding:.8em;
+    border-radius: 50%;    
+    border: 3px solid rgba(150,164,93,0);
+}
+
+#logoutButton a:hover{  
+    border: 3px solid rgba(180,4,4,1);
+    background: transparent;
+}
+/*
+RGB
+141,167,58
+150,164,93
+244,182,8
+242,161,9
+192,107,3
+*/
+.arrow{    
+    color:rgba(150,164,93,1);    
+    font-size: 6em;    
+    position:fixed;
+    z-index:10;
+    right: 5%;
+    background: transparent;
+}
+
+@media (max-width: 768px) {
+    .arrow{
+        font-size: 3.5em;
+    }
+    .arrow-up{
+        top:10% !important;
+    }
+    .arrow-down{
+        bottom:10% !important;
+    }
+}
+.arrow-up{
+    top:-5%;
+}
+.arrow-down{
+    bottom:7%;
+}
+
+.bigspace{
+    margin-top: 8em;
+}
+
+
+.redback{
+    background-color: rgba(180,4,4,0.8) !important;
+}
+
+.redback:hover{
+    background-color: rgba(180,4,4,0.95) !important;
+}
+
+
+.gallery-image img{
+    border: 2px solid rgba(255,255,255, 0.8) !important;
+}
+
+.gallery-image:hover{
+}
+
+.caption p{
+    font-family: 'Ubuntu Condensed', sans-serif;
+    /*font-family: 'Medula One', cursive;*/
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.2em;
+    text-align: center;
+
+}
+
+
+/**NEWS**/
+
+
+.news{ 
+    font-family: 'Ubuntu Condensed', sans-serif;
+    /*font-family: 'Medula One', cursive;*/
+    color: rgba(0,0,0,.8);  
+    text-shadow:0 0.5px 1px rgba(255,255,255,.2);
+    margin-top: 2em;
+}
+
+article.news{
+    margin-top: 0;    
+    margin-bottom: 1em;
+}
+
+.news-rectangle{
+    background-color: rgba(0,0,0,0);
+    text-align: center;
+    border-radius: 1em 1em 0 0;
+    margin: 0;
+}
+
+.news-site{
+    background-color: rgba(255,255,255,0);
+    text-align: left;
+    border-radius: 0;
+    margin: 0;   
+}
+
+.news-site-place{
+    font-size: 1.5em;
+    color: rgba(180,4,4,1) !important;
+    text-shadow:0 0.5px 1px rgba(0,0,0,.2);
+    font-weight: bold; 
+    margin-top:.5em;
+    margin-bottom: 1em;
+}
+
+.news-site-date{
+    font-size: 1.5em;
+    color: rgba(180,4,4,1);
+    text-shadow:0 0.5px 1px rgba(0,0,0,.2);
+    margin-top:.5em;
+    margin-bottom: .5em;
+}
+
+.news-site-subtitle{
+    font-size: 1.5em;
+    margin-top:.5em;
+    margin-bottom: .5em;
+    color: rgba(0,0,0,0.8);
+    text-shadow:0 0.5px 1px rgba(0,0,0,.2);
+}
+
+.news-site a:hover{
+    color: rgba(0,0,0,1);
+}
+
+.news-content{
+    background-color: rgba(0,0,0,00);
+    text-align: left;
+    border-radius: 0 0 1em 1em;
+    margin: 0; 
+    font-style: normal;
+    padding-left: 2em;
+    font-size: 1.2em;
+}
+
+.news-subtitle{
+    background-color: rgba(0,0,0,0);
+    text-align: left;
+    border-radius: 0;
+    margin: 0; 
+}
+
+.news-author{
+    font-weight: bold; 
+    font-size: 1.2em;
+}
+
+.news-editor{
+    font-weight: bold; 
+    font-size: 1.2em;
+}
+
+.news-year{
+    font-weight: bold; 
+    font-size: 1.2em;
+}
+
+.news-sinopsi{
+    font-weight: bold; 
+    font-size: 1.2em;
+}
+
+
+h3.news-title{
+    font-size: 4.5em !important;
+}
+
+a.news-link{
+    color: rgba(180,4,4,1) !important;
+    text-shadow: none !important;
+    font-weight: bold !important;
+}
+
+a.news-link:hover{
+    text-decoration:underline !important;
+}
+
+.news-btn-red{
+    background-color: rgba(180,4,4,0.8) !important;
+    margin: .5em; 
+    margin-bottom: 1em;
+    color: rgba(255,255,255,1);
+}
+
+.news-btn-red:hover{
+    background-color: rgba(180,4,4,1) !important; 
+    color: rgba(255,255,255,1);    
+}
+
+.news-img{
+    margin-top: 10px;
+}
+
+.news-btn-white{
+    background-color: rgba(255,255,255,1) !important;
+    margin: .5em;  
+    margin-bottom: 1em;  
+    color: rgba(0,0,0,0.8) !important;
+}
+
+.news-btn-white:hover{
+    background-color: rgba(255,255,255,1) !important; 
+    color: rgba(0,0,0,1);    
+}
+
+.news-menu{ 
+    background-color: rgba(0,0,0,0) !important;
+    border-radius: 0;
+    color: #fff; 
+    border: 3px solid transparent;
+    padding: .5em !important;
+    padding-top: 1em !important;
+}
+a.news-menu{
+    font-family: 'Medula One', cursive;
+    font-size: 2.3em;
+}
+
+.news-menu-sub{    
+    font-family: 'Ubuntu Condensed', sans-serif;
+    margin: 0 1.5em 0 0;
+    padding: -.1em 1em 1em 1em;
+}
+
+
+.first-menu{
+    border-radius: 1em 1em 0 0 !important; 
+}
+
+.last-menu{
+    border-radius: 0 0 1em 1em !important; 
+}
+a:hover .news-menu{ 
+    background-color: rgba(0,0,0,1) !important;
+    border: 3px solid #fff;
+}
+
+a.active .news-menu{ 
+    background-color: rgba(0,0,0,1) !important;
+    border: 3px solid #fff;
+}
+
+
+a.news-menu:hover p{
+    color: rgba(255,255,255,1);
+    font-weight:bold;
+}
+
+
+.panel-menu{
+    color: rgba(0,0,0,1)!important;
+    font-family: 'Medula One', cursive;
+    font-weight: bold;
+}
+
+.panel-menu-heading h2{
+    color: rgba(0,0,0,1)!important;
+    font-size: 2em;
+    padding: .2em !important;
+    margin:0;
+}
+.panel-menu-heading{
+    background: rgba(255,255,255,1)!important;
+    border-radius: 0;
+    border: 2px solid rgba(0,0,0,1);    
+}
+
+.esp{ 
+    font-family: 'Ubuntu Condensed', sans-serif;
+    color: rgba(0,0,0,.8);
+}
+
+article.esp{
+    margin-top: 0;    
+    margin-bottom: 1em;  
+    text-shadow:0 0.5px 1px rgba(255,255,255,.2);
+    border-radius: 1em;
+}
+
+.esp-img.smaller{
+    margin-top:10px;
+}
+
+.esp-img{
+    padding:0;
+}
+.esp-img img{
+    width: 100%;
+    margin: .3em .1em .3em;
+    border-radius: .5em;
+}
+
+.esp-name.smaller{
+    font-size: .775em;
+    text-align: right !important;
+}
+
+.esp-site{
+    background-color: rgba(255,255,255,0.95);
+    text-align: right;
+    border-radius: 0;
+    margin: 0;   
+}
+
+.esp-title{
+    background-color: rgba(255,255,255,0);
+    border-radius: 1em 1em 0 0;
+    margin:0;
+    font-family: 'Medula One', cursive;    
+    text-shadow:2px 2px 2px rgba(0,0,0,1);
+}
+
+.esp-title h3{
+    font-size: 4em;
+    padding:0;
+    color: rgba(0,0,0,.8);
+    text-shadow:0 2px 2px rgba(0,0,0,1);
+}
+
+.esp-site a{
+    color: rgba(0,0,0,0.8);
+    text-shadow:0 0.5px 1px rgba(0,0,0,.2);
+    background-color: rgba(255,255,255,1);
+    font-weight: bold; 
+}
+
+.esp-site a:hover{
+    color: rgba(0,0,0,1);
+    text-decoration: none;
+    background-color: rgba(255,255,255,1);
+}
+
+.esp-content{
+    background-color: rgba(255,255,255,00);
+    text-align: left;
+    border-radius: 0 0 1em 1em;
+    margin: 0; 
+    font-style: oblique;
+    padding: .5em 0 0 0;
+}
+
+
+.esp-btn-red{
+    background-color: rgba(180,4,4,0.8) !important;
+    margin-bottom: 1em; 
+    margin-top: .2em;
+    color: rgba(255,255,255,0.8);
+}
+
+.esp-btn-red:hover{
+    background-color: rgba(180,4,4,1) !important; 
+    color: rgba(255,255,255,1);    
+}
+
+.esp-btn-black{
+    background-color: rgba(0,0,0,1) !important;
+    margin-bottom: 1em;  
+    margin-top: .2em;
+    color: rgba(255,255,255,0.8);
+}
+
+.esp-btn-black:hover{
+    background-color: rgba(0,0,0,0.8) !important;
+    color: rgba(255,255,255,1);    
+}
+
+.esp-btn-white{
+    background-color: rgba(255,255,255,1) !important;
+    margin-bottom: 1em;
+    margin-right: 1em;
+    margin-top: .2em;
+    color: rgba(0,0,0,0.8) !important;
+}
+
+.esp-btn-white:hover{
+    background-color: rgba(255,255,255,0.8) !important;
+    color: rgba(0,0,0,1);    
+}
+
+/*
+RGB
+141,167,58
+150,164,93
+244,182,8
+242,161,9
+192,107,3
+*/
+
+.btn-green{
+    color: rgba(141,167,58,.8);
+    font-weight: 100;
+}
+
+.btn-green:hover{
+    color:rgba(150,164,93,.8);
+}
+
+#inici_{
+    background: transparent; /* For browsers that do not support gradients */
+    background: -webkit-radial-gradient(rgba(255,255,255,.8), transparent); /* For Safari 5.1 to 6.0 */
+    background: -o-radial-gradient(rgba(255,255,255,.8), transparent); /* For Opera 11.1 to 12.0 */
+    background: -moz-radial-gradient(rgba(255,255,255,.8), transparent); /* For Firefox 3.6 to 15 */
+    background: radial-gradient(rgba(255,255,255,.8), transparent); /* Standard syntax */ 
+}

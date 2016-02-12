@@ -16,12 +16,12 @@ class TypeType extends AbstractType
     {
        $builder
             ->add('name', TextType::class, array(
-                ,'label' => 'type.name.label'
+                'label' => 'type.name.label'
                 ,'required' => true
                 ,'empty_data' => null
                 ))
             ->add('description', TextareaType::class, array(
-                ,'label' => 'type.description.label'
+                'label' => 'type.description.label'
                 ,'required' => false
                 ))
             ->add('enabled', CheckboxType::class, array(

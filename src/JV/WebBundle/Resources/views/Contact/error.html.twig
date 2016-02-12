@@ -1,0 +1,68 @@
+{% extends 'JVWebBundle::layout.html.twig' %}
+
+{% block confirm %}
+    <section>
+       <div class="alert alert-danger alert-dismissible" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <strong>Error!</strong> Feedback not sended. Please, try again.
+        </div>
+    </section>
+{% endblock %}
+
+
+{% block contact %}
+<section class="section" id="contacte_">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
+		        <h2 class="text-center title">Contact</h2>
+		        <div class="form-style">
+				{{ form_start(form, {'action': path('jv_contact_index'), 'attr' : {'novalidate': 'novalidate', 'role' : 'form'} }) }}
+                <fieldset>
+                <div class="form-group">
+                    {{ form_label(form.firstName) }}
+                    {{ form_widget(form.firstName, { 'attr' : {'class' : 'form-control'} }) }}
+                    <span class="text-danger">{{ form_errors(form.firstName) }}</span>
+                </div>
+                <div class="form-group">
+                    {{ form_label(form.lastName) }}
+                    {{ form_widget(form.lastName, { 'attr' : {'class' : 'form-control'} }) }}
+                    <span class="text-danger">{{ form_errors(form.lastName) }}</span>
+                </div>
+                
+			    <div class="form-group">
+			        {{ form_label(form.email) }}
+			        {{ form_widget(form.email, {'attr': {'class': 'form-control'}}) }}
+			        <span class="text-danger">{{ form_errors(form.email) }}</span>
+			    </div>
+			    
+			    <div class="form-group">
+			        {{ form_label(form.subject) }}
+			        {{ form_widget(form.subject, {'attr': {'class': 'form-control'}}) }}
+			        <span class="text-danger">{{ form_errors(form.subject) }}</span>
+			    </div>
+			    
+			    <div class="form-group">
+			        {{ form_label(form.body) }}
+			        {{ form_widget(form.body, {'attr': {'class': 'form-control'}}) }}
+			        <span class="text-danger">{{ form_errors(form.body) }}</span>
+			    </div>
+
+				</fieldset>
+				<div class="row">
+					<div class="col-sm-12 text-center">
+					    <p>
+					        {{ form_widget(form.save, {'attr': {'class': 'btn button'}}) }}
+
+					    </p>        
+			                {{ form_end(form) }}
+                	</div>
+				</div>
+		        
+    
+    		  </div>
+		</div>
+	</div>
+</section>
+    
+{% endblock %}

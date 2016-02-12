@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="ca">
     <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    {% block head %}
+        {% include 'head.html.twig' %}
+    {% endblock %}
     </head>
     <body>
         {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        {% block javascripts %}
+            {% include 'js.html.twig' %}
+        {% endblock %}
     </body>
 </html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ca">
+    <head>
+    {% block head %}
+        {% include 'JVWebBundle::head.html.twig' %}
+    {% endblock %}
+    </head>
+    <body data-spy="scroll" data-offset="220" data-target="#navbar-body">
+        {% block body %}
+            {% block nav %}
+                {% include 'JVWebBundle:Web:nav.html.twig' %}
+            {% endblock %}
+            {% block modal %}
+                {% include 'JVWebBundle:Web:modal.html.twig' %}
+            {% endblock %}
+            {% block confirm %}
+                
+            {% endblock %}
+            {% block start %}
+                {% include 'JVWebBundle:Web:start.html.twig' %}
+            {% endblock %}
+            {% block about %}
+                {% include 'JVWebBundle:Web:about.html.twig' %}
+            {% endblock %}
+            {% block courses %}
+                {% include 'JVWebBundle:Web:couses.html.twig' %}
+            {% endblock %}
+            {% block studies %}
+                {% include 'JVWebBundle:Web:studies.html.twig' %}
+            {% endblock %}
+            {% block contact %}
+                
+            {% endblock %}
+            {% block footer %}
+                {% include 'JVWebBundle:Web:footer.html.twig' %}
+            {% endblock %}
+        {% endblock %}
+        {% block javascripts %}
+        {% include 'JVWebBundle::js.html.twig' %}{% endblock %}
+    </body>
+</html>

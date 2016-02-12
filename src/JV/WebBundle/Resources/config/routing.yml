@@ -1,3 +1,19 @@
-jv_web_homepage:
-    path:     /
-    defaults: { _controller: JVWebBundle:Default:index }
+jv_web_index:
+    path:     /index
+    defaults: { _controller: JVWebBundle:Contact:contact }
+    requirements:
+        _method:  GET|POST
+
+jv_web_confirmation:
+    path:     /confirmation
+    defaults: { _controller: JVWebBundle:Contact:contact }
+    requirements:
+        _method:  GET|POST
+        
+jv_web_error:
+    path:     /error
+    defaults: { _controller: JVWebBundle:Contact:contact }
+    requirements:
+        _method:  GET|POST
+
+        

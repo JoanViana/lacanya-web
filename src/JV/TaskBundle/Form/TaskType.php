@@ -16,7 +16,7 @@ class TaskType extends AbstractType
     {
         $builder
             ->add('name', TextType::class, array(
-                ,'label' => 'task.name.label'
+                'label' => 'task.name.label'
                 ,'required' => true
                 ,'empty_data' => null
                 ))
@@ -42,7 +42,7 @@ class TaskType extends AbstractType
                 ,'empty_data' => null
                 ))
             ->add('summary', TextareaType::class, array(
-                ,'label' => 'task.summary.label'
+                'label' => 'task.summary.label'
                 ,'required' => false
                 ))
             ->add('link', UrlType::class, array(

@@ -1,0 +1,19 @@
+
+        {% block head %}
+             <meta charset="utf-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+            <title>{% block title %}la Canya estudis{% endblock %}</title>
+        
+            <link rel="canonical" href="http://www.lacanyaestudis.herokuapp.com/">         
+            <meta name="description" content="la Canya estudis, Arundo donax, Bioconstrucció, Bioconstrucción, Valencia, Canya de San Joan, Caña">
+            <meta name="keywords" content="la Canya estudis, Arundo donax, Bioconstrucció, Bioconstrucción, Valencia, Canya de San Joan, Caña">
+            <meta name="author" content="la Canya Estudis">    
+        
+             <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        
+            {% block css %}
+                {% include 'JVWebBundle::css.html.twig' %}
+            {% endblock %}
+        {% endblock %}

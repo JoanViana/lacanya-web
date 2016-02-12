@@ -1,10 +1,14 @@
 jv_web:
     resource: "@JVWebBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix : /{_locale}/ 
+    requirements:
+        _locale: '%app.locales%'
 
 jv_task:
     resource: "@JVTaskBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix : /{_locale}/intranet/
+    requirements:
+        _locale: '%app.locales%'
 
 app:
     resource: "@AppBundle/Controller/"
@@ -12,6 +16,6 @@ app:
     
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
-    prefix : /{_locale}/ 
+    prefix : /{_locale}/intranet/admin/
     requirements:
         _locale: '%app.locales%'
