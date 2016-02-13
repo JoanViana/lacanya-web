@@ -25,10 +25,10 @@ class CategoryController extends Controller
         $categories = $em->getRepository('JVTaskBundle:Category')->findAll();
 
         if (count($categories) === 0) {
-            return $this->render("category/index.html.twig", array("flashnocategories" => true));
+            return $this->render('JVTaskBundle:Category:list.html.twig', array("flashnocategories" => true));
         }
 
-        return $this->render('category/list.html.twig', array(
+        return $this->render('JVTaskBundle:Category:list.html.twig', array(
             'categories' => $categories,
         ));
     }
@@ -51,7 +51,7 @@ class CategoryController extends Controller
             return $this->redirectToRoute('category_show', array('id' => $category->getId()));
         }
 
-        return $this->render('category/new.html.twig', array(
+        return $this->render('JVTaskBundle:Category:new.html.twig', array(
             'category' => $category,
             'form' => $form->createView(),
         ));
@@ -65,7 +65,7 @@ class CategoryController extends Controller
     {
         $deleteForm = $this->createDeleteForm($category);
 
-        return $this->render('category/show.html.twig', array(
+        return $this->render('JVTaskBundle:Category:show.html.twig', array(
             'category' => $category,
             'delete_form' => $deleteForm->createView(),
         ));
@@ -89,7 +89,7 @@ class CategoryController extends Controller
             return $this->redirectToRoute('category_edit', array('id' => $category->getId()));
         }
 
-        return $this->render('category/edit.html.twig', array(
+        return $this->render('JVTaskBundle:Category:edit.html.twig', array(
             'category' => $category,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),

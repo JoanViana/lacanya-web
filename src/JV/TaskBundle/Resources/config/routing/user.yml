@@ -1,8 +1,8 @@
 user_index:
     path:     /
-    defaults: { _controller: "JVTaskBundle:User:index" }
+    defaults: { _controller: "JVTaskBundle:User:list" }
     methods:  GET
-
+    
 user_list:
     path:     /
     defaults: { _controller: "JVTaskBundle:User:list" }

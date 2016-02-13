@@ -25,10 +25,10 @@ class TaskController extends Controller
         $tasks = $em->getRepository('JVTaskBundle:Task')->findAll();
         
         if (count($tasks) === 0) {
-            return $this->render("task/index.html.twig", array("flashnotasks" => true));
+            return $this->render('JVTaskBundle:Task:list.html.twig', array("flashnotasks" => true));
         }
         
-        return $this->render('task/list.html.twig', array(
+        return $this->render('JVTaskBundle:Task:list.html.twig', array(
             'tasks' => $tasks,
         ));
     }
@@ -51,7 +51,7 @@ class TaskController extends Controller
             return $this->redirectToRoute('task_show', array('id' => $task->getId()));
         }
 
-        return $this->render('task/new.html.twig', array(
+        return $this->render('JVTaskBundle:Task:new.html.twig', array(
             'task' => $task,
             'form' => $form->createView(),
         ));
@@ -65,7 +65,7 @@ class TaskController extends Controller
     {
         $deleteForm = $this->createDeleteForm($task);
 
-        return $this->render('task/show.html.twig', array(
+        return $this->render('JVTaskBundle:Task:show.html.twig', array(
             'task' => $task,
             'delete_form' => $deleteForm->createView(),
         ));
@@ -89,7 +89,7 @@ class TaskController extends Controller
             return $this->redirectToRoute('task_edit', array('id' => $task->getId()));
         }
 
-        return $this->render('task/edit.html.twig', array(
+        return $this->render('JVTaskBundle:Task:edit.html.twig', array(
             'task' => $task,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
@@ -134,7 +134,7 @@ class TaskController extends Controller
 
         $tasks = $type->getTasks();
 
-        return $this->render('task/listByType.html.twig', array('tasks' => $tasks,
+        return $this->render('JVTaskBundle:Task:listByType.html.twig', array('tasks' => $tasks,
         'type'=> $type
         ));
     }
@@ -147,10 +147,10 @@ class TaskController extends Controller
         
         if (count($types) === 0) {
 
-            return $this->render('task/index.html.twig', array('flashnotypes' => true));
+            return $this->render('JVTaskBundle:Task:list.html.twig', array('flashnotypes' => true));
         }
 
-        return $this->render('task/listAllByType.html.twig', array('types' => $types,
+        return $this->render('JVTaskBundle:Task:listAllByType.html.twig', array('types' => $types,
         ));
     }
     
@@ -158,7 +158,7 @@ class TaskController extends Controller
 
         $tasks = $project->getTasks();
 
-        return $this->render('task/listByProject.html.twig', array('tasks' => $tasks,
+        return $this->render('JVTaskBundle:Task:listByProject.html.twig', array('tasks' => $tasks,
         'project'=> $project
         ));
     }
@@ -171,10 +171,10 @@ class TaskController extends Controller
         
         if (count($projects) === 0) {
 
-            return $this->render('task/index.html.twig', array('flashnoprojects' => true));
+            return $this->render('JVTaskBundle:Task:list.html.twig', array('flashnoprojects' => true));
         }
 
-        return $this->render('task/listAllByProject.html.twig', array('projects' => $projects,
+        return $this->render('JVTaskBundle:Task:listAllByProject.html.twig', array('projects' => $projects,
         ));
     }
     
@@ -182,7 +182,7 @@ class TaskController extends Controller
 
         $tasks = $user->getTasks();
 
-        return $this->render('task/listByUser.html.twig', array('tasks' => $tasks,
+        return $this->render('JVTaskBundle:Task:listByUser.html.twig', array('tasks' => $tasks,
         'user'=> $user
         ));
     }
@@ -195,10 +195,10 @@ class TaskController extends Controller
         
         if (count($users) === 0) {
 
-            return $this->render('task/index.html.twig', array('flashnousers' => true));
+            return $this->render('JVTaskBundle:Task:list.html.twig', array('flashnousers' => true));
         }
 
-        return $this->render('task/listAllByUser.html.twig', array('users' => $users,
+        return $this->render('JVTaskBundle:Task:listAllByUser.html.twig', array('users' => $users,
         ));
     }
     

@@ -23,19 +23,8 @@ jv_task_type:
     prefix:   /type
     
 jv_task_homepage:
-    path:     /
+    path:     /homepage
     defaults: { _controller: JVTaskBundle:Default:index }
-
-jv_task_redirect:
-    path: /
-    defaults:
-        _controller: JVTaskBundle:Default:index
-        path: /index
-        permanent: true
-
-jv_task_admin:
-    path:     /admin
-    defaults: { _controller: JVTaskBundle:Default:admin }
 
 fos_user_security_login_username:
     defaults: { _controller: JVTaskBundle:User:login }

@@ -4,8 +4,6 @@ namespace JV\TaskBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
-use JV\TaskBundle\Entity\User;
-use JV\TaskBundle\Entity\Project;
 
 /**
  * Assignment
@@ -35,7 +33,7 @@ class Assignment
     /**
      * @var bool
      *
-     * @ORM\Column(name="Active", type="boolean")
+     * @ORM\Column(name="isActive", type="boolean")
      * @Assert\NotBlank(message="as.nb")
      */
     private $isActive;
@@ -43,11 +41,17 @@ class Assignment
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="AddedAt", type="datetime")
+     * @ORM\Column(name="CreatedAt", type="datetime")
      */
-    private $addedAt;
+    private $createdAt;
 
-
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="UpdatedAt", type="datetime")
+     */
+    private $updatedAt;
+    
     /**
      * Get id
      *
@@ -107,35 +111,68 @@ class Assignment
     }
 
     /**
-     * Set addedAt
+     * Set createdAt
      *
-     * @param \DateTime $addedAt
+     * @param \DateTime $createdAt
      *
      * @return Assignment
      */
-    public function setAddedAt($addedAt)
+    public function setCreatedAt($createdAt)
     {
-        $this->addedAt = $addedAt;
+        $this->createdAt = $createdAt;
 
         return $this;
     }
 
     /**
-     * Get addedAt
+     * Get createdAt
      *
      * @return \DateTime
      */
-    public function getAddedAt()
+    public function getCreatedAt()
     {
-        return $this->addedAt;
+        return $this->createdAt;
     }
     
+     /**
+     * Set updatedAt
+     *
+     * @param \DateTime $updatedAt
+     *
+     * @return Task
+     */
+    public function setUpdatedAt($updatedAt)
+    {
+        $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+    /**
+     * Get updatedAt
+     *
+     * @return \DateTime
+     */
+    public function getUpdatedAt()
+    {
+        return $this->updatedAt;
+    }
+
     /**
      * @ORM\PrePersist
      */
-    public function setAddedAtValue()
+    public function setCreatedAtValue()
     {
-        $this->AddedAt = new \DateTime();
+        $this->createdAt = new \DateTime();
+    }
+
+    /**
+     * @ORM\PrePersist
+     * @ORM\PreUpdate
+     */
+    public function setUpdatedAtValue()
+    {
+        $this->updatedAt = new \DateTime();
     }
     
     /**

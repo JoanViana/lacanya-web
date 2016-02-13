@@ -1,0 +1,101 @@
+#JVWebBundle.es.yml 
+nav:
+    start: 'Inicio'
+    about: 'Quienes somos'
+    courses: 'Cursos'
+    studies: 'Estudios'
+    contact: 'Contacto'
+modal:
+    login:
+        label: 'Login'
+        remember: "Recuérdame"
+    logout:
+        label: 'Login'
+        confirm: '¿Seguro que quieres salir?'
+        
+form:
+    email:
+        label: 'Email'
+        placeholder: 'Email'
+    password:
+        label: 'Contraseña'
+        placeholder: 'Contraseña'
+
+button:
+    login: 'Login'
+    cancel: 'Cancelar'
+    logout: 'Logout'
+    previous: 'Anterior'
+    next: 'Siguiente'
+    save: 'Guardar'
+    reset: 'Borra'
+
+about:
+    quisom:
+        content1: "Somos un grupo de técnicos provenientes del mundo de la arquitectura y la ingeniería, residentes en la Huerta Sur, que fruto de la convivencia con la caña, Arundo donax L., hemos desarrollado el interés por esta especie vegetal debido a su potencial como elemento constructivo. "
+    bioconstruccio:
+        title: "Bioconstrucción"
+        content1: "La bioconstrucción es una disciplina que se basa en el estudio de los elementos naturales que disponemos a nuestro alrededor, obteniendo información de cómo se comportan los materiales y utilizándolos para resolver nuestras necesidades constructivas, btenint de esta manera estructuras sostenibles, innovadoras, que generan beneficios sociales y medioambientales. "
+        content2: "Rompe con la mentalidad de la construcción industrializada donde los materiales empleados son creados artificialmente, la relación entre la infraestructura y el medio es nula y el único objetivo que se persigue es el beneficio económico. La utilización de materiales naturales, como pueden ser la caña, tierra, piedra, paja y cal, necesita del uso de técnicas tradicionales y, por tanto, de labores artesanales que permiten obtendré procesos constructivos libres de contaminación, estructuras vivas que interactúan con el medio consiguiendo la integración paisajística y la participación dinámica de la sociedad. "
+    benSocials:
+        title: "Beneficios Sociales"
+        content1: "La técnica constructiva con la caña requiere del trabajo cooperativo de la gente participante y fomentando valores."
+        content2: "El uso de técnicas tradicionales permite el intercambio de conocimiento entre gente de diferente edad, esta mezcla permite meter en valor los conocimientos de los más mayores así como poder realizar los talleres en familia, con colegios, actividades sociales para empresas, etc "
+        content3: "Además, estos conocimientos permiten a cualquier persona que sea capaz de iniciar proyectos propios con el uso de la caña."
+    benMediambiantals:
+        title: "Beneficios Medioambientales"
+        content1: "Uno de los principales problemas medioambientales que tenemos en nuestros barrancos y zonas húmedas es la proliferación de especies invasoras como es el Arundo donax L., dada su densidad poblacional, su rápido crecimiento y el adelanto de los rizomas. "
+        content2: "Los problemas se dividen en dos:"
+        list1: "El desplazamiento o erradicación de la vegetación autóctona: inhibición de la adquisición de agua y nutrientes por parte de las especies nativas, así como el impedimento de germinación y el crecimiento de estas debido a la parte aérea tan densa de la caña. "
+        list2: "Problemas relacionados con la vulnerabilidad de estos espacios naturales:"
+        list21: "De incineración debido a su densidad de biomasa (15,5 kg / m2) y su baja cantidad de humedad."
+        list22: "Desbordamientos y obstrucción de los elementos de control hidráulico"
+        content3: "Es por tanto que las tareas de eliminación de la caña junto a actividades de reforestación con especies nativas permite la restauración de los espacios fluviales, así como la fijación de grandes cantidades de CO2"
+    links:
+        title: "Enlaces"
+        
+courses:
+    paiporta:
+        title:
+            label: 'Curso de Bioconstrucción'
+        place:
+            label: 'Asociación Cultural El Barranc de Paiporta '
+        date:
+            label: 'Enero-Abril 2015'
+        caption:
+            label: 'El Barranc 2015'
+    etsatopia:
+        title:
+            label: 'Taller de Construcción con cañas'
+        place:
+            label: 'Festival de Arquitectura ETSATOPIA, UPV'
+        date:
+            label: 'Junio 2015'
+        caption:
+            label: 'ETSATOPIA 2015'
+studies:
+    sps:
+        title: 'Ingeniería Solar Pasiva'
+        subtitle1: "Análisis sombras en Valencia"
+        subtitle2: 'Año meteorlógico Típico en Valencia '
+        subtitle3: 'Notas del Curso MIT - FPSS-12'
+    omm:
+        title: 'Modelos Matemáticos Abiertos'
+        subtitle1: 'Repositorios GitHub'
+        subtitle2: 'Entornos Cloud9'
+    eng:
+        title: 'Ingeniería'
+        subtitle1: 'Modelos GIS 3D'
+        subtitle2: 'Modelos CAD 3D'
+
+contact:
+    firstname:
+        label: 'Introduce tu nombre'
+    lastname:
+        label: 'Introduce tu apellido'
+    email:
+        label: 'Introduce tu email'
+    subject:
+        label: 'Introduce la razón'
+    body:
+        label: 'Introduce el mensaje'

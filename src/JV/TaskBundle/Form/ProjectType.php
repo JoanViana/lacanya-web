@@ -5,6 +5,17 @@ namespace JV\TaskBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\UrlType;
+use Symfony\Component\Form\Extension\Core\Type\MoneyType;
+use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\ResetType;
+use JV\TaskBundle\Entity\Category;
 
 class ProjectType extends AbstractType
 {
@@ -16,19 +27,19 @@ class ProjectType extends AbstractType
     {
         $builder
             ->add('name', TextType::class, array(
-                ,'label' => 'project.name.label'
+                'label' => 'project.name.label'
                 ,'required' => true
                 ,'empty_data' => null
                 ))
             ->add('category', EntityType::class, array(
                 'class' => 'JVTaskBundle:Category'
-                ,'choice_label' => $category->getName()
+                ,'choice_label' => 'name'
                 ,'label' => 'category.name.label'
                 ,'required' => true
                 ,'empty_data' => null
                 ))
             ->add('summary', TextareaType::class, array(
-                ,'label' => 'project.summary.label'
+                'label' => 'project.summary.label'
                 ,'required' => false
                 ))
             ->add('remuneration', MoneyType::class, array(
@@ -44,11 +55,11 @@ class ProjectType extends AbstractType
                 ))
             ->add('status', ChoiceType::class, array(
                 //'class' => 'AppBundle:User'
-                'choices' => array('project.status.proposed' => 'proposed', 
-                                   'project.status.working' => 'working',
-                                   'project.status.active' => 'active',
-                                   'project.status.finished' => 'finished',
-                                   'project.status.cancelled' => 'cancelled')
+                'choices' => array('project.status.proposed' => 'PROPOSED', 
+                                   'project.status.working' => 'WORKING',
+                                   'project.status.active' => 'ACTIVE',
+                                   'project.status.finished' => 'FINISHED',
+                                   'project.status.cancelled' => 'CANCELLED')
                 ,'label' => 'project.status.label'
                 ,'choices_as_values' => true
                 ,'multiple' => false
@@ -88,7 +99,8 @@ class ProjectType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'JV\TaskBundle\Entity\Project'
+            'data_class' => 'JV\TaskBundle\Entity\Project',
+            'translation_domain' => 'JVTaskBundle'
         ));
     }
 }

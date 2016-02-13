@@ -1,0 +1,11 @@
+as:
+    nb: 'This field cannot be empty'
+    invalid: 'This field cannot be empty'
+    date: 'Type a valid date'
+    email: "The email '{{ value }}' is not valid"
+    url: "The url '{{ value }}'is not valid"
+    card: "The card number is not valid"
+    iban: "The IBAN is not valid"  
+    remuneration:
+        min: 'The minimum remuneration is {{ limit }}'
+        max: 'The maximum remuneration is {{ limit }}'

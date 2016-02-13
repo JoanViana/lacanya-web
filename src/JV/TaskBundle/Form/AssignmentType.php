@@ -5,6 +5,15 @@ namespace JV\TaskBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\ResetType;
+use JV\TaskBundle\Entity\User;
+use JV\TaskBundle\Entity\Project;
 
 class AssignmentType extends AbstractType
 {
@@ -17,14 +26,14 @@ class AssignmentType extends AbstractType
         $builder
             ->add('project', EntityType::class, array(
                 'class' => 'JVTaskBundle:Project'
-                ,'choice_label' => $project->getName()
+                ,'choice_label' => 'name'
                 ,'label' => 'project.name.label'
                 ,'required' => true
                 ,'empty_data' => null
                 ))
             ->add('user', EntityType::class, array(
                 'class' => 'JVTaskBundle:User'
-                ,'choice_label' => $user->getUsername()
+                ,'choice_label' => 'username'
                 ,'label' => 'user.username.label'
                 ,'required' => true
                 ,'empty_data' => null
@@ -40,7 +49,7 @@ class AssignmentType extends AbstractType
                                    'assignment.function.other' => 'other')
                 ,'label' => 'assignment.function.label'
                 ,'choices_as_values' => true
-                ,'multiple' => true
+                ,'multiple' => false
                 ,'expanded' => true
                 ,'required' => true
                 ,'empty_data' => null
@@ -67,7 +76,8 @@ class AssignmentType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'JV\TaskBundle\Entity\Assignment'
+            'data_class' => 'JV\TaskBundle\Entity\Assignment',
+            'translation_domain' => 'JVTaskBundle'
         ));
     }
 }

@@ -5,6 +5,12 @@ namespace JV\TaskBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\ResetType;
+
 
 class CategoryType extends AbstractType
 {
@@ -16,12 +22,12 @@ class CategoryType extends AbstractType
     {
         $builder
             ->add('name', TextType::class, array(
-                ,'label' => 'category.name.label'
+                'label' => 'category.name.label'
                 ,'required' => true
                 ,'empty_data' => null
                 ))
             ->add('description', TextareaType::class, array(
-                ,'label' => 'category.description.label'
+                'label' => 'category.description.label'
                 ,'required' => false
                 ))
             ->add('enabled', CheckboxType::class, array(
@@ -45,7 +51,8 @@ class CategoryType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'JV\TaskBundle\Entity\Category'
+            'data_class' => 'JV\TaskBundle\Entity\Category',
+            'translation_domain' => 'JV\TaskBundle'
         ));
     }
 }

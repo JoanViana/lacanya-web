@@ -1,19 +1,19 @@
+    {% trans_default_domain 'JVWebBundle' %} 
     {% block courses %}
 
         <section class="section" id="cursos_">
 
             <div class="container">
-                <h2 class="text-center section-title">Cursos</h2>
+                <h2 class="text-center section-title">{{ 'nav.courses'|trans }}</h2>
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <ol class="breadcrumb">
-                            <li><a href="#inici_">Inici</a></li>
-                            <li><a href="#quisom_">Qui som </a></li>
-
-                            <li class="active">Cursos</li>
-                            <li ><a href="#estudis_">Estudis </a></li>
-                            <li ><a href="#contacte_">Contacte </a></li>
-                        </ol>                
+                            <li><a href="#inici_">{{ 'nav.start'|trans }}</a></li>
+                            <li><a href="#about_">{{ 'nav.about'|trans }}</a></li>
+                            <li  class="active" >{{ 'nav.courses'|trans }}</li>
+                            <li ><a href="#estudis_">{{ 'nav.studies'|trans }}</a></li>
+                            <li ><a href="#contacte_">{{ 'nav.contact'|trans }}</a></li>
+                        </ol>               
                     </div>
                 </div>
                 <div class="container-fluid">
@@ -24,11 +24,11 @@
                             <article class="esp">         
                                 <div class="row esp-site">  
                                     <a class="active news-menu" data-toggle="collapse" href="#coll_new-1">
-                                        ETSATOPIA, Festival de Arquitectura
+                                       {{ 'courses.etsatopia.title.label'|trans }}
                                     </a>
                                     <div>
-                                        <p class="news-menu-sub">Escuela Técnica Superior de Arquitectura, UPV</p>
-                                        <p class="news-menu-sub">Junio 2015</p>
+                                        <p class="news-menu-sub">{{ 'courses.etsatopia.place.label'|trans }}</p>
+                                        <p class="news-menu-sub">{{ 'courses.etsatopia.date.label'|trans }}</p>
                                     </div>
 
                                 </div>
@@ -36,7 +36,7 @@
                                 <div class="row esp-content"> 
                                     <div class="esp-img">
                                         <a class="active news-menu-link" data-toggle="collapse" href="#coll_new-1">
-                                            <img class="grow" height="450" src="files/images/etsatopia/etsatopiaportada.jpg" alt="etsatopia"/>
+                                            <img class="grow" height="450" src="{{ asset('public/files/images/etsatopia/etsatopiaportada.jpg') }}" alt="{{ 'courses.etsatopia.title.label'|trans }}"/>
                                         </a>
                                     </div>                     
                                 </div>
@@ -47,16 +47,16 @@
                             <article class="esp">         
                                 <div class="row esp-site">  
                                     <a class="news-menu" data-toggle="collapse" href="#coll_new-2">
-                                        Curs de construcció amb canyes</a>
+                                        {{ 'courses.paiporta.title.label'|trans }}</a>
 
-                                    <p class="news-menu-sub">Associació Cultural El barranc de Paiporta</p>
-                                    <p class="news-menu-sub">Gener i Abril 2015</p>
+                                    <p class="news-menu-sub">{{ 'courses.paiporta.place.label'|trans }}</p>
+                                    <p class="news-menu-sub">{{ 'courses.paiporta.date.label'|trans }}</p>
 
                                 </div>
                                 <div class="row esp-content">
                                     <div class="esp-img">
                                         <a class="news-menu-link" data-toggle="collapse" href="#coll_new-2">
-                                            <img class="grow" height="450" src="files/images/paiporta/paiportaportada.jpg" alt="paiporta"/>
+                                            <img class="grow" height="450" src="{{ asset('public/files/images/paiporta/paiportaportada.jpg') }}" alt="{{ 'courses.paiporta.title.label'|trans }}"/>
                                         </a>
                                     </div>
 
@@ -73,7 +73,7 @@
                                 <article class="news">
                                     <div class="row news-rectangle">
                                         <div class="col-xs-12">
-                                            <h3 class="news-title font-medula">ETSATOPIA, Festival de Arquitectura</h3>
+                                            <h3 class="news-title font-medula">{{ 'courses.etsatopia.place.label'|trans }}</h3>
                                         </div>
                                     </div>
                                     <div class="row news-content">
@@ -81,65 +81,67 @@
                                         <div class="container-fluid">
                                             <div class="row gallery">
                                                 <div id="etsatopia_gallery" class="justified-gallery">                                            
-                                                    <a class="gallery-image grow" data-lightbox="roadtrip" href="files/images/etsatopia/etsatopia1.jpg">
-                                                        <img alt="ETSATOPIA 2015" src="files/images/etsatopia/small/etsatopia1.jpg" />
-                                                        <div class='caption'><p>ETSATOPIA 2015</p></div>
+                                                    <a class="gallery-image grow" data-lightbox="roadtrip" href="{{ asset('public/files/images/etsatopia/etsatopia1.jpg') }}">
+                                                        <img alt="{{ 'courses.etsatopia.caption.label'|trans }}" src="{{ asset('public/files/images/etsatopia/small/etsatopia1.jpg') }}" />
+                                                        <div class='caption'><p>{{ 'courses.etsatopia.caption.label'|trans }}</p></div>
                                                     </a>
-                                                    <a class="gallery-image grow" data-lightbox="roadtrip" href="files/images/etsatopia/etsatopia2.jpg">
-                                                        <img alt="ETSATOPIA 2015" src="files/images/etsatopia/small/etsatopia2.jpg" />
-                                                        <div class='caption'><p>ETSATOPIA 2015</p></div>
+                                                    <a class="gallery-image grow" data-lightbox="roadtrip" href="{{ asset('public/files/images/etsatopia/etsatopia2.jpg') }}">
+                                                        <img alt="{{ 'courses.etsatopia.caption.label'|trans }}" src="{{ asset('public/files/images/etsatopia/small/etsatopia2.jpg') }}" />
+                                                        <div class='caption'><p>{{ 'courses.etsatopia.caption.label'|trans }}</p></div>
                                                     </a>
-                                                    <a class="gallery-image grow" data-lightbox="roadtrip" href="files/images/etsatopia/etsatopia3.jpg">
-                                                        <img alt="ETSATOPIA 2015" src="files/images/etsatopia/small/etsatopia3.jpg" />
-                                                        <div class='caption'><p>ETSATOPIA 2015</p></div>
+                                                    <a class="gallery-image grow" data-lightbox="roadtrip" href="{{ asset('public/files/images/etsatopia/etsatopia3.jpg') }}">
+                                                        <img alt="{{ 'courses.etsatopia.caption.label'|trans }}" src="{{ asset('public/files/images/etsatopia/small/etsatopia3.jpg') }}" />
+                                                        <div class='caption'><p>{{ 'courses.etsatopia.caption.label'|trans }}</p></div>
                                                     </a>
-                                                    <a class="gallery-image grow" data-lightbox="roadtrip" href="files/images/etsatopia/etsatopia4.jpg">
-                                                        <img alt="ETSATOPIA 2015" src="files/images/etsatopia/small/etsatopia4.jpg" />
-                                                        <div class='caption'><p>ETSATOPIA 2015</p></div>
+                                                    <a class="gallery-image grow" data-lightbox="roadtrip" href="{{ asset('public/files/images/etsatopia/etsatopia4.jpg') }}">
+                                                        <img alt="{{ 'courses.etsatopia.caption.label'|trans }}" src="{{ asset('public/files/images/etsatopia/small/etsatopia4.jpg') }}" />
+                                                        <div class='caption'><p>{{ 'courses.etsatopia.caption.label'|trans }}</p></div>
                                                     </a>
-                                                    <a class="gallery-image grow" data-lightbox="roadtrip" href="files/images/etsatopia/etsatopia5.jpg">
-                                                        <img alt="ETSATOPIA 2015" src="files/images/etsatopia/small/etsatopia5.jpg" />
-                                                        <div class='caption'><p>ETSATOPIA 2015</p></div>
+                                                    <a class="gallery-image grow" data-lightbox="roadtrip" href="{{ asset('public/files/images/etsatopia/etsatopia5.jpg') }}">
+                                                        <img alt="{{ 'courses.etsatopia.caption.label'|trans }}" src="{{ asset('public/files/images/etsatopia/small/etsatopia5.jpg') }}" />
+                                                        <div class='caption'><p>{{ 'courses.etsatopia.caption.label'|trans }}</p></div>
                                                     </a>
-                                                    <a class="gallery-image grow" data-lightbox="roadtrip" href="files/images/etsatopia/etsatopia6.jpg">
-                                                        <img alt="ETSATOPIA 2015" src="files/images/etsatopia/small/etsatopia6.jpg" />
-                                                        <div class='caption'><p>ETSATOPIA 2015</p></div>
+                                                    <a class="gallery-image grow" data-lightbox="roadtrip" href="{{ asset('public/files/images/etsatopia/etsatopia6.jpg') }}">
+                                                        <img alt="{{ 'courses.etsatopia.caption.label'|trans }}" src="{{ asset('public/files/images/etsatopia/small/etsatopia6.jpg') }}" />
+                                                        <div class='caption'><p>{{ 'courses.etsatopia.caption.label'|trans }}</p></div>
                                                     </a>
-                                                    <a class="gallery-image grow" data-lightbox="roadtrip" href="files/images/etsatopia/etsatopia7.jpg">
-                                                        <img alt="ETSATOPIA 2015" src="files/images/etsatopia/small/etsatopia7.jpg" />
-                                                        <div class='caption'><p>ETSATOPIA 2015</p></div>
+                                                    {#
+                                                    <a class="gallery-image grow" data-lightbox="roadtrip" href="{{ asset('public/files/images/etsatopia/etsatopia7.jpg') }}">
+                                                        <img alt="{{ 'courses.etsatopia.caption.label'|trans }}" src="{{ asset('public/files/images/etsatopia/small/etsatopia7.jpg') }}" />
+                                                        <div class='caption'><p>{{ 'courses.etsatopia.caption.label'|trans }}</p></div>
                                                     </a>
-                                                    <a class="gallery-image grow" data-lightbox="roadtrip" href="files/images/etsatopia/etsatopia8.jpg">
-                                                        <img alt="ETSATOPIA 2015" src="files/images/etsatopia/small/etsatopia8.jpg" />
-                                                        <div class='caption'><p>ETSATOPIA 2015</p></div>
+                                                    #}
+                                                    <a class="gallery-image grow" data-lightbox="roadtrip" href="{{ asset('public/files/images/etsatopia/etsatopia8.jpg') }}">
+                                                        <img alt="{{ 'courses.etsatopia.caption.label'|trans }}" src="{{ asset('public/files/images/etsatopia/small/etsatopia8.jpg') }}" />
+                                                        <div class='caption'><p>{{ 'courses.etsatopia.caption.label'|trans }}</p></div>
                                                     </a>
-                                                    <a class="gallery-image grow" data-lightbox="roadtrip" href="files/images/etsatopia/etsatopia9.jpg">
-                                                        <img alt="ETSATOPIA 2015" src="files/images/etsatopia/small/etsatopia9.jpg" />
-                                                        <div class='caption'><p>ETSATOPIA 2015</p></div>
+                                                    <a class="gallery-image grow" data-lightbox="roadtrip" href="{{ asset('public/files/images/etsatopia/etsatopia9.jpg') }}">
+                                                        <img alt="{{ 'courses.etsatopia.caption.label'|trans }}" src="{{ asset('public/files/images/etsatopia/small/etsatopia9.jpg') }}" />
+                                                        <div class='caption'><p>{{ 'courses.etsatopia.caption.label'|trans }}</p></div>
                                                     </a>
-                                                    <a class="gallery-image grow" data-lightbox="roadtrip" href="files/images/etsatopia/etsatopia10.jpg">
-                                                        <img alt="ETSATOPIA 2015" src="files/images/etsatopia/small/etsatopia10.jpg" />
-                                                        <div class='caption'><p>ETSATOPIA 2015</p></div>
+                                                    <a class="gallery-image grow" data-lightbox="roadtrip" href="{{ asset('public/files/images/etsatopia/etsatopia10.jpg') }}">
+                                                        <img alt="{{ 'courses.etsatopia.caption.label'|trans }}" src="{{ asset('public/files/images/etsatopia/small/etsatopia10.jpg') }}" />
+                                                        <div class='caption'><p>{{ 'courses.etsatopia.caption.label'|trans }}</p></div>
                                                     </a>
-                                                    <a class="gallery-image grow" data-lightbox="roadtrip" href="files/images/etsatopia/etsatopia11.jpg">
-                                                        <img alt="ETSATOPIA 2015" src="files/images/etsatopia/small/etsatopia11.jpg" />
-                                                        <div class='caption'><p>ETSATOPIA 2015</p></div>
+                                                    <a class="gallery-image grow" data-lightbox="roadtrip" href="{{ asset('public/files/images/etsatopia/etsatopia11.jpg') }}">
+                                                        <img alt="{{ 'courses.etsatopia.caption.label'|trans }}" src="{{ asset('public/files/images/etsatopia/small/etsatopia11.jpg') }}" />
+                                                        <div class='caption'><p>{{ 'courses.etsatopia.caption.label'|trans }}</p></div>
                                                     </a>
-                                                    <a class="gallery-image grow" data-lightbox="roadtrip" href="files/images/etsatopia/etsatopia12.jpg">
-                                                        <img alt="ETSATOPIA 2015" src="files/images/etsatopia/small/etsatopia12.jpg" />
-                                                        <div class='caption'><p>ETSATOPIA 2015</p></div>
+                                                    <a class="gallery-image grow" data-lightbox="roadtrip" href="{{ asset('public/files/images/etsatopia/etsatopia12.jpg') }}">
+                                                        <img alt="{{ 'courses.etsatopia.caption.label'|trans }}" src="{{ asset('public/files/images/etsatopia/small/etsatopia12.jpg') }}" />
+                                                        <div class='caption'><p>{{ 'courses.etsatopia.caption.label'|trans }}</p></div>
                                                     </a>
-                                                    <a class="gallery-image grow" data-lightbox="roadtrip" href="files/images/etsatopia/etsatopia13.jpg">
-                                                        <img alt="ETSATOPIA 2015" src="files/images/etsatopia/small/etsatopia13.jpg" />
-                                                        <div class='caption'><p>ETSATOPIA 2015</p></div>
+                                                    <a class="gallery-image grow" data-lightbox="roadtrip" href="{{ asset('public/files/images/etsatopia/etsatopia13.jpg') }}">
+                                                        <img alt="{{ 'courses.etsatopia.caption.label'|trans }}" src="{{ asset('public/files/images/etsatopia/small/etsatopia13.jpg') }}" />
+                                                        <div class='caption'><p>{{ 'courses.etsatopia.caption.label'|trans }}</p></div>
                                                     </a>
-                                                    <a class="gallery-image grow" data-lightbox="roadtrip" href="files/images/etsatopia/etsatopia14.jpg">
-                                                        <img alt="ETSATOPIA 2015" src="files/images/etsatopia/small/etsatopia14.jpg" />
-                                                        <div class='caption'><p>ETSATOPIA 2015</p></div>
+                                                    <a class="gallery-image grow" data-lightbox="roadtrip" href="{{ asset('public/files/images/etsatopia/etsatopia14.jpg') }}">
+                                                        <img alt="{{ 'courses.etsatopia.caption.label'|trans }}" src="{{ asset('public/files/images/etsatopia/small/etsatopia14.jpg') }}" />
+                                                        <div class='caption'><p>{{ 'courses.etsatopia.caption.label'|trans }}</p></div>
                                                     </a>
-                                                    <a class="gallery-image grow" data-lightbox="roadtrip" href="files/images/etsatopia/etsatopia15.jpg">
-                                                        <img alt="ETSATOPIA 2015" src="files/images/etsatopia/small/etsatopia15.jpg" />
-                                                        <div class='caption'><p>ETSATOPIA 2015</p></div>
+                                                    <a class="gallery-image grow" data-lightbox="roadtrip" href="{{ asset('public/files/images/etsatopia/etsatopia15.jpg') }}">
+                                                        <img alt="{{ 'courses.etsatopia.caption.label'|trans }}" src="{{ asset('public/files/images/etsatopia/small/etsatopia15.jpg') }}" />
+                                                        <div class='caption'><p>{{ 'courses.etsatopia.caption.label'|trans }}</p></div>
                                                     </a>
                                                 </div>
                                             </div>
@@ -152,7 +154,7 @@
                                 <article class="news">
                                     <div class="row news-rectangle">
                                         <div class="col-xs-12">
-                                            <h3 class="news-title font-medula">Curs de Construcció amb canyes</h3>
+                                            <h3 class="news-title font-medula">{{ 'courses.paiporta.place.label'|trans }}</h3>
                                         </div>
                                     </div>
                                     <div class="row news-content">
@@ -160,53 +162,53 @@
                                         <div class="container-fluid">
                                             <div class="row gallery">
                                                 <div id="paiporta_gallery" class="justified-gallery">                                            
-                                                    <a class="gallery-image grow" data-lightbox="roadtrip" href="files/images/paiporta/paiporta1.jpg">
-                                                        <img alt="PAIPORTA 2015" src="files/images/paiporta/small/paiporta1.jpg" />
-                                                        <div class='caption'><p>PAIPORTA 2015</p></div>
+                                                    <a class="gallery-image grow" data-lightbox="roadtrip" href="{{ asset('public/files/images/paiporta/paiporta1.jpg') }}">
+                                                        <img alt="{{ 'courses.paiporta.caption.label'|trans }}" src="{{ asset('public/files/images/paiporta/small/paiporta1.jpg') }}" />
+                                                        <div class='caption'><p>{{ 'courses.paiporta.caption.label'|trans }}</p></div>
                                                     </a>
-                                                    <a class="gallery-image grow" data-lightbox="roadtrip" href="files/images/paiporta/paiporta2.jpg">
-                                                        <img alt="PAIPORTA 2015" src="files/images/paiporta/small/paiporta2.jpg" />
-                                                        <div class='caption'><p>PAIPORTA 2015</p></div>
+                                                    <a class="gallery-image grow" data-lightbox="roadtrip" href="{{ asset('public/files/images/paiporta/paiporta2.jpg') }}">
+                                                        <img alt="{{ 'courses.paiporta.caption.label'|trans }}" src="{{ asset('public/files/images/paiporta/small/paiporta2.jpg') }}" />
+                                                        <div class='caption'><p>{{ 'courses.paiporta.caption.label'|trans }}</p></div>
                                                     </a>
-                                                    <a class="gallery-image grow" data-lightbox="roadtrip" href="files/images/paiporta/paiporta3.jpg">
-                                                        <img alt="PAIPORTA 2015" src="files/images/paiporta/small/paiporta3.jpg" />
-                                                        <div class='caption'><p>PAIPORTA 2015</p></div>
+                                                    <a class="gallery-image grow" data-lightbox="roadtrip" href="{{ asset('public/files/images/paiporta/paiporta3.jpg') }}">
+                                                        <img alt="{{ 'courses.paiporta.caption.label'|trans }}" src="{{ asset('public/files/images/paiporta/small/paiporta3.jpg') }}" />
+                                                        <div class='caption'><p>{{ 'courses.paiporta.caption.label'|trans }}</p></div>
                                                     </a>
-                                                    <a class="gallery-image grow" data-lightbox="roadtrip" href="files/images/paiporta/paiporta4.jpg">
-                                                        <img alt="PAIPORTA 2015" src="files/images/paiporta/small/paiporta4.jpg" />
-                                                        <div class='caption'><p>PAIPORTA 2015</p></div>
+                                                    <a class="gallery-image grow" data-lightbox="roadtrip" href="{{ asset('public/files/images/paiporta/paiporta4.jpg') }}">
+                                                        <img alt="{{ 'courses.paiporta.caption.label'|trans }}" src="{{ asset('public/files/images/paiporta/small/paiporta4.jpg') }}" />
+                                                        <div class='caption'><p>{{ 'courses.paiporta.caption.label'|trans }}</p></div>
                                                     </a>
-                                                    <a class="gallery-image grow" data-lightbox="roadtrip" href="files/images/paiporta/paiporta5.jpg">
-                                                        <img alt="PAIPORTA 2015" src="files/images/paiporta/small/paiporta5.jpg" />
-                                                        <div class='caption'><p>PAIPORTA 2015</p></div>
+                                                    <a class="gallery-image grow" data-lightbox="roadtrip" href="{{ asset('public/files/images/paiporta/paiporta5.jpg') }}">
+                                                        <img alt="{{ 'courses.paiporta.caption.label'|trans }}" src="{{ asset('public/files/images/paiporta/small/paiporta5.jpg') }}" />
+                                                        <div class='caption'><p>{{ 'courses.paiporta.caption.label'|trans }}</p></div>
                                                     </a>
-                                                    <a class="gallery-image grow" data-lightbox="roadtrip" href="files/images/paiporta/paiporta6.jpg">
-                                                        <img alt="PAIPORTA 2015" src="files/images/paiporta/small/paiporta6.jpg" />
-                                                        <div class='caption'><p>PAIPORTA 2015</p></div>
+                                                    <a class="gallery-image grow" data-lightbox="roadtrip" href="{{ asset('public/files/images/paiporta/paiporta6.jpg') }}">
+                                                        <img alt="{{ 'courses.paiporta.caption.label'|trans }}" src="{{ asset('public/files/images/paiporta/small/paiporta6.jpg') }}" />
+                                                        <div class='caption'><p>{{ 'courses.paiporta.caption.label'|trans }}</p></div>
                                                     </a>
-                                                    <a class="gallery-image grow" data-lightbox="roadtrip" href="files/images/paiporta/paiporta7.jpg">
-                                                        <img alt="PAIPORTA 2015" src="files/images/paiporta/small/paiporta7.jpg" />
-                                                        <div class='caption'><p>PAIPORTA 2015</p></div>
+                                                    <a class="gallery-image grow" data-lightbox="roadtrip" href="{{ asset('public/files/images/paiporta/paiporta7.jpg') }}">
+                                                        <img alt="{{ 'courses.paiporta.caption.label'|trans }}" src="{{ asset('public/files/images/paiporta/small/paiporta7.jpg') }}" />
+                                                        <div class='caption'><p>{{ 'courses.paiporta.caption.label'|trans }}</p></div>
                                                     </a>
-                                                    <a class="gallery-image grow" data-lightbox="roadtrip" href="files/images/paiporta/paiporta8.jpg">
-                                                        <img alt="PAIPORTA 2015" src="files/images/paiporta/small/paiporta8.jpg" />
-                                                        <div class='caption'><p>PAIPORTA 2015</p></div>
+                                                    <a class="gallery-image grow" data-lightbox="roadtrip" href="{{ asset('public/files/images/paiporta/paiporta8.jpg') }}">
+                                                        <img alt="{{ 'courses.paiporta.caption.label'|trans }}" src="{{ asset('public/files/images/paiporta/small/paiporta8.jpg') }}" />
+                                                        <div class='caption'><p>{{ 'courses.paiporta.caption.label'|trans }}</p></div>
                                                     </a>
-                                                    <a class="gallery-image grow" data-lightbox="roadtrip" href="files/images/paiporta/paiporta9.jpg">
-                                                        <img alt="PAIPORTA 2015" src="files/images/paiporta/small/paiporta9.jpg" />
-                                                        <div class='caption'><p>PAIPORTA 2015</p></div>
+                                                    <a class="gallery-image grow" data-lightbox="roadtrip" href="{{ asset('public/files/images/paiporta/paiporta9.jpg') }}">
+                                                        <img alt="{{ 'courses.paiporta.caption.label'|trans }}" src="{{ asset('public/files/images/paiporta/small/paiporta9.jpg') }}" />
+                                                        <div class='caption'><p>{{ 'courses.paiporta.caption.label'|trans }}</p></div>
                                                     </a>
-                                                    <a class="gallery-image grow" data-lightbox="roadtrip" href="files/images/paiporta/paiporta10.jpg">
-                                                        <img alt="PAIPORTA 2015" src="files/images/paiporta/small/paiporta10.jpg" />
-                                                        <div class='caption'><p>PAIPORTA 2015</p></div>
+                                                    <a class="gallery-image grow" data-lightbox="roadtrip" href="{{ asset('public/files/images/paiporta/paiporta10.jpg') }}">
+                                                        <img alt="{{ 'courses.paiporta.caption.label'|trans }}" src="{{ asset('public/files/images/paiporta/small/paiporta10.jpg') }}" />
+                                                        <div class='caption'><p>{{ 'courses.paiporta.caption.label'|trans }}</p></div>
                                                     </a>
-                                                    <a class="gallery-image grow" data-lightbox="roadtrip" href="files/images/paiporta/paiporta11.jpg">
-                                                        <img alt="PAIPORTA 2015" src="files/images/paiporta/small/paiporta11.jpg" />
-                                                        <div class='caption'><p>PAIPORTA 2015</p></div>
+                                                    <a class="gallery-image grow" data-lightbox="roadtrip" href="{{ asset('public/files/images/paiporta/paiporta11.jpg') }}">
+                                                        <img alt="{{ 'courses.paiporta.caption.label'|trans }}" src="{{ asset('public/files/images/paiporta/small/paiporta11.jpg') }}" />
+                                                        <div class='caption'><p>{{ 'courses.paiporta.caption.label'|trans }}</p></div>
                                                     </a>
-                                                    <a class="gallery-image grow" data-lightbox="roadtrip" href="files/images/paiporta/paiporta12.jpg">
-                                                        <img alt="PAIPORTA 2015" src="files/images/paiporta/small/paiporta12.jpg" />
-                                                        <div class='caption'><p>PAIPORTA 2015</p></div>
+                                                    <a class="gallery-image grow" data-lightbox="roadtrip" href="{{ asset('public/files/images/paiporta/paiporta12.jpg') }}">
+                                                        <img alt="{{ 'courses.paiporta.caption.label'|trans }}" src="{{ asset('public/files/images/paiporta/small/paiporta12.jpg') }}" />
+                                                        <div class='caption'><p>{{ 'courses.paiporta.caption.label'|trans }}</p></div>
                                                     </a>
                                                 </div>
                                             </div>

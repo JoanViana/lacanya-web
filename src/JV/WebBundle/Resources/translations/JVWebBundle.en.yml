@@ -1,0 +1,102 @@
+# JVWebBundle.en.yml
+nav:
+    start: 'Home'
+    about: 'About Us'
+    courses: 'Courses'
+    studies: 'Studies'
+    contact: 'Contact'
+modal:
+    login:
+        label: 'Login'
+        remember: "Remember Me"
+    logout:
+        label: 'Login'
+        confirm: 'Are you sure you want to quit?'
+        
+form:
+    email:
+        label: 'Email'
+        placeholder: 'Email'
+    password:
+        label: 'Password'
+        placeholder: 'Password'
+
+button:
+    login: 'Login'
+    cancel: 'Cancel'
+    logout: 'Logout'
+    previous: 'Previous'
+    next: 'Next'
+    save: 'Save'
+    reset: 'Reset'
+
+about:
+    quisom:
+        content1: "We are a group of technicians from the world of architecture and engineering, residents Horta Sud, which result from living with cane, Arundo donax L. we developed interest in this plant species due to its potential as construction element. "
+    bioconstruccio:
+        title: "Bio-construction"
+        content1: "The bio is a discipline that is based on the study of natural elements that we have around us, getting information on how materials behave and using them to solve our needs constructive, thus btenint structures sustainable, innovative, that generate social and environmental benefits. "
+        content2: "Break the mentality of industrialized construction where materials are created artificially, the relationship between the infrastructure and the environment will be void and the only objective pursued is profit. The use of natural materials, such as cane, earth, stone, straw and lime, requires the use of traditional techniques and, therefore, will I allow craft works construction processes free from pollution, living structures that interact with the environment reaching landscaping and dynamic participation in society. "
+    benSocials:
+        title: "Social Benefits"
+        content1: "The construction technique with cane requires teamwork of people participating and promoting values."
+        content2: "The use of traditional techniques allows the exchange of knowledge between people of different ages, lets put this mixture in value the knowledge of older and able to carry out workshops with family, schools, social activities for companies, etc. "
+        content3: "Moreover, such knowledge allows anyone who is able to initiate their own projects with the use of the cane."
+    benMediambiantals:
+        title: "Environmental Benefits"
+        content1: "One of the major environmental problems we have in our ravines and wetlands is the proliferation of invasive species such as the Arundo donax L., given its population density and its rapid growth the advancement of the rhizomes. "
+        content2: "The problems are divided into two"
+        list1: "The displacement or eradication of native vegetation inhibition of the acquisition of water and nutrients from native species, as well as the impediment of germination and growth of these due to the air so dense the cane. "
+        list2: "Problems related to the vulnerability of those natural"
+        list21: "incineration due to its biomass density (15.5 kg / m2) and its low amount of moisture."
+        list22: "overflows and obstruction of hydraulic control elements"
+        content3: "is therefore the task of removing the rod together with native species reforestation activities allows the restoration of river areas, as well as the establishment of large amounts of CO2"
+    links:
+        title: "Links"
+        
+courses:
+    paiporta:
+        title:
+            label: 'Course of Bio-construction'
+        place:
+            label: 'Associació Cultural El Barranc de Paiporta'
+        date:
+            label: 'January - April 2015'
+        caption:
+            label: 'El Barranc 2015'
+    etsatopia:
+        title:
+            label: 'Workshop of Bio-construction with cannes'
+        place:
+            label: 'ETSATOPIA, Architecture festival. UPV'
+        date:
+            label: 'June 2015'
+        caption:
+            label: 'ETSATOPIA 2015'
+
+studies:
+    sps:
+        title: 'Solar Passive Systems'
+        subtitle1: 'Shadow and solar radiation analysis in Valencia'
+        subtitle2: 'Typical Meteorological Year in Valencia'
+        subtitle3: 'Notes of MIT Course - FPSS-12'
+    omm:
+        title: 'Open Mathematical Modelling'
+        subtitle1: 'GitHub repositories'
+        subtitle2: 'Cloud9 workspaces'
+    eng: 
+        title: 'Engineering'
+        subtitle1: 'GIS 3D Modeling'
+        subtitle2: 'CAD 3D Modeling'
+            
+contact:
+    firstname:
+        label: 'Enter your name'
+    lastname:
+        label: 'Enter your name'
+    email:
+        label: 'Enter your email'
+    subject:
+        label: 'Enter the reason'
+    body:
+        label: 'Write message'

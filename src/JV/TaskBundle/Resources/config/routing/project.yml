@@ -1,6 +1,6 @@
 project_index:
     path:     /
-    defaults: { _controller: "JVTaskBundle:Project:index" }
+    defaults: { _controller: "JVTaskBundle:Project:list" }
     methods:  GET
 
 project_list:

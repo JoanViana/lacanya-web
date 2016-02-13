@@ -1,0 +1,11 @@
+as:
+    nb: 'Este campo no puede estar vacío'
+    invalid: 'Este no es un valor válido'
+    date: 'Introduce una fecha válida'
+    email: "El email '{{ value }}' no es un email válido"
+    url: "La url '{{ value }}'no es una url válida"
+    card: "El número de tarjeta introducido no es válido"
+    iban: "El IBAN introducido no es válido" 
+    descends:
+        min: 'La remuneracion mínima es {{ limit }}'
+        max: 'La remuneracion màxima es {{ limit }}'

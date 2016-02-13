@@ -21,7 +21,7 @@ class UserController extends SecurityController
 {
     protected function renderLogin(array $data)
     {
-        return $this->render('FOSUserBundle:Security:loginUsername.html.twig', $data);
+        return $this->render('JVTaskBundle:FOSUserBundle:Security:loginUsername.html.twig', $data);
     }
 
     /**
@@ -35,10 +35,10 @@ class UserController extends SecurityController
         $users = $em->getRepository('JVTaskBundle:User')->findAll();
         
         if (count($users) === 0) {
-            return $this->render("user/index.html.twig", array("flashnousers" => true));
+            return $this->render('JVTaskBundle:User:list.html.twig', array("flashnousers" => true));
         }
 
-        return $this->render('user/list.html.twig', array(
+        return $this->render('JVTaskBundle:User:list.html.twig', array(
             'users' => $users,
         ));
     }
@@ -61,7 +61,7 @@ class UserController extends SecurityController
             return $this->redirectToRoute('user_show', array('id' => $user->getId()));
         }
 
-        return $this->render('user/new.html.twig', array(
+        return $this->render('JVTaskBundle:User:new.html.twig', array(
             'user' => $user,
             'form' => $form->createView(),
         ));
@@ -75,7 +75,7 @@ class UserController extends SecurityController
     {
         $deleteForm = $this->createDeleteForm($user);
 
-        return $this->render('user/show.html.twig', array(
+        return $this->render('JVTaskBundle:User:show.html.twig', array(
             'user' => $user,
             'delete_form' => $deleteForm->createView(),
         ));
@@ -99,7 +99,7 @@ class UserController extends SecurityController
             return $this->redirectToRoute('user_edit', array('id' => $user->getId()));
         }
 
-        return $this->render('user/edit.html.twig', array(
+        return $this->render('JVTaskBundle:User:edit.html.twig', array(
             'user' => $user,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),

@@ -7,6 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 use JV\TaskBundle\Entity\Project;
 use JV\TaskBundle\Form\ProjectType;
+use JV\TaskBundle\Entity\Category;
 
 /**
  * Project controller.
@@ -25,10 +26,10 @@ class ProjectController extends Controller
         $projects = $em->getRepository('JVTaskBundle:Project')->findAll();
 
         if (count($projects) === 0) {
-            return $this->render("project/index.html.twig", array("flashnoprojects" => true));
+            return $this->render('JVTaskBundle:Project:list.html.twig', array("flashnoprojects" => true));
         }
         
-        return $this->render('project/list.html.twig', array(
+        return $this->render('JVTaskBundle:Project:list.html.twig', array(
             'projects' => $projects,
         ));
     }
@@ -51,7 +52,7 @@ class ProjectController extends Controller
             return $this->redirectToRoute('project_show', array('id' => $project->getId()));
         }
 
-        return $this->render('project/new.html.twig', array(
+        return $this->render('JVTaskBundle:Project:new.html.twig', array(
             'project' => $project,
             'form' => $form->createView(),
         ));
@@ -65,7 +66,7 @@ class ProjectController extends Controller
     {
         $deleteForm = $this->createDeleteForm($project);
 
-        return $this->render('project/show.html.twig', array(
+        return $this->render('JVTaskBundle:Project:show.html.twig', array(
             'project' => $project,
             'delete_form' => $deleteForm->createView(),
         ));
@@ -89,7 +90,7 @@ class ProjectController extends Controller
             return $this->redirectToRoute('project_edit', array('id' => $project->getId()));
         }
 
-        return $this->render('project/edit.html.twig', array(
+        return $this->render('JVTaskBundle:Project:edit.html.twig', array(
             'project' => $project,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
@@ -134,7 +135,7 @@ class ProjectController extends Controller
 
         $projects = $category->getProjects();
 
-        return $this->render('project/listByCategory.html.twig', array('projects' => $projects,
+        return $this->render('JVTaskBundle:Project/listByCategory.html.twig', array('projects' => $projects,
         'category'=> $category
         ));
     }
@@ -147,10 +148,10 @@ class ProjectController extends Controller
         
         if (count($categories) === 0) {
 
-            return $this->render('project/index.html.twig', array('flashnocategories' => true));
+            return $this->render('JVTaskBundle:Project:list.html.twig', array('flashnocategories' => true));
         }
 
-        return $this->render('project/listAllByCategory.html.twig', array('categories' => $categories,
+        return $this->render('JVTaskBundle:Project:listAllByCategory.html.twig', array('categories' => $categories,
         ));
     }
 

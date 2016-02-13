@@ -1,33 +1,21 @@
-{% extends 'DWSBundle::layout.html.twig' %}
-{% trans_default_domain 'DWSBundle' %}
-{% block title %}DWS - {{ 'category.edit.title'|trans({'%categoryname%' : category.name }) }}{% endblock %}
+{% extends 'base.html.twig' %}
+
 {% block body %}
-    {{ parent() }}
-	<div class="main container">
-		<div class="row well">
-			<div class="col-md-6 col-md-offset-3">
-				<div class="page-header">
-					<h2>{{ 'category.edit.header'|trans({'%categoryname%' : category.name }) }}</h2>
-				</div>
-                {{ form_start(form, { 'attr' : {'novalidate': 'novalidate', 'role' : 'form'} }) }}
-            <fieldset>
-                <div class="form-group"> 
-                    {{ form_label(form.name) }}
-                    {{ form_widget(form.name, { 'attr' : {'class' : 'form-control'} }) }}
-                    <span class="text-danger">{{ form_errors(form.name) }}</span>
-                </div>
-			</fieldset>
+    <h1>Category edit</h1>
 
-				<div class="row">
-					<div class="col-sm-12">
-					    <p>
-					        {{ form_widget(form.save, {'attr': {'class': 'btn btn-success'}}) }}
+    {{ form_start(edit_form) }}
+        {{ form_widget(edit_form) }}
+        <input type="submit" value="Edit" />
+    {{ form_end(edit_form) }}
 
-					    </p>        
-			                {{ form_end(form) }}
-                	</div>
-				</div>
-			</div>
-		</div>
-	</div>
+    <ul>
+        <li>
+            <a href="{{ path('category_index') }}">Back to the list</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
 {% endblock %}

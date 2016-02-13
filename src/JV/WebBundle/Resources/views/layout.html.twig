@@ -1,5 +1,7 @@
+{% trans_default_domain 'JVWebBundle' %} 
+
 <!DOCTYPE html>
-<html lang="ca">
+<html lang="{{ app.request.locale }}">
     <head>
     {% block head %}
         {% include 'JVWebBundle::head.html.twig' %}
@@ -23,7 +25,7 @@
                 {% include 'JVWebBundle:Web:about.html.twig' %}
             {% endblock %}
             {% block courses %}
-                {% include 'JVWebBundle:Web:couses.html.twig' %}
+                {% include 'JVWebBundle:Web:courses.html.twig' %}
             {% endblock %}
             {% block studies %}
                 {% include 'JVWebBundle:Web:studies.html.twig' %}

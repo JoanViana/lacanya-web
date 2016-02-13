@@ -1,6 +1,6 @@
 <?php
 
-namespace JV\PersonalWebsiteBundle\Composer;
+namespace JV\WebBundle\Composer;
 
 use Composer\Script\Event;
 

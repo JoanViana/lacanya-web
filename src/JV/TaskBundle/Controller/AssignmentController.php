@@ -25,10 +25,10 @@ class AssignmentController extends Controller
         $assignments = $em->getRepository('JVTaskBundle:Assignment')->findAll();
         
         if (count($assignments) === 0) {
-            return $this->render("assignment/index.html.twig", array("flashnoassignments" => true));
+            return $this->render('JVTaskBundle:Assignment:list.html.twig', array("flashnoassignments" => true));
         }
 
-        return $this->render('assignment/list.html.twig', array(
+        return $this->render('JVTaskBundle:Assignment:list.html.twig', array(
             'assignments' => $assignments,
         ));
     }
@@ -51,7 +51,7 @@ class AssignmentController extends Controller
             return $this->redirectToRoute('assignment_show', array('id' => $assignment->getId()));
         }
 
-        return $this->render('assignment/new.html.twig', array(
+        return $this->render('JVTaskBundle:Assignment:new.html.twig', array(
             'assignment' => $assignment,
             'form' => $form->createView(),
         ));
@@ -65,7 +65,7 @@ class AssignmentController extends Controller
     {
         $deleteForm = $this->createDeleteForm($assignment);
 
-        return $this->render('assignment/show.html.twig', array(
+        return $this->render('JVTaskBundle:Assignment:show.html.twig', array(
             'assignment' => $assignment,
             'delete_form' => $deleteForm->createView(),
         ));
@@ -89,7 +89,7 @@ class AssignmentController extends Controller
             return $this->redirectToRoute('assignment_edit', array('id' => $assignment->getId()));
         }
 
-        return $this->render('assignment/edit.html.twig', array(
+        return $this->render('JVTaskBundle:Assignment:edit.html.twig', array(
             'assignment' => $assignment,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
@@ -134,7 +134,7 @@ class AssignmentController extends Controller
 
         $assignments = $user->getAssignments();
 
-        return $this->render('assignment/listByUser.html.twig', array('assignments' => $assignments,
+        return $this->render('JVTaskBundle:Assignment:listByUser.html.twig', array('assignments' => $assignments,
         'user'=> $user
         ));
     }
@@ -147,10 +147,10 @@ class AssignmentController extends Controller
         
         if (count($users) === 0) {
 
-            return $this->render('assignment/index.html.twig', array('flashnousers' => true));
+            return $this->render('JVTaskBundle:Assignment:list.html.twig', array('flashnousers' => true));
         }
 
-        return $this->render('assignment/listAllByUser.html.twig', array('users' => $users,
+        return $this->render('JVTaskBundle:Assignment:listAllByUser.html.twig', array('users' => $users,
         ));
     }
     
@@ -158,7 +158,7 @@ class AssignmentController extends Controller
 
         $assignments = $project->getAssignments();
 
-        return $this->render('assignment/listByProject.html.twig', array('assignments' => $assignments,
+        return $this->render('JVTaskBundle:Assignment:listByProject.html.twig', array('assignments' => $assignments,
         'project'=> $project
         ));
     }
@@ -171,10 +171,10 @@ class AssignmentController extends Controller
         
         if (count($projects) === 0) {
 
-            return $this->render('assignment/index.html.twig', array('flashnoprojects' => true));
+            return $this->render('JVTaskBundle:Assignment:list.html.twig', array('flashnoprojects' => true));
         }
 
-        return $this->render('assignment/listAllByProject.html.twig', array('projects' => $projects,
+        return $this->render('JVTaskBundle:Assignment:listAllByProject.html.twig', array('projects' => $projects,
         ));
     }
 }

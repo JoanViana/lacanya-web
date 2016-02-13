@@ -1,42 +1,16 @@
-{% extends 'DWSBundle::layout.html.twig' %}
-{% trans_default_domain 'DWSBundle' %} 
-{% block title %}DWS - {{ 'category.new.title'|trans }}{% endblock %}
+{% extends 'base.html.twig' %}
+
 {% block body %}
-    {{ parent() }}
-	<div class="main container">
-		<div class="row well">
-			<div class="col-md-6 col-md-offset-3">
-				<div class="page-header">
-					<h2>{{ 'category.new.header'|trans }}</h2>
-				</div>
-                {{ form_start(form, { 'attr' : {'novalidate': 'novalidate', 'role' : 'form'} }) }}
-            <fieldset>
-                <div class="form-group">
-                    {{ form_label(form.name) }}
-                    {{ form_widget(form.name, { 'attr' : {'class' : 'form-control' } }) }}
-                    <span class="text-danger">{{ form_errors(form.name) }}</span>
-                </div>
-			</fieldset>
+    <h1>Category creation</h1>
 
-				<div class="row">
-					<div class="col-sm-12">
-					    <p>
-					        {{ form_widget(form.save, {'attr': {'class': 'btn btn-success'}}) }}
-					        {{ form_widget(form.saveAndAdd, {'attr': {'class': 'btn btn-info'}}) }}
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <input type="submit" value="Create" />
+    {{ form_end(form) }}
 
-					    </p>        
-			                {{ form_end(form) }}
-                	</div>
-				</div>
-			</div>
-		</div>
-		{#
-		<div class="row">
-			<div class="text-center"> 
-					<a href="{{ path('cat_create_def') }}"><button class="btn btn-lg">Create default</button></a>
-			</div>
-		</div>
-		#}
-	</div>
+    <ul>
+        <li>
+            <a href="{{ path('category_index') }}">Back to the list</a>
+        </li>
+    </ul>
 {% endblock %}
-

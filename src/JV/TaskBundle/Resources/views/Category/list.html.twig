@@ -1,55 +1,47 @@
-{% extends 'DWSBundle::layout.html.twig' %}
-{% trans_default_domain 'DWSBundle' %} 
-{% block title %}DWS - {{ 'category.list.title'|trans }}{% endblock %}
+{% extends 'base.html.twig' %}
+
 {% block body %}
-    {{ parent() }}
-    <div class="container">
-		<div class="col-md-10 col-md-offset-2">
-			<div class="page-header margin-none">
-				<h2 class="padding-none">{{ 'category.list.header'|trans }}</h2>
-			</div>
-			<div class="table-responsive">
-				<table class="table table-striped table-hover">
-					<thead>
-						<tr>
-							<th>{{ 'category.id'|trans }}</th>
-                            <th>{{ 'category.name'|trans }}</th>                            
-						</tr>
-					</thead>
-					<tbody>
-						{% for category in categories %}
-                            <tr>
-								<td> {{ category.id }} </td> 
-	                            <td> {{ category.name }} </td> 
-	                           
-                                <td class="actions">
-                                	<a href="{{ path('pro_list_bycat', {'category': category.name}) }}" class="btn btn-sm btn-success">
-			                            {{ 'action.listProducts'|trans }}
-			                        </a>			
-			                        <a href="{{ path('cat_show', {'id': category.id}) }}" class="btn btn-sm btn-info">
-			                            {{ 'action.show'|trans }}
-			                        </a>
-			                        {% if is_granted('ROLE_APP_ADMIN') %}
-			                        <a href="{{ path('cat_edit', {'id': category.id}) }}" class="btn btn-sm btn-primary">
-			                            {{ 'action.edit'|trans }}
-			                        </a>
-			                        <a href="{{ path('cat_delete', {'id': category.id}) }}" class="btn btn-sm btn-danger btn-delete">
-			                            {{ 'action.delete'|trans }}
-			                        </a>
-			                        {% endif %}
-				                </td>
-                            </tr>
-                         {% endfor %}
-					</tbody>
-				</table>
-			</div>
-		</div>
-		{#
-		<div class="row">
-			<div class="text-center"> 
-					<a href="{{ path('cat_create_def') }}"><button class="btn btn-primary btn-lg">Create default</button></a>
-			</div>
-		</div>
-		#}
-	</div>
+    <h1>Category list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Createdat</th>
+                <th>Updatedat</th>
+                <th>Enabled</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for category in categories %}
+            <tr>
+                <td><a href="{{ path('category_show', { 'id': category.id }) }}">{{ category.id }}</a></td>
+                <td>{{ category.name }}</td>
+                <td>{{ category.description }}</td>
+                <td>{% if category.createdAt %}{{ category.createdAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if category.updatedAt %}{{ category.updatedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if category.enabled %}Yes{% else %}No{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('category_show', { 'id': category.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('category_edit', { 'id': category.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('category_new') }}">Create a new entry</a>
+        </li>
+    </ul>
 {% endblock %}

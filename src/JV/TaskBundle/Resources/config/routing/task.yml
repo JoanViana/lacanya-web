@@ -1,8 +1,8 @@
 task_index:
     path:     /
-    defaults: { _controller: "JVTaskBundle:Task:index" }
+    defaults: { _controller: "JVTaskBundle:Task:list" }
     methods:  GET
-    
+
 task_list:
     path:     /
     defaults: { _controller: "JVTaskBundle:Task:list" }

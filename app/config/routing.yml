@@ -1,3 +1,10 @@
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
+    prefix : /{_locale}/ 
+    requirements:
+        _locale: '%app.locales%'
+        
 jv_web:
     resource: "@JVWebBundle/Resources/config/routing.yml"
     prefix : /{_locale}/ 
@@ -10,12 +17,19 @@ jv_task:
     requirements:
         _locale: '%app.locales%'
 
-app:
-    resource: "@AppBundle/Controller/"
-    type:     annotation
-    
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
     prefix : /{_locale}/intranet/admin/
     requirements:
         _locale: '%app.locales%'
+
+# jv_redirect:
+#     path: /
+#     defaults:
+#         _controller: JVWebBundle:Contact:contact
+#         path: /index
+#         prefix : /{_locale}/ 
+#         permanent: true
+#     requirements:
+#         _method:  GET|POST
+#         _locale: '%app.locales%'

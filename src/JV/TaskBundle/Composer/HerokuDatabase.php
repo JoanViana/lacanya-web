@@ -1,6 +1,6 @@
 <?php
 
-namespace DWSBundle\Composer;
+namespace JV\TaskBundle\Composer;
 
 use Composer\Script\Event;
 

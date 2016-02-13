@@ -1,0 +1,103 @@
+#JVWebBundle.ca.yml 
+nav:
+    start: 'Inici'
+    about: 'Qui som'
+    courses: 'Cursos'
+    studies: 'Estudis'
+    contact: 'Contacte'
+modal:
+    login:
+        label: 'Login'
+        remember: "Recorda'm"
+    logout:
+        label: 'Login'
+        confirm: 'Segur que vols eixir?'
+        
+form:
+    email:
+        label: 'Email'
+        placeholder: 'Email'
+    password:
+        label: 'Contrasenya'
+        placeholder: 'Contrasenya'
+
+button:
+    login: 'Login'
+    cancel: 'Cancel·la'
+    logout: 'Logout'
+    previous: 'Anterior'
+    next: 'Següent'
+    save: 'Guardar'
+    reset: 'Borra'
+
+about:
+    quisom: 
+        content1: "Som un grup de tècnics provinents del mon de l’arquitectura i l’enginyeria, residents a l’Horta Sud, que fruït de la convivència amb la canya, Arundo donax L., hem desenvolupat l’interès per aquesta espècie vegetal degut al seu potencial com element constructiu."
+    bioconstruccio:
+        title: "Bioconstrucció"
+        content1: "La bioconstrucció és una disciplina que es basa en l’estudi dels elements naturals que disposem al nostre voltant, obtenint informació de com es comporten els materials i utilitzant-los  per tal de resoldre les nostres necessitats constructives, btenint d’aquesta manera estructures sostenibles, innovadores, que generen beneficis socials i mediambientals."
+        content2: "Trenca amb la mentalitat de la construcció industrialitzada on els materials emprats són creats artificialment, la relació entre la infraestructura i el medi es nul·la i l’únic objectiu que es persegueix es el benefici econòmic. La utilització de materials naturals, com poden ser la canya, terra, pedra, palla i calç, necessita de l’ús de tècniques tradicionals i, per tant, de labors artesanals que permeten obtindré processos constructius lliures de contaminació, estructures vives que interactuen amb el medi aconseguint la integració paisatgística i la participació dinàmica de la societat."
+    benSocials:
+        title: "Beneficis Socials"
+        content1: "La tècnica constructiva amb la canya requereix del treball cooperatiu de la gent participant i fomentant valors."
+        content2: "L’ús de tècniques  tradicionals permet l’intercanvi de coneixement entre gent de diferent edat, aquesta barreja permet ficar en valor els coneixements dels mes majors així com poder realitzar els tallers en família, amb col·legis, activitats socials per a empreses, etc"
+        content3: "A més, aquests coneixements permeten a qualsevol persona que siga capaç de encetar projectes propis amb l’ús de la canya."
+    benMediambiantals:
+        title: "Beneficis Mediambientals"
+        content1: "Un dels principals problemes mediambientals que tenim als nostres barrancs i zones humides és la proliferació d’espècies invasores com és l’Arundo donax L., donada la seva densitat poblacional, el seu ràpid creixement i l’avançament dels rizomes."
+        content2: "Els problemes es divideixen en dos:"
+        list1: "El desplaçament o eradicació de la vegetació autòctona: inhibició de l’adquisició d’aigua i nutrients per part de les especies natives, així com l’impediment de germinació y el creixement d’estes degut a la part aèria tan densa de la canya."
+        list2: "Problemes relacionats amb la vulnerabilitat d’aquests espais naturals:"
+        list21: "D’incineració degut a la seva densitat de biomassa (15,5 kg/m2) i a la seva baixa quantitat d’humitat."
+        list22: "Desbordaments i obstrucció dels elements de control hidràulic"
+        content3: "Es per tant que les tasques d’eliminació de la canya junt a activitats de reforestació amb espècies natives permet la restauració dels espais fluvials, així com la fixació de grans quantitats de CO2"
+    links:
+        title: "Enllaços"
+        
+courses:
+    paiporta:
+        title:
+            label: 'Curs de Bioconstrucció'
+        place:
+            label: 'Associació Cultural El Barranc de Paiporta'
+        date:
+            label: 'Gener-Abril 2015'
+        caption:
+            label: 'El Barranc 2015'
+    etsatopia:
+        title:
+            label: 'Taller de Construcció amb canyes'
+        place:
+            label: 'Festival de Arquitectura ETSATOPIA, UPV'
+        date:
+            label: 'Juny 2015'
+        caption:
+            label: 'ETSATOPIA 2015'
+studies:
+    sps:
+        title: 'Enginyeria Solar Passiva'
+        subtitle1: "Análisi de l'ombra a València"
+        subtitle2: 'Any Meteorlògic Títpic a València'
+        subtitle3: 'Notes del Curs MIT - FPSS-12'
+    omm:
+        title: 'Models Matemàtics Oberts'
+        subtitle1: 'Repositoris GitHub'
+        subtitle2: 'Entorns Cloud9'
+    eng: 
+        title: 'Enginyeria'
+        subtitle1: 'Models GIS 3D'
+        subtitle2: 'Models CAD 3D'
+            
+            
+contact:
+    firstname:
+        label: 'Introdueix el teu nom'
+    lastname:
+        label: 'Introdueix el teu cognom'
+    email:
+        label: 'Introdueix el teu email'
+    subject:
+        label: 'Introdueix la raó'
+    body:
+        label: 'Introdueix el missatge'
+

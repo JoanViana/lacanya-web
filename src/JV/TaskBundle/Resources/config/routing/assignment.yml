@@ -1,8 +1,8 @@
 assignment_index:
     path:     /
-    defaults: { _controller: "JVTaskBundle:Assignment:index" }
+    defaults: { _controller: "JVTaskBundle:Assignment:list" }
     methods:  GET
-    
+
 assignment_list:
     path:     /
     defaults: { _controller: "JVTaskBundle:Assignment:list" }
