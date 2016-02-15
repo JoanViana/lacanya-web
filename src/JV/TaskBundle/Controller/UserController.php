@@ -88,7 +88,7 @@ class UserController extends SecurityController
         
         $id = $user->getId();
         
-        if (($userId != $id)&&(!in_array($userRole, 'ROLE_APP_ADMIN'))){
+        if (($userId != $id)||(!in_array($userRole, 'ROLE_APP_ADMIN'))){
             return $this->render('JVTaskBundle:Task:listByUser.html.twig', array(
                 "user" => $usernow,
                 "tasks" => $usernow->getTasks(),
@@ -117,7 +117,7 @@ class UserController extends SecurityController
         
         $id = $user->getId();
         
-        if (($userId != $id)&&(!in_array($userRole, 'ROLE_APP_ADMIN'))){
+        if (($userId != $id)||(!in_array($userRole, 'ROLE_APP_ADMIN'))){
             return $this->render('JVTaskBundle:Task:listByUser.html.twig', array(
                 "user" => $usernow,
                 "tasks" => $usernow->getTasks(),

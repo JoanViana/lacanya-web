@@ -4,26 +4,12 @@ security:
     providers:
         chain_provider:
             chain:
-                providers: [fos_userbundle_username, fos_userbundle_email, in_memory]
+                providers: [fos_userbundle_username, fos_userbundle_email]
         fos_userbundle_username:
             id:    jv.username_provider
         fos_userbundle_email:
             id:    jv.email_provider
-        in_memory:
-            memory:
-                users:
-                    user:
-                        password: 1234
-                        roles: 'ROLE_USER'
-                    user@example.com:
-                        password: 1234
-                        roles: 'ROLE_USER'
-                    admin:
-                        password: admin
-                        roles: 'ROLE_APP_ADMIN'
-                    dws:
-                        password: dws
-                        roles: 'ROLE_USER'
+        
         
     encoders:
         Symfony\Component\Security\Core\User\User: plaintext
