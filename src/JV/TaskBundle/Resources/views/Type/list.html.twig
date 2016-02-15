@@ -2,8 +2,7 @@
 {% trans_default_domain 'JVTaskBundle' %} 
 
 {% block title %}{{ parent() }} {{ 'type.list.title'|trans }}{% endblock %}
-{% block table %}
-{{ parent() }}
+
     {% block theader %}{{ 'type.list.header'|trans }}{% endblock %}
     {% block thead %}
 
@@ -26,6 +25,9 @@
                     <li>
                         <a  class="btn btn-default btn-sm" href="{{ path('type_show', { 'id': type.id }) }}">{{ 'action.show'|trans }}</a>
                     </li>
+                    <li>
+                        <a class="btn btn-default btn-sm" href="{{ path('task_listByType', { 'id': type.id }) }}">{{ 'action.listTasks'|trans }}</a>
+                    </li>
                 {% if is_granted('ROLE_APP_ADMIN') %}
                     <li>
                         <a class="btn btn-default btn-sm" href="{{ path('type_edit', { 'id': type.id }) }}">{{ 'action.edit'|trans }}</a>
@@ -37,6 +39,5 @@
         {% endfor %}
     {% endblock %}
     {% block tout %}
-        <a class="btn btn-default btn-sm" href="{{ path('type_new') }}">Create a new entry</a>
+        <a class="btn btn-default btn-sm" href="{{ path('type_new') }}">{{ 'action.new'|trans }}</a>
     {% endblock %}
-{% endblock %}

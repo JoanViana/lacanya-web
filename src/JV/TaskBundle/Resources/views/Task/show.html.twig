@@ -2,8 +2,7 @@
 {% trans_default_domain 'JVTaskBundle' %} 
 
 {% block title %}{{ parent() }} {{ 'task.show.title'|trans({'%taskname%' : task.name }) }}{% endblock %}
-{% block table %}
-{{ parent() }}
+
     {% block theader %}{{ 'task.show.header'|trans({'%taskname%' : task.name }) }}{% endblock %}
     {% block tbody %}
             <tr>
@@ -13,6 +12,27 @@
             <tr>
                 <th>{{ 'form.name'|trans }}</th>
                 <td>{{ task.name }}</td>
+            </tr>
+            <tr>
+                <th>{{ 'nav.project'|trans }}</th>
+                <td><a href="{{ path('project_show', { 'id': task.project.id }) }}">
+                    {{ task.project.name }}</a></td>
+            </tr>
+            <tr>
+                <th>{{ 'nav.type'|trans }}</th>
+                <td><a href="{{ path('type_show', { 'id': task.type.id }) }}">
+                    {{ task.project.name }}</a></td>
+            </tr>
+            <tr>
+                <th>{{ 'nav.user'|trans }}</th>
+                <td>
+                    {% if is_granted('ROLE_APP_ADMIN') %}
+                    <a href="{{ path('user_show', { 'id': task.user.id }) }}">
+                    {{ task.user.username }}</a>
+                    {% else %}
+                    {{ task.user.username }}
+                    {% endif %}
+                </td>
             </tr>
             <tr>
                 <th>{{ 'form.summary'|trans }}</th>
@@ -66,4 +86,4 @@
                 <a class="btn btn-default btn-sm" href="{{ path('task_index') }}">{{ 'action.backList'|trans }}</a>
             </li>
     {% endblock %}
-{% endblock %}
+

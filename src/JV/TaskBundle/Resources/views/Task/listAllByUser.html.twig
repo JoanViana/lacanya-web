@@ -2,8 +2,7 @@
 {% trans_default_domain 'JVTaskBundle' %} 
 
 {% block title %}{{ parent() }} {{ 'task.listAllByUser.title'|trans }}{% endblock %}
-{% block table %}
-{{ parent() }}
+
     {% block theader %}{{ 'task.listAllByUser.header'|trans }}{% endblock %}
     {% block group %} 
 	{% for user in users %}	    
@@ -63,7 +62,7 @@
                         <ul>
                             <li>
         {% block tout %}
-            <a class="btn btn-default btn-sm" href="{{ path('task_new') }}">Create a new entry</a>
+            <a class="btn btn-default btn-sm" href="{{ path('task_new') }}">{{ 'action.new'|trans }}</a>
         {% endblock %}
                              </li>
                         </ul>
@@ -72,4 +71,3 @@
             </div>
     {% endfor %}
     {% endblock %}
-{% endblock %}

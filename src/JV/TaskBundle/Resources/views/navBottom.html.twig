@@ -12,15 +12,21 @@
                                {{ app.user.username}} <span class="caret"></span></a>
                           <ul class="dropdown-menu">
                             <li><a href="{{ path('jv_web_index') }}">
-                                <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> 
-                                {{ 'link.task'|trans }}</a></li>
+                                <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> 
+                                {{ 'link.web'|trans }}</a></li>
                             <li role="separator" class="divider"></li>
-                            <li><a href="{{ path('fos_user_profile_show') }}">
+                            <li><a href="{{ path('task_listByUser', { 'id': app.user.id }) }}">
+                                <span class="glyphicon glyphicon-cloud" aria-hidden="true"></span> 
+                                {{ 'task.list.title'|trans }}</a></li>
+                            <li><a href="{{ path('user_show', { 'id': app.user.id }) }}">
                                 <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> 
                                 {{ 'usernav.show.title'|trans }}</a></li>
-                            <li><a href="{{ path('fos_user_profile_edit') }}">
+                            <li><a href="{{ path('user_edit', { 'id': app.user.id }) }}">
                                 <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
                                 {{ 'usernav.edit.title'|trans }}</a></li>
+                            <li><a href="{{ path('fos_user_profile_edit') }}">
+                                <span class="glyphicon glyphicon-adjust" aria-hidden="true"></span>
+                                {{ 'usernav.data.title'|trans }}</a></li>
                             <li><a href="{{ path('fos_user_change_password') }}"> 
                             <span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> 
                             {{ 'usernav.pass.title'|trans }}</a></li>

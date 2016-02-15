@@ -1,8 +1,53 @@
-{% extends 'JVTaskBundle::edit.html.twig' %}
+{% extends 'JVTaskBundle::editDetail.html.twig' %}
 {% trans_default_domain 'JVTaskBundle' %} 
 
-{% block title %}{{ parent() }} {{ 'user.edit.title'|trans({'%username%' : user.username }) }}{% endblock %}
-{% block theader %}{{ 'user.edit.title'|trans({'%username%' : user.username }) }} {% endblock %}
-{% block tout %}
-    <a class="btn btn-default btn-sm" href="{{ path('user_index') }}">{{ 'action.backList'|trans }}</a>                       
+{% block title %}{{ parent() }} {{ 'usernav.data.title'|trans({'%username%' : user.username }) }}{% endblock %}
+{% block theader %}{{ 'usernav.data.title'|trans({'%username%' : user.username }) }} {% endblock %}
+{% block form %}
+{{ form_start(edit_form, { 'attr' : {'novalidate': 'novalidate', 'role' : 'form'} }) }}
+                <fieldset>
+                <div class="form-group">
+			        {{ form_label(edit_form.firstName) }}
+			        {{ form_widget(edit_form.firstName, {'attr': {'class': 'form-control'}}) }}
+			        <span class="text-danger">{{ form_errors(edit_form.firstName) }}</span>
+			    </div>
+                <div class="form-group">
+                    {{ form_label(edit_form.lastName) }}
+                    {{ form_widget(edit_form.lastName, { 'attr' : {'class' : 'form-control'} }) }}
+                    <span class="text-danger">{{ form_errors(edit_form.lastName) }}</span>
+                </div>
+                
+			    <div class="form-group">
+			        {{ form_label(edit_form.phone) }}
+			        {{ form_widget(edit_form.phone, {'attr': {'class': 'form-control'}}) }}
+			        <span class="text-danger">{{ form_errors(edit_form.phone) }}</span>
+			    </div>
+			    
+			    <div class="form-group">
+			        {{ form_label(edit_form.enabled) }}
+			        {{ form_widget(edit_form.enabled, {'attr': {'class': 'form-control' }}) }}
+			        <span class="text-danger">{{ form_errors(edit_form.enabled) }}</span>
+			    </div>
+			</fieldset>
+				<div class="row actions">
+					<div class="col-sm-4 text-center">
+					    
+					        {{ form_widget(edit_form.save, {'attr': {'class': 'btn btn-success'}}) }}
+					        {{ form_end(edit_form) }}
+					   </div>
+					   <div class="col-sm-4 text-center">
+                                <button class="btn btn-default btn-sm" href="{{ path('user_index') }}">
+                                	  	{{ 'action.backList'|trans }}                       
+                                </button>
+                        </div>
+					   <div class="col-sm-4 text-center">
+                            {{ form_start(delete_form, { 'attr' : {'novalidate': 'novalidate', 'role' : 'form'} }) }}
+                        		<button class="btn btn-danger btn-sm" ><input type="submit" value="{{ 'action.delete'|trans }}"></button>
+                    		{{ form_end(delete_form) }}
+                        
+                	</div>
+				</div>
 {% endblock %}
+
+
+			

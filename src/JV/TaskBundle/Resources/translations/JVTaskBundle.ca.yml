@@ -1,0 +1,243 @@
+#JVTaskBundle.ca.yml
+nav:
+    start: 'Principal'
+    user: 'Usuari' 
+    category: 'Categoria'
+    type: 'Tipus'
+    task: 'Tasca'
+    project: 'Projecte'
+modal:
+    login:
+        label: 'Login'
+        remember: "Recorda'm"
+    logout:
+        label: 'Logout'
+        confirm: 'Segur que vols eixir?'
+form:
+    id:  'Id' 
+    name:  'Nom' 
+    username: 'Usuari'
+    description: 'Descripció' 
+    summary: 'Resum' 
+    firstname: 'Nom'
+    lastname: 'Cognom'
+    firstName: 'Nom'
+    lastName: 'Cognom'
+    email: 'Email'
+    status: 'Estat'
+    password: 'Contrasenya'
+    remuneration: 'Remuneració' 
+    link: 'Enllaç'
+    phone: 'Telèfon'
+    createdAt: 'Creat'
+    updatedAt: 'Actualitzat'
+    checked: 'Confirmat'
+    enabled: 'Actiu'
+    startdate: 'Data inici'
+    enddate: 'Data fi'
+    startDate: 'Data inici'
+    endDate: 'Data fi'
+    roles: 'Rol'
+
+action:
+    label: 'Acccions'
+    list: 'Llista'
+    new: 'Nou'
+    show: 'Detalls'
+    edit: 'Edita'
+    delete: 'El·limina'
+    update: 'Actualitza'
+    login: 'Login'
+    logout: 'Logout'
+    register: 'Registrat' 
+    cancel: 'Cancel·la'
+    previous: 'Previ'
+    next: 'Següent'
+    save: 'Guarda'
+    reset: 'Borra'
+    backList: 'Torna a la llistat'
+    listTasks: 'Llista tasques'
+    listProjects: 'Llista projectes'
+ 
+general:
+    yes: 'Si'
+    no: 'No'
+flash:
+    success: 'Operació realitzada amb èxito!'
+    error: 'Error!'
+    info: 'Notificació:'
+    no:
+        projects: 'No hi ha ningún projecte guardat'
+        types: 'No hi ha ningún tipus guardat'
+        categories: 'No hi ha ninguna categoria guardada'
+        users: 'No hi ha ningún usuari guardat'
+        usernow: "No pots consultar dades d'altres usuaris"
+        tasks: 'No hi ha ninguna tasca guardada'
+        category:
+            id: 'No hi ha ninguna categoria amb id %categoryid%'
+        project:
+            id: 'No hi ha ningún projecte amb id %projectid%'
+        type:
+            id: 'No hi ha ningún tipus amb id %typeid%'
+        task:
+            id: 'No hi ha ninguna tasca amb id %taskid%'
+        user:
+            id: 'No hi ha ningún categoria amb id %userid%'
+    category:
+        add: "Categoria %categoryname% guardada"
+        remove: "Categoria %categoryname% eliminada"
+        update: "Categoria %categoryname% actualitzada"
+    project:
+        add: "Projecto %projectname% guardat"
+        remove: "Projecto %projectname% eliminat"
+        update: "Projecto %projectname% actualitzat"
+    user:
+        add: "Usuario %username% guardat"
+        remove: "Usuario %username% eliminat"
+        update: "Usuario %username% actualitzat"
+    task:
+        add: "Tasca %taskname% guardada"
+        remove: "Tasca %taskname% eliminada"
+        update: "Tasca %taskname% actualitzada"
+    type:
+        add: "Tipus %typename% guardat"
+        remove: "Tipus %typename% eliminat"
+        update: "Tipus %typename% actualitzat"
+
+task:
+    status:
+        label: 'Estat'
+        proposed: 'Proposat'
+        working: 'Previs'
+        active: 'Actiu'
+        checked: 'Revisat'
+        finished: 'Finalitzat'
+        cancelled: 'Cancel·lat'
+    list:
+        title: 'Llista de tasques' 
+        header: 'Llista de tasques'
+    new:
+        title: 'Nova tasca' 
+        header: 'Nova tasca'
+    edit:
+        title: 'Edició tasca %taskname%' 
+        header: 'Edició tasca %taskname%'
+    show:
+        title: 'Detalls tasca %taskname%' 
+        header: 'Detalls tasca %taskname%'    
+    listByType:
+        title: 'Llista tasques tipus %typename%' 
+        header: 'Llista tasques tipus %typename%'
+    listAllByType:
+        title: 'Llista tasques per tipus' 
+        header: 'Llista tasques per tipus' 
+    listByProject:
+        title: 'Llista tasques projecte %projectname%' 
+        header: 'Llista tasques projecte %projectname%'
+    listAllByProject:
+        title: 'Llista tasques per projecte' 
+        header: 'Llista tasques per projecte' 
+    listByUser:
+        title: "Llista tasques usuari %username%" 
+        header: "Llista tasques usuari %username%"
+    listAllByUser:
+        title: "Llista de tasques per usuari"
+        header: "Llista de tasques per usuari" 
+
+category: 
+    list:
+        title: 'Llista de categories' 
+        header: 'Llista de categories'
+    new:
+        title: 'Nova categoria' 
+        header: 'Nova categoria'
+    edit:
+        title: 'Edició categoria %categoryname%' 
+        header: 'Edició categoria %categoryname%'
+    show:
+        title: 'Detalls categoria %categoryname%' 
+        header: 'Detalls categoria %categoryname%' 
+
+type: 
+    list:
+        title: 'Llista tipus' 
+        header: 'Llista tipus'
+    new:
+        title: 'Nou tipus' 
+        header: 'Nou tipus'
+    edit:
+        title: 'Edició tipus %typename%' 
+        header: 'Edició tipus %typename%'
+    show:
+        title: 'Detalls tipus %typename%' 
+        header: 'Detalls tipus %typename%' 
+
+user:
+    list:
+        title: 'Llista usuari'
+        header: 'Llista usuari'
+    new:
+        title: 'Nou usuari' 
+        header: 'Nou usuari'
+    edit:
+        title: 'Edició usuari %username%' 
+        header: 'Edició usuari %username%'
+    show:
+        title: 'Detalls usuari %username%' 
+        header: 'Detalls usuari %username%'
+
+usernav:
+    register:
+        header: 'Registre'
+        title: 'Registre'
+    login:
+        header: 'Login'
+        title: 'Login'
+    confirmation:
+        header: 'Confirmació de registre'
+        title: 'Confirmació de registre'
+    edit:
+        header: 'Edició perfil'
+        title: 'Edició perfil'
+    show:
+        header: 'Perfil'
+        title: 'Perfil'
+    pass:
+        header: 'Canvi contrasenya'
+        title: 'Canvi contrasenya'
+        
+project:
+    status:
+        label: 'Estat'
+        proposed: 'Proposat'
+        working: 'Previs'
+        active: 'Actiu'
+        checked: 'Revisat'
+        finished: 'Finalitzat'
+        cancelled: 'Cancel·lat'
+    list:
+        title: 'Llista de projectes' 
+        header: 'Llista de projectes'
+    new:
+        title: 'Nou projecte' 
+        header: 'Nou projecte'
+    edit:
+        title: 'Edició projecte %projectname%' 
+        header: 'Edició projecte %projectname%'
+    show:
+        title: 'Detalls projecte %projectname%' 
+        header: 'Detalls projecte %projectname%'    
+    listByCategory:
+        title: 'Llista projectes categoria %categoryname%' 
+        header: 'Llista projectes categoria %categoryname%'
+    listAllByCategory:
+        title: 'Llista projectes per categoria' 
+        header: 'Llista projectes per categoria' 
+
+
+link:
+    web: 'Website'
+    task: 'Intranet'
+    
+action:
+logout: 'Logout'

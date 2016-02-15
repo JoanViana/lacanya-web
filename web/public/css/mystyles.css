@@ -402,8 +402,19 @@ li.navhome.active a{
     border: 3px solid rgba(150,164,93,1);
     background: rgba(255,255,255,.6);
     z-index:999999;
+    width: 200px !important;
 }
 
+.well{
+    background: transparent !important;
+    color: rgba(0,0,0,.8) !important;
+    font-size: 2em;
+    
+}
+
+.well h2{
+    font-size: 2em;
+}
 
 #logoutButton .dropdown-menu li{  
     padding:0;
@@ -549,11 +560,11 @@ blockquote {
     font-size: 3em;
 }
 .form-style{
-    font-size: 2em !important;
-    font-family: 'Medula One', cursive !important;
+    font-size: 2em;
+    font-family: 'Medula One', cursive;
     font-weight: bold;
     margin: 1em;
-    color: rgba(0,0,0,.8) !important;
+    color: rgba(0,0,0,.8);
     text-shadow:0 2px 3px rgba(0,0,0,.4);
 }
 .form-style label{
@@ -562,11 +573,20 @@ blockquote {
 }
 
 .form-style button{
-    box-shadow: 0;
     font-weight:500;
     padding: 0.2em;
     font-size: 1em;
-    margin: 1em 0;
+}
+
+.form-style .actions .btn input{
+    font-family: 'Medula One', cursive;
+    font-size: 1em;
+    margin:0;
+    padding: .3em;
+    border: 0px;
+    background: none;
+    color: #fff;
+    
 }
 
 .form-style .form-group{
@@ -582,7 +602,7 @@ blockquote {
     font-weight: normal;
     font-size: 0.6em;
     line-height:1em;
-    border: 3px solid rgba(0,0,0,.8) !important;
+    border: 3px solid rgba(0,0,0,.8);
     border-radius: 4px;
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset;
     background-color: rgba(255,255,255, 0.8);
@@ -604,7 +624,7 @@ blockquote {
     font-weight: normal;
     font-size: .8em;
     line-height:1em;
-    border: 3px solid rgba(0, 0, 0, .8) !important;
+    border: 3px solid rgba(0, 0, 0, .8);
     border-radius: 4px;
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset;
     background-color: rgba(255,255,255, 0.8);
@@ -612,7 +632,7 @@ blockquote {
     margin: 0.3em;
     padding-left: 1em;
     padding: 0.2em;
-    color: #000 !important;
+    color: #000;
 }
 
 input[type=checkbox]{
@@ -620,10 +640,6 @@ input[type=checkbox]{
     border: 1px solid #000;
 }
 
-input[type=button]{
-    border:none;
-    background:transparent;
-}
 .checkbox{
     display: inline-block;
     width:20%;

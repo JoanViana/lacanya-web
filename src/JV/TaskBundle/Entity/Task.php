@@ -369,21 +369,21 @@ class Task
     }
     
     /**
-     * @ORM\ManyToOne(targetEntity="Project", inversedBy="tasks")
+     * @ORM\ManyToOne(targetEntity="Project", inversedBy="tasks", cascade={"persist", "remove"})
      * @ORM\JoinColumn(name="project_id", referencedColumnName="id", nullable=false)
      * @Assert\NotBlank(message="as.nb")
      */
     protected $project;
     
     /**
-     * @ORM\ManyToOne(targetEntity="Type", inversedBy="tasks")
+     * @ORM\ManyToOne(targetEntity="Type", inversedBy="tasks", cascade={"persist", "remove"})
      * @ORM\JoinColumn(name="type_id", referencedColumnName="id", nullable=false)
      * @Assert\NotBlank(message="as.nb")
      */
     protected $type;
     
     /**
-     * @ORM\ManyToOne(targetEntity="User", inversedBy="tasks")
+     * @ORM\ManyToOne(targetEntity="User", inversedBy="tasks", cascade={"persist", "remove"})
      * @ORM\JoinColumn(name="user_id", referencedColumnName="id", nullable=false)
      * @Assert\NotBlank(message="as.nb")
      */

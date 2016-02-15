@@ -1,8 +1,80 @@
-{% extends 'JVTaskBundle::edit.html.twig' %}
+{% extends 'JVTaskBundle::editDetail.html.twig' %}
 {% trans_default_domain 'JVTaskBundle' %} 
 
 {% block title %}{{ parent() }} {{ 'project.edit.title'|trans({'%projectname%' : project.name }) }}{% endblock %}
 {% block theader %}{{ 'project.edit.title'|trans({'%projectname%' : project.name }) }} {% endblock %}
-{% block tout %}
-    <a class="btn btn-default btn-sm" href="{{ path('project_index') }}">{{ 'action.backList'|trans }}</a>                       
+{% block form %}
+{{ form_start(edit_form, { 'attr' : {'novalidate': 'novalidate', 'role' : 'form'} }) }}
+                <fieldset>
+                <div class="form-group">
+                    {{ form_label(edit_form.name) }}
+                    {{ form_widget(edit_form.name, { 'attr' : {'class' : 'form-control'} }) }}
+                    <span class="text-danger">{{ form_errors(edit_form.name) }}</span>
+                </div>
+                
+                <div class="form-group">
+			        {{ form_label(edit_form.summary) }}
+			        {{ form_widget(edit_form.summary, {'attr': {'class': 'form-control'}}) }}
+			        <span class="text-danger">{{ form_errors(edit_form.summary) }}</span>
+			    </div>
+			    
+			    <div class="form-group">
+			        {{ form_label(edit_form.category) }}
+			        {{ form_widget(edit_form.category, {'attr': {'class': 'form-control'}}) }}
+			        <span class="text-danger">{{ form_errors(edit_form.category) }}</span>
+			    </div>
+                
+			    <div class="form-group">
+			        {{ form_label(edit_form.remuneration) }}
+			        {{ form_widget(edit_form.remuneration, {'attr': {'class': 'form-control' }}) }}
+			        <span class="text-danger">{{ form_errors(edit_form.remuneration) }}</span>
+			    </div>
+
+			    <div class="form-group">
+			        {{ form_label(edit_form.link) }}
+			        {{ form_widget(edit_form.link, {'attr': {'class': 'form-control' }}) }}
+			        <span class="text-danger">{{ form_errors(edit_form.link) }}</span>
+			    </div>
+			   <div class="form-group">
+			        {{ form_label(edit_form.status) }}
+			        {{ form_widget(edit_form.status, {'attr': {'class': 'form-control' }}) }}
+			        <span class="text-danger">{{ form_errors(edit_form.status) }}</span>
+			    </div>
+			    <div class="form-group">
+			        {{ form_label(edit_form.startDate) }}
+			        {{ form_widget(edit_form.startDate, {'attr': {'class': 'input-group date' }}) }}
+			        <span class="text-danger">{{ form_errors(edit_form.startDate) }}</span>
+			    </div>
+	            <div class="form-group">
+			        {{ form_label(edit_form.endDate) }}
+			        {{ form_widget(edit_form.endDate, {'attr': {'class': 'input-group date' }}) }}
+			        <span class="text-danger">{{ form_errors(edit_form.endDate) }}</span>
+			    </div>
+			    <div class="form-group">
+			        {{ form_label(edit_form.enabled) }}
+			        {{ form_widget(edit_form.enabled, {'attr': {'class': 'form-control' }}) }}
+			        <span class="text-danger">{{ form_errors(edit_form.enabled) }}</span>
+			    </div>
+			</fieldset>
+				<div class="row actions">
+					<div class="col-sm-4 text-center">
+					    
+					        {{ form_widget(edit_form.save, {'attr': {'class': 'btn btn-success'}}) }}
+					        {{ form_end(edit_form) }}
+					   </div>
+					   <div class="col-sm-4 text-center">
+                                <button class="btn btn-default btn-sm" href="{{ path('project_index') }}">
+                                	  	{{ 'action.backList'|trans }}                       
+                                </button>
+                        </div>
+					   <div class="col-sm-4 text-center">
+                            {{ form_start(delete_form, { 'attr' : {'novalidate': 'novalidate', 'role' : 'form'} }) }}
+                        		<button class="btn btn-danger btn-sm" ><input type="submit" value="{{ 'action.delete'|trans }}"></button>
+                    		{{ form_end(delete_form) }}
+                        
+                	</div>
+				</div>
 {% endblock %}
+
+
+			

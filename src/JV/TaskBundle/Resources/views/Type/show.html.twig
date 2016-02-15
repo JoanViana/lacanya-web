@@ -2,8 +2,7 @@
 {% trans_default_domain 'JVTaskBundle' %} 
 
 {% block title %}{{ parent() }} {{ 'type.show.title'|trans({'%typename%' : type.name }) }}{% endblock %}
-{% block table %}
-{{ parent() }}
+
     {% block theader %}{{ 'type.show.header'|trans({'%typename%' : type.name }) }}{% endblock %}
     {% block tbody %}
             <tr>
@@ -41,9 +40,12 @@
                     <input class="btn btn-danger btn-sm" type="submit" value="{{ 'action.delete'|trans }}">
                 {{ form_end(delete_form) }}
             </li>
+            <li>
+                <a class="btn btn-default btn-sm" href="{{ path('task_listByType', { 'id': type.id }) }}">{{ 'action.listTasks'|trans }}</a>
+            </li>
         {% endif %}
             <li>
                 <a class="btn btn-default btn-sm" href="{{ path('type_index') }}">{{ 'action.backList'|trans }}</a>
             </li>
     {% endblock %}
-{% endblock %}
+

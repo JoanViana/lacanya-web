@@ -56,6 +56,8 @@ action:
     save: 'Save'
     reset: 'Reset'
     backList: 'Back to the list'
+    listTasks: 'List tasks'
+    listProjects: 'List projects'
  
 general:
     yes: 'Yes'
@@ -65,28 +67,42 @@ flash:
     error: 'Error!'
     info: 'Notification:'
     no:
-        products: 'There is not any products stored, you can create a default one'
-        persons: 'There is not any person stored, you can create a default one'
-        categories: 'There is not any category stored, you can create a default one'
+        projects: 'There is not any projects stored'
+        types: 'There is not any types stored'
+        categories: 'There is not any categories stored'
+        users: 'There is not any users stored'
+        usernow: 'You cannot request info of other users'
+        tasks: 'There is not any tasks stored'
         category:
             id: 'There is not any category with id %categoryid%'
-            name: 'There is not any category with name %categoryname%'
-        product:
-            id: 'There is not any product stored with id %productid%'
-        person:
-            id: 'There is not any person stored with id %personid%'
-    product:
-        add: "Product %productname% stored"
-        remove: "Product %productname% removed"
-        update: "Product %productname% updated"
+        project:
+            id: 'There is not any project stored with id %projectid%'
+        type:
+            id: 'There is not any type stored with id %typeid%'
+        task:
+            id: 'There is not any task stored with id %taskid%'
+        user:
+            id: 'There is not any user stored with id %userid%'
     category:
         add: "Category %categoryname% stored"
         remove: "Category %categoryname% removed"
         update: "Category %categoryname% updated"
-    person:
-        add: "Person %personname% stored"
-        remove: "Person %personname% removed"
-        update: "Person %personname% updated"
+    project:
+        add: "Project %projectname% stored"
+        remove: "Project %projectname% removed"
+        update: "Project %projectname% updated"
+    user:
+        add: "User %username% stored"
+        remove: "User %username% removed"
+        update: "User %username% updated"
+    task:
+        add: "Task %taskname% stored"
+        remove: "Task %taskname% removed"
+        update: "Task %taskname% updated"
+    type:
+        add: "Type %typename% stored"
+        remove: "Type %typename% removed"
+        update: "Type %typename% updated"
 task:
     status:
         label: 'Status'
@@ -97,8 +113,8 @@ task:
         finished: 'Finished'
         cancelled: 'Cancelled'
     list:
-        title: 'Product list' 
-        header: 'Product list'
+        title: 'Task list' 
+        header: 'Task list'
     new:
         title: 'New task' 
         header: 'New task'
@@ -198,8 +214,8 @@ project:
         finished: 'Finished'
         cancelled: 'Cancelled'
     list:
-        title: 'Product list' 
-        header: 'Product list'
+        title: 'Project list' 
+        header: 'Project list'
     new:
         title: 'New project' 
         header: 'New project'

@@ -8,7 +8,7 @@ class DefaultController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('JVTaskBundle:Default:index.html.twig');
+        return $this->render('JVTaskBundle:Task:list.html.twig');
     }
     
 }

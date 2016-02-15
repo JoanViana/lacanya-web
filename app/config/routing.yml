@@ -23,13 +23,9 @@ fos_user:
     requirements:
         _locale: '%app.locales%'
 
-# jv_redirect:
-#     path: /
-#     defaults:
-#         _controller: JVWebBundle:Contact:contact
-#         path: /index
-#         prefix : /{_locale}/ 
-#         permanent: true
-#     requirements:
-#         _method:  GET|POST
-#         _locale: '%app.locales%'
+jv_redirect:
+    path: /
+    defaults:
+        _controller: JVWebBundle:Contact:contact
+        path: /{_locale}/index
+        permanent: true

@@ -28,7 +28,7 @@ class CategoryController extends Controller
         $categories = $em->getRepository('JVTaskBundle:Category')->findAll();
 
         if (count($categories) === 0) {
-            return $this->render('JVTaskBundle:Category:index.html.twig', array("flashnocategories" => true));
+            return $this->render('JVTaskBundle:Category:list.html.twig', array("flashnocategories" => true));
         }
 
         return $this->render('JVTaskBundle:Category:list.html.twig', array(

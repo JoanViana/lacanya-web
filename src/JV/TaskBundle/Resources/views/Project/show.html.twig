@@ -2,8 +2,7 @@
 {% trans_default_domain 'JVTaskBundle' %} 
 
 {% block title %}{{ parent() }} {{ 'project.show.title'|trans({'%projectname%' : project.name }) }}{% endblock %}
-{% block table %}
-{{ parent() }}
+
     {% block theader %}{{ 'project.show.header'|trans({'%projectname%' : project.name }) }}{% endblock %}
     {% block tbody %}
             <tr>
@@ -13,6 +12,11 @@
             <tr>
                 <th>{{ 'form.name'|trans }}</th>
                 <td>{{ project.name }}</td>
+            </tr>
+            <tr>
+                <th>{{ 'nav.category'|trans }}</th>
+                <td><a href="{{ path('category_show', { 'id': project.category.id }) }}">
+                    {{ project.category.name }}</a></td>
             </tr>
             <tr>
                 <th>{{ 'form.summary'|trans }}</th>
@@ -61,9 +65,12 @@
                     <input class="btn btn-danger btn-sm" type="submit" value="{{ 'action.delete'|trans }}">
                 {{ form_end(delete_form) }}
             </li>
+            <li>
+                <a class="btn btn-default btn-sm" href="{{ path('task_listByProject', { 'id': project.id }) }}">{{ 'action.listTasks'|trans }}</a>
+            </li>
         {% endif %}
             <li>
                 <a class="btn btn-default btn-sm" href="{{ path('project_index') }}">{{ 'action.backList'|trans }}</a>
             </li>
     {% endblock %}
-{% endblock %}
+

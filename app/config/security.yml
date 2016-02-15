@@ -60,8 +60,9 @@ security:
     access_control:
         - { path: ^/[a-z]+/index, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/[a-z]+/intranet/log/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/[a-z]+/intranet/log/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/[a-z]+/intranet/log/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/[a-z]+/intranet/log/register, role: ROLE_APP_ADMIN }
+        - { path: ^/[a-z]+/intranet/log/resetting, role: ROLE_APP_ADMIN }
+        - { path: ^/[a-z]+/intranet/log/profile, role: ROLE_USER }
         - { path: ^/[a-z]+/intranet/project/list, role: [ROLE_USER,ROLE_APP_ADMIN] }
         - { path: ^/[a-z]+/intranet/project/index, role: [ROLE_USER,ROLE_APP_ADMIN] }
         - { path: ^/[a-z]+/intranet/project/[0-9]+/show, role: [ROLE_USER,ROLE_APP_ADMIN] }
@@ -88,18 +89,14 @@ security:
         - { path: ^/[a-z]+/intranet/task/new, role: ROLE_APP_ADMIN }
         - { path: ^/[a-z]+/intranet/task/[0-9]+/delete, role: ROLE_APP_ADMIN }
         - { path: ^/[a-z]+/intranet/task/[0-9]+/edit, role: ROLE_APP_ADMIN }
-        - { path: ^/[a-z]+/intranet/project/[0-9]+/lisbytype, role: [ROLE_USER,ROLE_APP_ADMIN] }
-        - { path: ^/[a-z]+/intranet/project/listallbytype, role: [ROLE_USER,ROLE_APP_ADMIN] }
-        - { path: ^/[a-z]+/intranet/project/[0-9]+/lisbyproject, role: [ROLE_USER,ROLE_APP_ADMIN] }
-        - { path: ^/[a-z]+/intranet/project/listallbyproject, role: [ROLE_USER,ROLE_APP_ADMIN] }
-        - { path: ^/[a-z]+/intranet/project/[0-9]+/lisbyuser, role: [ROLE_APP_ADMIN] }
-        - { path: ^/[a-z]+/intranet/project/listallbyuser, role: [ROLE_APP_ADMIN] }
-        - { path: ^/[a-z]+/intranet/user/list, role: [ROLE_USER,ROLE_APP_ADMIN] }
-        - { path: ^/[a-z]+/intranet/user/index, role: [ROLE_USER,ROLE_APP_ADMIN] }
+        - { path: ^/[a-z]+/intranet/project/[0-9]+/lisbycategory, role: [ROLE_USER,ROLE_APP_ADMIN] }
+        - { path: ^/[a-z]+/intranet/project/listallbycategory, role: [ROLE_USER,ROLE_APP_ADMIN] }
+        - { path: ^/[a-z]+/intranet/user/list, role: ROLE_APP_ADMIN }
+        - { path: ^/[a-z]+/intranet/user/index, role: ROLE_APP_ADMIN }
         - { path: ^/[a-z]+/intranet/user/[0-9]+/show, role: [ROLE_USER,ROLE_APP_ADMIN] }
         - { path: ^/[a-z]+/intranet/user/new, role: ROLE_APP_ADMIN }
         - { path: ^/[a-z]+/intranet/user/[0-9]+/delete, role: ROLE_APP_ADMIN }
-        - { path: ^/[a-z]+/intranet/user/[0-9]+/edit, role: ROLE_APP_ADMIN }
+        - { path: ^/[a-z]+/intranet/user/[0-9]+/edit, role:  [ROLE_USER,ROLE_APP_ADMIN] }
 
 
 

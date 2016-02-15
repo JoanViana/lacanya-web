@@ -2,8 +2,7 @@
 {% trans_default_domain 'JVTaskBundle' %} 
 
 {% block title %}{{ parent() }} {{ 'category.show.title'|trans({'%categoryname%' : category.name }) }}{% endblock %}
-{% block table %}
-{{ parent() }}
+
     {% block theader %}{{ 'category.show.header'|trans({'%categoryname%' : category.name }) }}{% endblock %}
     {% block tbody %}
             <tr>
@@ -41,9 +40,12 @@
                     <input class="btn btn-danger btn-sm" type="submit" value="{{ 'action.delete'|trans }}">
                 {{ form_end(delete_form) }}
             </li>
+            <li>
+                        <a class="btn btn-default btn-sm" href="{{ path('project_listByCategory', { 'id': category.id }) }}">{{ 'action.listTasks'|trans }}</a>
+                    </li>
         {% endif %}
             <li>
                 <a class="btn btn-default btn-sm" href="{{ path('category_index') }}">{{ 'action.backList'|trans }}</a>
             </li>
     {% endblock %}
-{% endblock %}
+

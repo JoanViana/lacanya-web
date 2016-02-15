@@ -37,7 +37,7 @@ class UserController extends SecurityController
         $users = $em->getRepository('JVTaskBundle:User')->findAll();
         
         if (count($users) === 0) {
-            return $this->render('JVTaskBundle:User:index.html.twig', array("flashnousers" => true));
+            return $this->render('JVTaskBundle:User:list.html.twig', array("flashnousers" => true));
         }
 
         return $this->render('JVTaskBundle:User:list.html.twig', array(
@@ -65,7 +65,8 @@ class UserController extends SecurityController
             $em->persist($user);
             $em->flush();
 
-            return $this->redirectToRoute('user_show', array('id' => $user->getId()));
+            return $this->redirectToRoute('user_show', array('id' => $user->getId(),
+            "flashuseradd" => true));
         }
 
         return $this->render('JVTaskBundle:User:new.html.twig', array(
@@ -76,26 +77,52 @@ class UserController extends SecurityController
 
     /**
      * Finds and displays a User entity.
-     * @Sec("has_role('ROLE_APP_ADMIN')")
+     * @Sec("has_role('ROLE_APP_ADMIN'||'ROLE_USER')")
      *
      */
     public function showAction(User $user)
     {
+        $usernow = $this->getUser();
+        $userId = $usernow->getId();
+        
+        $id = $user->getId();
+        
+        if ($userId != $id){
+            return $this->render('JVTaskBundle:Task:listByUser.html.twig', array(
+                "user" => $usernow,
+                "tasks" => $usernow->getTasks(),
+                "flashnousernow" => true));
+        }
+        else{
         $deleteForm = $this->createDeleteForm($user);
 
         return $this->render('JVTaskBundle:User:show.html.twig', array(
             'user' => $user,
             'delete_form' => $deleteForm->createView(),
         ));
+        }
     }
 
     /**
      * Displays a form to edit an existing User entity.
-     * @Sec("has_role('ROLE_APP_ADMIN')")
+     * @Sec("has_role('ROLE_APP_ADMIN'||'ROLE_USER')")
      *
      */
     public function editAction(Request $request, User $user)
     {
+        $usernow = $this->getUser();
+        $userId = $usernow->getId();
+        
+        $id = $user->getId();
+        
+        if ($userId != $id){
+            return $this->render('JVTaskBundle:Task:listByUser.html.twig', array(
+                "user" => $usernow,
+                "tasks" => $usernow->getTasks(),
+                "flashnousernow" => true));
+        }
+        else{
+        
         $deleteForm = $this->createDeleteForm($user);
         $editForm = $this->createForm('JV\TaskBundle\Form\UserType', $user);
         $encoder = $this->container->get('security.password_encoder');
@@ -117,6 +144,7 @@ class UserController extends SecurityController
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         ));
+        }
     }
 
     /**

@@ -4,10 +4,10 @@
 
 {% block fos_user_content_login %}
     <div class="form-group">
-        <label class="col-md-3 col-md-pull-4" for="username">{{ 'form.username'|trans({}, 'DWSBundle') }}</label>
-        <input class="col-md-9 col-md-pull-3" type="text" id="username" name="_username"  placeholder={{ 'form.username'|trans({}, 'DWSBundle') }}  value="{{ last_username }}" required="required" />
+        <label class="col-md-3 col-md-pull-4" for="username">{{ 'form.username'|trans({}, 'JVTaskBundle') }}</label>
+        <input class="col-md-9 col-md-pull-3" type="text" id="username" name="_username"  placeholder={{ 'form.username'|trans({}, 'JVTaskBundle') }}  value="{{ last_username }}" required="required" />
     </div>
     <sup>
-        <a href="{{ path('fos_user_security_login') }}" id="_submitByEmail">{{ 'link.login.email'|trans({}, 'DWSBundle') }} </a>
+        <a href="{{ path('fos_user_security_login') }}" id="_submitByEmail">{{ 'link.login.email'|trans({}, 'JVTaskBundle') }} </a>
     </sup>
 {% endblock %}

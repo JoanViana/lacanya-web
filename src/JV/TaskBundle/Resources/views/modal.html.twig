@@ -48,16 +48,21 @@
                             <p>{{ 'modal.logout.confirm'|trans }}</p>
 
                             <div class="form-group">  
-                                <div class="btn">
-                                    <li>
-                                        <a class="btn btn-danger btn-sm" href="{{ path('fos_user_security_logout') }}"> 
-                                        <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> 
-                                        {{ 'action.logout'|trans }}</a>
-                                    </li>
-                                    <li>
-                                        <button type="button" class="btn btn-default btn-sm"
-                                            data-dismiss="modal">{{ 'action.cancel'|trans }}</button>
-                                    </li>
+                                <div class="actions">
+                                    <ul>
+                                        <li>
+                                            <button type="button" class="btn btn-danger btn-sm">
+                                                <a href="{{ path('fos_user_security_logout') }}"> 
+                                            <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
+                                            {{ 'action.logout'|trans }}</a>
+                                            </button>
+                                            
+                                        </li>
+                                        <li>
+                                            <button type="button" class="btn btn-default btn-sm"
+                                                data-dismiss="modal">{{ 'action.cancel'|trans }}</button>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                         </form>

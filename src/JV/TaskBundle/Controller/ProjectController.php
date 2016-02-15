@@ -29,7 +29,7 @@ class ProjectController extends Controller
         $projects = $em->getRepository('JVTaskBundle:Project')->findAll();
 
         if (count($projects) === 0) {
-            return $this->render('JVTaskBundle:Project:index.html.twig', array("flashnoprojects" => true));
+            return $this->render('JVTaskBundle:Project:list.html.twig', array("flashnoprojects" => true));
         }
         
         return $this->render('JVTaskBundle:Project:list.html.twig', array(
@@ -165,7 +165,7 @@ class ProjectController extends Controller
         $categories = $em->getRepository('JVTaskBundle:Category')->findAll();
         
         if (count($categories) === 0) {
-            return $this->render('JVTaskBundle:Project:index.html.twig', array('flashnocategories' => true));
+            return $this->render('JVTaskBundle:Project:list.html.twig', array('flashnocategories' => true));
         }
 
         return $this->render('JVTaskBundle:Project:listAllByCategory.html.twig', array('categories' => $categories,

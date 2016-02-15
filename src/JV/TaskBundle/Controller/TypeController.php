@@ -28,7 +28,7 @@ class TypeController extends Controller
         $types = $em->getRepository('JVTaskBundle:Type')->findAll();
         
         if (count($types) === 0) {
-            return $this->render('JVTaskBundle:Type:index.html.twig', array("flashnotypes" => true));
+            return $this->render('JVTaskBundle:Type:list.html.twig', array("flashnotypes" => true));
         }
 
         return $this->render('JVTaskBundle:Type:list.html.twig', array(

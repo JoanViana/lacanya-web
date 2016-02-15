@@ -379,7 +379,7 @@ class Project
     }
     
     /**
-     * @ORM\ManyToOne(targetEntity="Category", inversedBy="projects")
+     * @ORM\ManyToOne(targetEntity="Category", inversedBy="projects", cascade={"persist", "remove"})
      * @ORM\JoinColumn(name="category_id", referencedColumnName="id", nullable=false)
      * @Assert\NotBlank(message="as.nb")
      */

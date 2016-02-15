@@ -31,7 +31,7 @@ class TaskController extends Controller
         $tasks = $em->getRepository('JVTaskBundle:Task')->findAll();
         
         if (count($tasks) === 0) {
-            return $this->render('JVTaskBundle:Task:index.html.twig', array("flashnotasks" => true));
+            return $this->render('JVTaskBundle:Task:list.html.twig', array("flashnotasks" => true));
         }
         
         return $this->render('JVTaskBundle:Task:list.html.twig', array(
@@ -169,7 +169,7 @@ class TaskController extends Controller
         
         if (count($types) === 0) {
 
-            return $this->render('JVTaskBundle:Task:index.html.twig', array('flashnotypes' => true));
+            return $this->render('JVTaskBundle:Task:list.html.twig', array('flashnotypes' => true));
         }
 
         return $this->render('JVTaskBundle:Task:listAllByType.html.twig', array('types' => $types,
@@ -203,7 +203,7 @@ class TaskController extends Controller
         
         if (count($projects) === 0) {
 
-            return $this->render('JVTaskBundle:Task:index.html.twig', array('flashnoprojects' => true));
+            return $this->render('JVTaskBundle:Task:list.html.twig', array('flashnoprojects' => true));
         }
 
         return $this->render('JVTaskBundle:Task:listAllByProject.html.twig', array('projects' => $projects,
@@ -217,7 +217,18 @@ class TaskController extends Controller
      *
      */
      public function listByUserAction(User $user) {
-
+        
+        $usernow = $this->getUser();
+        $userId = $usernow->getId();
+        
+        $id = $user->getId();
+        
+        if ($userId != $id){
+            return $this->render('JVTaskBundle:Task:listByUser.html.twig', array(
+                "user" => $usernow,
+                "tasks" => $user->getTasks(),
+                "flashnousers" => true));
+        }
         $tasks = $user->getTasks();
 
         return $this->render('JVTaskBundle:Task:listByUser.html.twig', array('tasks' => $tasks,
@@ -238,7 +249,7 @@ class TaskController extends Controller
         
         if (count($users) === 0) {
 
-            return $this->render('JVTaskBundle:Task:index.html.twig', array('flashnousers' => true));
+            return $this->render('JVTaskBundle:Task:list.html.twig', array('flashnousers' => true));
         }
 
         return $this->render('JVTaskBundle:Task:listAllByUser.html.twig', array('users' => $users,

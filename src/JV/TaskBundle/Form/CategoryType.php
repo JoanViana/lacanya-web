@@ -49,7 +49,7 @@ class CategoryType extends AbstractType
     {
         $resolver->setDefaults(array(
             'data_class' => 'JV\TaskBundle\Entity\Category',
-            'translation_domain' => 'JV\TaskBundle'
+            'translation_domain' => 'JVTaskBundle'
         ));
     }
 }
