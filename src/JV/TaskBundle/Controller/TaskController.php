@@ -226,16 +226,18 @@ class TaskController extends Controller
         if ($userId != $id){
             return $this->render('JVTaskBundle:Task:listByUser.html.twig', array(
                 "user" => $usernow,
-                "tasks" => $user->getTasks(),
-                "flashnousers" => true));
+                "tasks" => $usernow->getTasks(),
+                "flashnousernow" => true));
         }
+        else{
         $tasks = $user->getTasks();
 
         return $this->render('JVTaskBundle:Task:listByUser.html.twig', array('tasks' => $tasks,
         'user'=> $user
         ));
-    }
-
+        }
+     }
+    
     /**
      * 
      * @Security("has_role('ROLE_APP_ADMIN')")

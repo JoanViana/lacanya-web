@@ -1,6 +1,6 @@
 {
     "name": "ubuntu/web.lacanya",
-    "license": "proprietary",
+    "license": "Creative 4.0. BY",
     "type": "project",
     "autoload": {
         "psr-4": {
@@ -17,7 +17,7 @@
         }
     },
     "require": {
-        "php": ">=5.5.9",
+        "php": "^5.6.0",
         "symfony/symfony": "3.0.*",
         "doctrine/orm": "^2.5",
         "doctrine/doctrine-bundle": "^1.6",
@@ -28,13 +28,19 @@
         "sensio/distribution-bundle": "^5.0",
         "sensio/framework-extra-bundle": "^3.0.2",
         "incenteev/composer-parameter-handler": "^2.0",
-        "friendsofsymfony/user-bundle": "~2.0@dev"
+        "friendsofsymfony/user-bundle": "~2.0@dev",
+        "ircmaxell/password-compat": "^1.0",
+        "ext-mbstring": "*"
     },
     "require-dev": {
         "sensio/generator-bundle": "^3.0",
         "symfony/phpunit-bridge": "^2.7"
     },
     "scripts": {
+        "pre-install-cmd": [
+			"JV\\TaskBundle\\Composer\\HerokuDatabase::populateEnvironment",
+			"JV\\WebBundle\\Composer\\HerokuDatabase::populateEnvironment"
+		],
         "post-install-cmd": [
             "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
@@ -50,22 +56,34 @@
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::prepareDeploymentTarget"
+        ],        
+        "compile" : [
+            "php bin/console doctrine:schema:update --force",
+            "rm web/app_dev.php",
+            "bin/console assetic:dump"
         ]
     },
     "config": {
-        "platform": {
-            "php": "5.5.9"
-        }
+        "bin-dir": "bin"
     },
     "extra": {
         "symfony-app-dir": "app",
         "symfony-bin-dir": "bin",
         "symfony-var-dir": "var",
-        "symfony-web-dir": "web",
-        "symfony-tests-dir": "tests",
         "symfony-assets-install": "relative",
         "incenteev-parameters": {
-            "file": "app/config/parameters.yml"
+            "file": "app/config/parameters.yml",
+            "env-map": {
+                "database_host": "DATABASE_HOST",
+                "database_port": "DATABASE_PORT",
+                "database_name": "DATABASE_NAME",
+                "database_user": "DATABASE_USER",
+                "database_password": "DATABASE_PASSWORD"
+        }
+    },
+        "heroku" : {
+            "framework": "symfony2"
         }
     }
+
 }

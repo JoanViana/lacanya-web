@@ -96,9 +96,9 @@ studies:
             
 contact:
     firstname:
-        label: 'Enter your name'
+        label: 'Enter your First Name'
     lastname:
-        label: 'Enter your name'
+        label: 'Enter your Last Name'
     email:
         label: 'Enter your email'
     subject:
