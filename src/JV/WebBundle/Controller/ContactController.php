@@ -16,11 +16,12 @@ public function contactAction(Request $request)
 		$enquiry = new Contact();
 		$form = $this->createForm(ContactType::class, $enquiry);
 	    $form->handleRequest($request);
-		
-		if ($request->getMethod() == 'POST') {
-			$form->submit($request);
 	
-    		if ($form->isValid()) {
+    	if ($form->isSubmitted() && $form->isValid()) {
+    		    
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($enquiry);
+            $em->flush();
     	
             /*$message = \Swift_Message::newInstance()
                 ->setSubject('Contact feedback from lacanyaestudis.herokuapp.com')
@@ -29,10 +30,7 @@ public function contactAction(Request $request)
                 ->setBody($this->renderView('JVWebBundle:Contact:contactEmail.txt.twig', array('enquiry' => $enquiry)));
             $this->get('mailer')->send($message);
             */
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($enquiry);
-            $em->flush();
-    
+
             //$this->get('session')->setFlash('contact-notice', 'Your feedback was successfully sent. Thank you!');
     
             // Redirect - This is important to prevent users re-posting
@@ -43,12 +41,6 @@ public function contactAction(Request $request)
                     'contact' => $enquiry,
             		'form' => $form->createView()));
             }
-            else{
-            	return $this->render('JVWebBundle:Contact:error.html.twig', array(
-                        'contact' => $enquiry,
-                		'form' => $form->createView()));
-            }
-		}
 	
 		return $this->render('JVWebBundle:Contact:contact.html.twig', array(
                 'contact' => $enquiry,

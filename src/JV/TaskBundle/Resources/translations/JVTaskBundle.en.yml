@@ -204,6 +204,9 @@ usernav:
     pass:
         header: 'Change password'
         title: 'Change password'
+    data:
+        header: 'Edit user data'
+        title: 'Edit user data'
         
 project:
     status:

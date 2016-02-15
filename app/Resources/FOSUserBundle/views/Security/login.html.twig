@@ -4,53 +4,57 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
 {% block fos_user_content %}
-            {% if error %}
-                <div class="alert alert-danger alert-dismissible" role="alert">
-	  	        	<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	  		        <strong>{{ 'flash.error'|trans({}, 'JVtaskBundle') }}</strong> {{ error.messageKey|trans(error.messageData, 'security') }}
-		         </div> 
-            {% endif %}
-	<div class="main container">
-		<div class="row">
-			<div class="col-md-6 col-md-offset-3">
-				<div class="page-header">
-					<h2>{{ 'user.login.header'|trans({}, 'JVtaskBundle') }}</h2>
-				</div>
-
-
-            <form action="{{ path("fos_user_security_check") }}" method="post">
-                <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
-                    <fieldset>
-                        
-                        {% block fos_user_content_login %}
-                            <div class="form-group">
-                                <label class="col-md-3 col-md-pull-4" for="username">{{ 'form.email'|trans({}, 'JVtaskBundle') }}</label>
-                                <input class="col-md-9 col-md-pull-3" type="email" id="username" name="_username" placeholder= {{ 'form.username'|trans({}, 'JVtaskBundle') }} value="{{ last_username }}" required="required" />
-                            </div>
-                            
-                            <sup>
-                                <a href="{{ path('fos_user_security_login_username') }}" id="_submitByUsername" />{{ 'link.login.username'|trans({}, 'JVtaskBundle') }} </a>
-                            </sup>
-                        {% endblock %}
-                        
-                        <div class="form-group">
-                            <label class="col-md-3 col-md-pull-4" for="password">{{ 'security.login.password'|trans }}</label>
-                            <input class="col-md-9 col-md-pull-3" type="password" id="password" name="_password"  placeholder= {{ 'form.password'|trans({}, 'JVtaskBundle') }}  required="required" />
-                        </div>
-                        <div class="form-group">
-                            <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
-                            <label for="remember_me">{{ 'security.login.remember_me'|trans }}</label>
-                        </div>
-       				</fieldset>
-
-				<div class="row">
-					<div class="col-sm-offset-2 col-sm-10 col-md-9 col-md-pull-2">
-					    <p>
-                            <input href="{{ path('fos_user_security_login') }}" class="btn btn-info" type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}" />
-					    </p> 
-	                </div>
-				</div>
-            </form>
+{% if error %}
+    <div class="alert alert-danger alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <strong>{{ 'flash.error'|trans({}, 'JVtaskBundle') }}</strong> {{ error.messageKey|trans(error.messageData, 'security') }}
+    </div> 
+{% endif %}
+	
+<div class="container">
+		<div class="col-md-10 col-md-offset-1">
+			<div class="page-header margin-none">
+				<h2 class="padding-none"><h2>{{ 'usernav.login.header'|trans({}, 'JVtaskBundle') }}</h2></h2>
+			</div>
+			<div class="container-fluid">
+				<div class="form-style">
+                    <form action="{{ path("fos_user_security_check") }}" method="post">
+                        <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+                            <fieldset>
+                                
+                                {% block fos_user_content_login %}
+                                    <div class="form-group">
+                                        <label for="username">{{ 'form.username'|trans({}, 'JVtaskBundle') }}</label>
+                                        <input type="text" id="username" name="_username" placeholder= {{ 'form.username'|trans({}, 'JVtaskBundle') }} value="{{ last_username }}" required="required" />
+                                    </div>
+                                    
+                                    {#<sup>
+                                        <a href="{{ path('fos_user_security_login_username') }}" id="_submitByUsername" />{{ 'link.login.username'|trans({}, 'JVtaskBundle') }} </a>
+                                    </sup>#}
+                                {% endblock %}
+                                
+                                <div class="form-group">
+                                    <label for="password">{{ 'security.login.password'|trans }}</label>
+                                    <input type="password" id="password" name="_password"  placeholder= {{ 'form.password'|trans({}, 'JVtaskBundle') }}  required="required" />
+                                </div>
+                                <div class="form-group forrm-inline">
+                                    <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+                                    <label for="remember_me">{{ 'security.login.remember_me'|trans }}</label>
+                                </div>
+               				</fieldset>
+                    <div class="actions">
+        				<div class="row">
+        					<div class="col-sm-offset-2 col-sm-10 col-md-9 col-md-pull-2">
+        					    <ul>
+        					        <li>
+                                    <input class="btn btn-success btn-sm" href="{{ path('fos_user_security_login') }}" class="btn btn-info" type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}" />
+        					        </li>
+        					     </ul>
+        	                </div>
+        				</div>
+        			</div>
+                </form>
+            </div>
         </div>
     </div>
 </div>

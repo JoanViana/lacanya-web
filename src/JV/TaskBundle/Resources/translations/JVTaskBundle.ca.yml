@@ -205,6 +205,9 @@ usernav:
     pass:
         header: 'Canvi contrasenya'
         title: 'Canvi contrasenya'
+    data:
+        header: 'Edició dades usuari'
+        title: 'Edició dades usuari'
         
 project:
     status:

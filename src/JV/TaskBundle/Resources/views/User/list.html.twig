@@ -21,7 +21,7 @@
                 <td><a href="{{ path('user_show', { 'id': user.id }) }}">{{ user.id }}</a></td>
                 <td>{{ user.username }}</td>
                 <td>{{ user.email }}</td>
-                <td>{{ user.roles[0] }}</td>
+                <td>{{ user.roles|join(',') }} }}</td>
                 <td>{% if user.createdAt %}{{ user.createdAt|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>{% if user.updatedAt %}{{ user.updatedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>{% if user.enabled %}{{ 'general.yes'|trans }}{% else %}{{ 'general.no'|trans }}{% endif %}</td>

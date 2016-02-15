@@ -35,7 +35,7 @@
             </tr>
             <tr>
                 <th>{{ 'form.roles'|trans }}</th>
-                <td>{{ user.roles[0] }}</td>
+                <td>{{ user.roles|join(',') }}</td>
             </tr>
             <tr>
                 <th>{{ 'form.createdAt'|trans }}</th>

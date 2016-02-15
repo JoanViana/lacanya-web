@@ -122,6 +122,9 @@ usernav:
     pass:
         header: 'Cambiar contraseña'
         title: 'Cambiar contraseña'
+    data:
+        header: 'Edición datos usuario'
+        title: 'Edición datos usuario'
         
 link:
     web: 'Website'

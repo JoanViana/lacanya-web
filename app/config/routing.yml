@@ -17,9 +17,21 @@ jv_task:
     requirements:
         _locale: '%app.locales%'
 
-fos_user:
-    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+fos_user_sec:
+    resource: "@FOSUserBundle/Resources/config/routing/security.xml"
     prefix : /{_locale}/intranet/log/
+    requirements:
+        _locale: '%app.locales%'
+        
+fos_user_pro:
+    resource: "@FOSUserBundle/Resources/config/routing/profile.xml"
+    prefix : /{_locale}/intranet/log/profile
+    requirements:
+        _locale: '%app.locales%'
+        
+fos_user_pas:
+    resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
+    prefix : /{_locale}/intranet/log/profile
     requirements:
         _locale: '%app.locales%'
 
@@ -27,5 +39,5 @@ jv_redirect:
     path: /
     defaults:
         _controller: JVWebBundle:Contact:contact
-        path: /{_locale}/index
+        path: /{locale_}/index
         permanent: true

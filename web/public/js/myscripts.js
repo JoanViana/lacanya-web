@@ -12,43 +12,8 @@ var new_show_time = 500;
 
 jQuery(document).ready(function ($) {
     
-    $('.datepicker').datepicker({
-    format: 'mm/dd/yyyy',
-    startDate: '-3d'
-});
-
-    $('.news-menu-link').click(function ()
-    {
-        if (!$(this).hasClass('active')) {
-            current_new_item = this;
-            $('.news-item:visible').fadeOut(new_hide_time, function () {
-                $('.news-menu-link').removeClass('active');
-                $(current_new_item).addClass('active');
-                var new_new = $($(current_new_item).attr('href'));
-                new_new.fadeIn(new_show_time);
-                $("body, html").animate({
-                    scrollTop: new_new.offset().top
-                }, 600);
-            });
-        }
-        return false;
-    });
-});
-
-
-$(document).ready(function () {
-
-    /*
-    $('.arrow-up').click(function () {
-        $('html, body').animate({scrollTop: '-=3000'}, 3000);
-    });
-
-    $('.arrow-down').click(function () {
-        $('html, body').animate({scrollTop: '+=3000'}, 3000);
-    });
-    */
-
-    $('#etsatopia_gallery').justifiedGallery({
+    
+     $('#etsatopia_gallery').justifiedGallery({
         'rowHeight': 150,
         'lastRow': 'nojustify',
         'margins': 4,
@@ -72,7 +37,36 @@ $(document).ready(function () {
                     'visibleOpacity': 0.9,
                     'nonVisibleOpacity': 0.5}
     });
+
+    $('.news-menu-link').click(function ()
+    {
+        if (!$(this).hasClass('active')) {
+            current_new_item = this;
+            $('.news-item:visible').fadeOut(new_hide_time, function () {
+                $('.news-menu-link').removeClass('active');
+                $(current_new_item).addClass('active');
+                var new_new = $($(current_new_item).attr('href'));
+                new_new.fadeIn(new_show_time);
+                $("body, html").animate({
+                    scrollTop: new_new.offset().top
+                }, 600);
+            });
+        }
+        return false;
+    });
 });
+
+    /*
+    $('.arrow-up').click(function () {
+        $('html, body').animate({scrollTop: '-=3000'}, 3000);
+    });
+
+    $('.arrow-down').click(function () {
+        $('html, body').animate({scrollTop: '+=3000'}, 3000);
+    });
+    */
+
+   
 
 
 

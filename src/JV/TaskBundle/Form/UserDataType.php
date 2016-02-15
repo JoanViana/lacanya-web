@@ -6,13 +6,16 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
+use Symfony\Component\Form\Extension\Core\Type\PasswordType;
+use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\ResetType;
 
 
-class CategoryType extends AbstractType
+class UserDataType extends AbstractType
 {
     /**
      * @param FormBuilderInterface $builder
@@ -21,24 +24,30 @@ class CategoryType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('name', TextType::class, array(
-                'label' => 'form.name'
+            ->add('firstName', TextType::class, array(
+                'label' => 'form.firstname'
                 ,'required' => true
                 ,'empty_data' => null
                 ))
-            ->add('description', TextareaType::class, array(
-                'label' => 'form.description'
-                ,'required' => false
+            ->add('lastName', TextType::class, array(
+                'label' => 'form.lastname'
+                ,'required' => true
+                ,'empty_data' => null
+                ))
+            ->add('phone', NumberType::class, array(
+                'label' => 'form.phone'
+                ,'required' => true
+                ,'empty_data' => null
                 ))
             ->add('enabled', CheckboxType::class, array(
                 'label'    => 'form.enabled'
-                ,'required' => false
-                ,'empty_data' => false
+                ,'required' =>false
                 ))
             ->add('save', SubmitType::class, array(
                 'attr' => array('class' => 'save')
                 ,'label' => 'action.save'
                 ))
+
         ;
     }
     
@@ -48,7 +57,7 @@ class CategoryType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'JV\TaskBundle\Entity\Category',
+            'data_class' => 'JV\TaskBundle\Entity\User',
             'translation_domain' => 'JVTaskBundle'
         ));
     }
