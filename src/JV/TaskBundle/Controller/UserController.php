@@ -123,6 +123,7 @@ class UserController extends SecurityController
                 "tasks" => $usernow->getTasks(),
                 "flashnousernow" => true));
         }
+        else{
         
         $deleteForm = $this->createDeleteForm($user);
         $editForm = $this->createForm('JV\TaskBundle\Form\UserType', $user);
