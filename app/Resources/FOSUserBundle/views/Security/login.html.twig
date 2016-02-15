@@ -7,14 +7,14 @@
             {% if error %}
                 <div class="alert alert-danger alert-dismissible" role="alert">
 	  	        	<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	  		        <strong>{{ 'flash.error'|trans({}, 'DWSBundle') }}</strong> {{ error.messageKey|trans(error.messageData, 'security') }}
+	  		        <strong>{{ 'flash.error'|trans({}, 'JVtaskBundle') }}</strong> {{ error.messageKey|trans(error.messageData, 'security') }}
 		         </div> 
             {% endif %}
 	<div class="main container">
 		<div class="row well">
-			<div class="col-md-4 col-md-offset-5">
+			<div class="col-md-10 col-md-offset-1">
 				<div class="page-header">
-					<h2>{{ 'user.login.header'|trans({}, 'DWSBundle') }}</h2>
+					<h2>{{ 'user.login.header'|trans({}, 'JVtaskBundle') }}</h2>
 				</div>
 
 
@@ -24,18 +24,18 @@
                         
                         {% block fos_user_content_login %}
                             <div class="form-group">
-                                <label class="col-md-3 col-md-pull-4" for="username">{{ 'form.email'|trans({}, 'DWSBundle') }}</label>
-                                <input class="col-md-9 col-md-pull-3" type="email" id="username" name="_username" placeholder= {{ 'form.username'|trans({}, 'DWSBundle') }} value="{{ last_username }}" required="required" />
+                                <label class="col-md-3 col-md-pull-4" for="username">{{ 'form.email'|trans({}, 'JVtaskBundle') }}</label>
+                                <input class="col-md-9 col-md-pull-3" type="email" id="username" name="_username" placeholder= {{ 'form.username'|trans({}, 'JVtaskBundle') }} value="{{ last_username }}" required="required" />
                             </div>
                             
                             <sup>
-                                <a href="{{ path('fos_user_security_login_username') }}" id="_submitByUsername" />{{ 'link.login.username'|trans({}, 'DWSBundle') }} </a>
+                                <a href="{{ path('fos_user_security_login_username') }}" id="_submitByUsername" />{{ 'link.login.username'|trans({}, 'JVtaskBundle') }} </a>
                             </sup>
                         {% endblock %}
                         
                         <div class="form-group">
                             <label class="col-md-3 col-md-pull-4" for="password">{{ 'security.login.password'|trans }}</label>
-                            <input class="col-md-9 col-md-pull-3" type="password" id="password" name="_password"  placeholder= {{ 'form.password'|trans({}, 'DWSBundle') }}  required="required" />
+                            <input class="col-md-9 col-md-pull-3" type="password" id="password" name="_password"  placeholder= {{ 'form.password'|trans({}, 'JVtaskBundle') }}  required="required" />
                         </div>
                         <div class="form-group">
                             <input type="checkbox" id="remember_me" name="_remember_me" value="on" />

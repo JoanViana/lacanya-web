@@ -220,10 +220,11 @@ class TaskController extends Controller
         
         $usernow = $this->getUser();
         $userId = $usernow->getId();
+        $userRole = $usernow->getRoles();
         
         $id = $user->getId();
         
-        if ($userId != $id){
+        if (($userId != $id)&&(!in_array($userRole, 'ROLE_APP_ADMIN'))){
             return $this->render('JVTaskBundle:Task:listByUser.html.twig', array(
                 "user" => $usernow,
                 "tasks" => $usernow->getTasks(),
