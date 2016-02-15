@@ -46,11 +46,11 @@ class ContactType extends AbstractType
                 ,'required' => false
                 ))
             ->add('save', SubmitType::class, array(
-                'attr' => array('class' => 'save')
+                'attr' => array('class' => 'btn btn-green')
                 ,'label' => 'button.save'
                 ))
             ->add('reset', ResetType::class, array(
-                'attr' => array('class' => 'reset')
+                'attr' => array('class' => 'btn reset')
                 ,'label' => 'button.reset'
                 ))
         ;

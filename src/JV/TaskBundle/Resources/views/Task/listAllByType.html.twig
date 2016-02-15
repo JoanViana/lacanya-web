@@ -1,0 +1,75 @@
+{% extends 'JVTaskBundle::listAll.html.twig' %}
+{% trans_default_domain 'JVTaskBundle' %} 
+
+{% block title %}{{ parent() }} {{ 'task.listAllByType.title'|trans }}{% endblock %}
+{% block table %}
+{{ parent() }}
+    {% block theader %}{{ 'task.listAllByType.header'|trans }}{% endblock %}
+    {% block group %} 
+	{% for type in types %}	    
+        <div class="container">
+		    <div class="col-md-11">
+			    <div class="page-header margin-none">
+				    <h4 class="padding-none"> 
+    {% block groupheader %}{{ 'task.listByType.title'|trans({'%typename%' : type.name }) }} {% endblock %}
+                        </h4>
+        	        </div>
+    			    <div class="table-responsive">
+        				<table class="table table-striped table-hover">
+        					<thead>
+        						<tr>
+    {% block thead %}
+        <th>{{ 'form.id'|trans }}</th>
+        <th>{{ 'form.name'|trans }}</th>
+        <th>{{ 'form.status'|trans }}</th>
+        <th>{{ 'form.endDate'|trans }}</th>
+        <th>{{ 'form.checked'|trans }}</th>
+        <th>{{ 'form.updatedAt'|trans }}</th>
+        <th>{{ 'form.enabled'|trans }}</th>
+        <th>{{ 'action.label'|trans }}</th>
+    {% endblock %}
+    	                        </tr>
+        					</thead>
+        				<tbody>
+    {% block tbody %}
+        {% for task in type.tasks %}
+            <tr>
+                <td><a href="{{ path('task_show', { 'id': task.id }) }}">{{ task.id }}</a></td>
+                <td>{{ task.name }}</td>
+                <td>{{ task.status }}</td>
+                <td>{% if task.endDate %}{{ task.endDate|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if task.checked %}{{ 'general.yes'|trans }}{% else %}{{ 'general.no'|trans }}{% endif %}</td>
+                <td>{% if task.updatedAt %}{{ task.updatedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if task.enabled %}{{ 'general.yes'|trans }}{% else %}{{ 'general.no'|trans }}{% endif %}</td>
+                <td class="actions">
+                <ul>
+                    <li>
+                        <a class="btn btn-default btn-sm" href="{{ path('task_show', { 'id': task.id }) }}">{{ 'action.show'|trans }}</a>
+                    </li>
+                {% if is_granted('ROLE_APP_ADMIN') %}
+                    <li>
+                        <a class="btn btn-default btn-sm" href="{{ path('task_edit', { 'id': task.id }) }}">{{ 'action.edit'|trans }}</a>
+                    </li>
+               {% endif %}
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+    {% endblock %}
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="actions"
+                    <ul>
+                        <li>
+    {% block tout %}
+        <a class="btn btn-default btn-sm" href="{{ path('task_new') }}">Create a new entry</a>
+    {% endblock %}
+                         </li>
+                    </ul>
+                    </div>
+                </div>
+            </div>
+    {% endfor %}
+    {% endblock %}
+{% endblock %}

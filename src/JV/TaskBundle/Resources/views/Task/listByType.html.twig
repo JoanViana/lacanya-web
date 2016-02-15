@@ -1,0 +1,47 @@
+{% extends 'JVTaskBundle::list.html.twig' %}
+{% trans_default_domain 'JVTaskBundle' %} 
+
+{% block title %}{{ parent() }} {{ 'task.listByType.title'|trans({'%typename%' : type.name }) }}{% endblock %}
+{% block table %}
+{{ parent() }}
+    {% block theader %}{{ 'task.listByType.title'|trans({'%typename%' : type.name }) }}{% endblock %}
+    {% block thead %}
+
+			<th>{{ 'form.id'|trans }}</th>
+        <th>{{ 'form.name'|trans }}</th>
+        <th>{{ 'form.status'|trans }}</th>
+        <th>{{ 'form.endDate'|trans }}</th>
+        <th>{{ 'form.checked'|trans }}</th>
+        <th>{{ 'form.updatedAt'|trans }}</th>
+        <th>{{ 'form.enabled'|trans }}</th>
+        <th>{{ 'action.label'|trans }}</th>
+    {% endblock %}
+    {% block tbody %}
+        {% for task in tasks %}
+            <tr>
+                <td><a href="{{ path('task_show', { 'id': task.id }) }}">{{ task.id }}</a></td>
+                <td>{{ task.name }}</td>
+                <td>{{ task.status }}</td>
+                <td>{% if task.endDate %}{{ task.endDate|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if task.checked %}{{ 'general.yes'|trans }}{% else %}{{ 'general.no'|trans }}{% endif %}</td>
+                <td>{% if task.updatedAt %}{{ task.updatedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if task.enabled %}{{ 'general.yes'|trans }}{% else %}{{ 'general.no'|trans }}{% endif %}</td>
+                <td class="actions">
+                <ul>
+                    <li>
+                        <a class="btn btn-default btn-sm" href="{{ path('task_show', { 'id': task.id }) }}">{{ 'action.show'|trans }}</a>
+                    </li>
+                {% if is_granted('ROLE_APP_ADMIN') %}
+                    <li>
+                        <a class="btn btn-default btn-sm" href="{{ path('task_edit', { 'id': task.id }) }}">{{ 'action.edit'|trans }}</a>
+                    </li>
+                {% endif %}
+                </ul>
+            </td>
+        </tr>
+        {% endfor %}
+    {% endblock %}
+    {% block tout %}
+        <a class="btn btn-default btn-sm" href="{{ path('task_new') }}">Create a new entry</a>
+    {% endblock %}
+{% endblock %}

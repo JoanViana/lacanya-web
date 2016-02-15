@@ -1,21 +1,8 @@
-{% extends 'base.html.twig' %}
+{% extends 'JVTaskBundle::edit.html.twig' %}
+{% trans_default_domain 'JVTaskBundle' %} 
 
-{% block body %}
-    <h1>Type edit</h1>
-
-    {{ form_start(edit_form) }}
-        {{ form_widget(edit_form) }}
-        <input type="submit" value="Edit" />
-    {{ form_end(edit_form) }}
-
-    <ul>
-        <li>
-            <a href="{{ path('type_index') }}">Back to the list</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+{% block title %}{{ parent() }} {{ 'type.edit.title'|trans({'%typename%' : type.name }) }}{% endblock %}
+{% block theader %}{{ 'type.edit.title'|trans({'%typename%' : type.name }) }} {% endblock %}
+{% block tout %}
+    <a class="btn btn-default btn-sm" href="{{ path('type_index') }}">{{ 'action.backList'|trans }}</a>                       
 {% endblock %}

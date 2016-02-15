@@ -113,6 +113,7 @@ RGB
 
 .quisom-text a{
     text-shadow:2px 2px 2px rgba(0,0,0,1);
+    color: rgba(242,161,9,1);
 }
 .panel-transparent {
     background: none;
@@ -125,9 +126,9 @@ RGB
 
 .panel-transparent .panel-heading h2{
     font-family: 'Medula One', cursive;
-    color: rgba(255,255,255,1);
+    color: rgba(0,0,0,.8);
     font-size: 2.5em;
-    text-shadow:2px 2px 2px rgba(0,0,0,1);
+    text-shadow: 0 2px 3px rgba(0,0,0,.4);
 }
 
 .panel-transparent a:hover,.panel-transparent a:active{
@@ -150,6 +151,35 @@ RGB
     text-shadow:2px 2px 2px rgba(0,0,0,.4);
     margin: .4em 0 .3em 0;
     padding: 0;
+}
+
+@media (max-width: 768px) {
+        .section-title{ 
+            font-size:4.5em;
+        }
+        
+        .title{ 
+            font-size:9em;
+        }
+        .subtitle { 
+            font-size: 3.5em;
+        }
+        
+    .breadcrumb{
+        font-size: 1.1em;
+    }
+    
+    
+    .quisom-body{
+        font-size: 1em;  
+    }
+    
+    .panel-transparent .panel-heading h2{
+        font-size: 2em;
+    }
+    .panel-transparent .panel-body{
+        font-size: 1em;
+    }
 }
 
 .title{ 
@@ -177,6 +207,11 @@ RGB
 .font-medula{
     font-family: 'Medula One', cursive !important;
 }
+
+
+
+
+
 
 .navbar .navbar-nav {
     display: inline-block;
@@ -239,20 +274,6 @@ li.navhome.active a{
 }
 
 
-
-@media (max-width: 768px) {
-    .navbar-inverse a{
-        font-size: 0.8em;
-        margin: 0 !important;
-    }
-    .login{
-        position: absolute;
-        left:5%;
-        top:8%;
-        z-index: 999;
-    }
-}
-
 .navbar-toggle {
     background: rgba(255,255,255,1);
     padding: 1em .6em;
@@ -266,10 +287,250 @@ li.navhome.active a{
     font-weight: bold;
 }
 
-    
-hidd{
-    display:none
+.dropdown-menu{
+    padding:0;
+    margin:0;
+    left: 0;
+    text-align: left !important;
+    border: 3px solid rgba(150,164,93,1);
+    background: rgba(255,255,255,.8);
+    z-index:999999;
 }
+
+
+.dropdown-menu li{  
+    padding:0;
+    margin:0;
+}
+
+.dropdown-menu li a{  
+    font-size: 1.5em !important;
+}
+
+
+.dropdown-menu li a:hover, #logoutButton .dropdown-menu li a:focus, #logoutButton .dropdown-menu li a:active{  
+    color: rgba(255,255,255,1);
+    background: rgba(150,164,93,1);
+}
+
+
+.login{    
+    background: transparent;
+    position:absolute;
+    left:3%;
+    top:3%;
+    width:60px;
+    height:60px;
+    z-index: 9999;
+    padding:0;
+    margin:0;
+}
+#loginButton{
+    position:relative;
+    left:0;
+    top:0;
+    width:60px;
+    height:60px;
+    border: 4px solid rgba(150,164,93,1);
+    border-radius: 50%;
+    background: rgba(255,255,255,0);
+    text-align: center;
+    font-family: 'Ubuntu Condensed', sans-serif;
+}
+
+#loginButton > a{  
+    position:relative;
+    color: rgba(255,255,255,1);
+    font-size: .7em;
+    border-radius: 50%;
+    width:100%;
+    height:100%;
+}
+
+#loginButton > a:hover{  
+    color: rgba(255,255,255,1);
+    background: rgba(150,164,93,.6);
+}
+
+#loginButton > a > span{
+    width:100%;
+    height:100%;
+}
+
+
+.logout{    
+    background: transparent;
+    position:absolute;
+    left:3%;
+    top:3%;
+    width:140px;
+    height:60px;
+    z-index: 9999;
+    padding:0;
+    margin:0;
+}
+#logoutButton{
+    position:relative;
+    left:0;
+    top:0;
+    width:130px;
+    height:60px;
+    border: 4px solid rgba(150,164,93,1);
+    border-radius: 10%;
+    background: transparent;
+    text-align: center;
+    font-family: 'Ubuntu Condensed', sans-serif;
+}
+
+#logoutButton > a{  
+    position:relative;
+    color: rgba(255,255,255,1);
+    font-size: .6em;
+    padding:1em 0;
+}
+
+#logoutButton > a:hover, #logoutButton > a:focus, #logoutButton > a:active{  
+    color: rgba(255,255,255,1);
+    background: rgba(150,164,93,1);
+}
+
+#logoutButton .dropdown-menu{
+    padding:0;
+    margin:0;
+    left: -3%;
+    text-align: left !important;
+    border: 3px solid rgba(150,164,93,1);
+    background: rgba(255,255,255,.6);
+    z-index:999999;
+}
+
+
+#logoutButton .dropdown-menu li{  
+    padding:0;
+    margin:0;
+}
+
+#logoutButton .dropdown-menu li a{  
+    font-size: 1.3em !important;
+}
+
+
+#logoutButton .dropdown-menu li a:hover, #logoutButton .dropdown-menu li a:focus, #logoutButton .dropdown-menu li a:active{  
+    color: rgba(255,255,255,1);
+    background: rgba(150,164,93,1);
+}
+
+
+.language{    
+    background: transparent;
+    position:absolute;
+    right:3%;
+    top:3%;
+    width:80px;
+    height:60px;
+    z-index: 9999;
+    padding:0;
+    margin:0;
+}
+#languageButton{
+    position:relative;
+    right:0;
+    top:0;
+    width:80px;
+    height:60px;
+    border: 4px solid rgba(150,164,93,1);
+    border-radius: 10%;
+    background: transparent;
+    text-align: center;
+    font-family: 'Ubuntu Condensed', sans-serif;
+}
+
+#languageButton > a{  
+    position:relative;
+    color: rgba(255,255,255,1);
+    font-size: .6em;
+    width:100%;
+    height:100%;
+}
+
+#languageButton > a:hover, #logoutButton > a:focus, #logoutButton > a:active{  
+    color: rgba(255,255,255,1);
+    background: rgba(150,164,93,1);
+}
+
+#languageButton .dropdown-menu{
+    padding:0;
+    margin:0;
+    right:-3%;
+    min-width: 80px !important;
+    text-align: left !important;
+    border: 3px solid rgba(150,164,93,1);
+    background: rgba(255,255,255,.6);
+}
+
+#languageButton .dropdown-menu li{  
+    padding:0;
+    margin:0;
+}
+
+#languageButton .dropdown-menu li a{  
+    font-size: 1.3em !important;
+}
+
+
+#languageButton .dropdown-menu li a:hover, #logoutButton .dropdown-menu li a:focus, #logoutButton .dropdown-menu li a:active{  
+    color: rgba(255,255,255,1);
+    background: rgba(150,164,93,1);
+}
+
+@media (max-width: 768px) {
+    .navbar-inverse a{
+        font-size: 0.8em;
+        padding: .5em .1em !important;
+        margin: 0 !important;
+    }
+    #logoutButton .dropdown-menu{
+    position: relative;
+    left:-3%;
+    bottom: 220px  !important;
+    max-width: 60px !important;
+    }
+    #logoutButton .dropdown-menu li{  
+    padding: .3em;
+    margin:0;
+    }
+    #logoutButton .dropdown-menu li a{  
+    font-size: 1em !important;
+    }
+    #languageButton .dropdown-menu{
+    position: relative;
+    left:0;
+    bottom: 170px  !important;
+    }
+    #languageButton .dropdown-menu li{  
+    padding: .3em;
+    margin:0;
+    }
+    #languageButton .dropdown-menu li a{  
+        font-size: 1em !important;
+    }
+    #loginButton{
+        height:35px;
+        width:35px;
+        font-size:.8em;
+    }
+     #loginButton > a {
+        padding:0;
+        margin:0;
+        width:100%;
+        height:100%;
+    }
+    #loginButton > a > span{
+        padding-top: 3px;
+    }
+}
+
+
 
 cite {
     font-style: italic;
@@ -278,10 +539,6 @@ cite {
 blockquote {
     border-left: 5px solid rgba(0,0,0,0.8);
 }
-
-/*.targetDiv{display:none}*/
-
-
 
 
 /**FORM**/
@@ -299,28 +556,33 @@ blockquote {
     color: rgba(0,0,0,.8) !important;
     text-shadow:0 2px 3px rgba(0,0,0,.4);
 }
+.form-style label{
+    margin-top:.6em;
+    width:100%;
+}
 
 .form-style button{
     box-shadow: 0;
     font-weight:500;
     padding: 0.2em;
-    font-size: 2em;
-    /*position: absolute;
-    right: 5%;*/
-
+    font-size: 1em;
+    margin: 1em 0;
 }
 
-.form-style button:hover{
-
+.form-style .form-group{
+    box-shadow: 0;
+    font-weight:500;
+    padding: 0.2em;
+    font-size: 1em;
 }
 
-.form-style input, .form-style textarea{
+.modal-dialog .form-group input{
     font-family: sans-serif;
     width: 100%;
     font-weight: normal;
     font-size: 0.6em;
     line-height:1em;
-    border: 2px solid rgba(0, 0, 0, 0.8) !important;
+    border: 3px solid rgba(0,0,0,.8) !important;
     border-radius: 4px;
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset;
     background-color: rgba(255,255,255, 0.8);
@@ -331,17 +593,78 @@ blockquote {
     color: #000 !important;
 }
 
+.modal-dialog .form-group .btn{
+    padding:0.2em;
+}
+
+
+.form-style input, .form-style textarea, form-group input{
+    font-family: sans-serif;
+    width: 100%;
+    font-weight: normal;
+    font-size: .8em;
+    line-height:1em;
+    border: 3px solid rgba(0, 0, 0, .8) !important;
+    border-radius: 4px;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset;
+    background-color: rgba(255,255,255, 0.8);
+    background-image: none;
+    margin: 0.3em;
+    padding-left: 1em;
+    padding: 0.2em;
+    color: #000 !important;
+}
+
+input[type=checkbox]{
+    width: 50px !important;
+    border: 1px solid #000;
+}
+
+input[type=button]{
+    border:none;
+    background:transparent;
+}
 .checkbox{
-    display: inline;
-    margin-left:-2em;
+    display: inline-block;
+    width:20%;
+    float:left;
 }
 .checkbox label{
     padding-left: 3.2em;
 }
 .form-control{
+    font-size:.8em;
+    padding:.1em;
+    margin:.3em;
     background: rgba(255,255,255,0.6)!important;
     border: 2px solid rgba(0,0,0,0.8);
     color: rgba(0,0,0,0.8) !important;
+}
+
+.btn-green{
+    background: rgba(141,167,58,.8);
+    color: rgba(255,255,255,1);
+    border: 3px solid rgba(255,255,255,1);
+    border-radius: 8%;
+}
+
+.btn-green:hover{
+    color: rgba(141,167,58,1);
+    background: rgba(255,255,255,1);
+    border: 3px solid rgba(141,167,58,1);
+}
+
+.btn-reset{
+    background: rgba(255,255,255,.8);
+    color: rgba(0,0,0,.8);
+    border: 3px solid rgba(255,255,255,1);
+    border-radius: 8%;
+}
+
+.btn-reset:hover{
+    color: rgba(255,255,255,1);
+    background: rgba(180,4,4,.8);
+    border: 3px solid rgba(255,255,255,1);
 }
 
 
@@ -452,65 +775,8 @@ blockquote {
     z-index: 999;
 }
 
-.login{    
-    background: transparent;
-    position:fixed;
-    left:0;
-    top:0;
-    width:40px;
-    height:40px;
-}
-#loginButton{
-    border: 4px solid rgba(150,164,93,1);
-    border-radius: 50%;
-    background: rgba(255,255,255,.8);
-}
 
-#loginButton a{  
-    color: rgba(0,0,0,.8);
-    font-size: .7em;    
-    padding:.8em;
-    border-radius: 50%;    
-    border: 3px solid rgba(150,164,93,0);
-}
 
-#loginButton a:hover{  
-    border: 3px solid rgba(150,164,93,1);
-    background: transparent;
-}
-.log{
-    position:absolute !important;
-    left:0;
-    top:0;
-    z-index: 9999;
-}
-
-.logout{    
-    background: transparent;
-    position:fixed;
-    left:0;
-    top:0;
-    width:40px;
-    height:40px;
-}
-#logoutButton{
-    border: 4px solid rgba(180,4,4,.8) !important;
-    border-radius: 50%;
-    background: rgba(255,255,255,.8);
-}
-
-#logoutButton a{  
-    color: rgba(0,0,0,.8);
-    font-size: .7em;    
-    padding:.8em;
-    border-radius: 50%;    
-    border: 3px solid rgba(150,164,93,0);
-}
-
-#logoutButton a:hover{  
-    border: 3px solid rgba(180,4,4,.8);
-    background: transparent;
-}
 
 
 /*
@@ -902,14 +1168,7 @@ RGB
 192,107,3
 */
 
-.btn-green{
-    color: rgba(141,167,58,.8);
-    font-weight: 100;
-}
 
-.btn-green:hover{
-    color:rgba(150,164,93,.8);
-}
 
 #inici_{
     background: transparent; /* For browsers that do not support gradients */
@@ -920,31 +1179,51 @@ RGB
 }
 
 
-.language a{
-    color: #fff;
-    font-size: .9em;
-    margin-left: 1em !important;
-    padding: .1em !important;
+.table-responsive{
+ color: rgba(255,255,255,.8);
+ 
+
+}
+.table-hover tr{
+     vertical-align: middle;
 }
 
-.language a:hover, .language a:active, .language a:focus{
+tr:nth-child(2n) {background: rgba(0,0,0,.6)!important;}
+tr:nth-child(2n+1) {background: rgba(0,0,0,.8)!important;}
+
+
+tr:hover {
+    background: rgba(255,255,255,.8) !important;
     color: rgba(0,0,0,.8);
-    font-size: .9em;
-    margin-left: 1em !important;
-    padding: .1em;
+    font-weight:bold;
+}
+
+        
+.table-responsive a{
+    color: rgba(242,161,9,1);
+    font-size:1.1em;
+    text-shadow:0 1px 2px rgba(0,0,0,1);
 }
 
 
-.language .dropdown-menu > li > a{
-    color: rgba(0,0,0,.8);
-    font-size: 1.3em; 
-    margin: 0;
-    padding: .1em;
-}
-
-.language .dropdown-menu{
-    min-width: 100px !important;
+ .actions ul{
+    list-style: none;
     margin:0;
+    padding:0;
+    display: inline-block;
+}
+
+ .actions ul li{
+    float: left;
+    margin:.1em .2em;
+}
+
+ .actions ul li a, .actions ul li input{
+
+    margin:.1em 0;
+
+    text-shadow:none;
+    color: rgba(0,0,0,.8);
 }
 
 

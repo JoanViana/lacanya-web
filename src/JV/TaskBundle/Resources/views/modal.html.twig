@@ -1,0 +1,69 @@
+{% trans_default_domain 'JVTaskBundle' %} 
+{% block modal %}
+    {% block modal_login %}    
+        <div id="loginModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="title-post">{{ 'modal.login.label'|trans }}</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form class="form-style" action="{{ path("fos_user_security_check") }}" method="post" name='authenticate'>
+                            <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}" />
+                            <fieldset>
+                                <div class="form-group form-group-sm">
+                                    <label class="sr-only" for="navEmail">{{ 'form.username'|trans }}</label>
+                                    <input type="text" class="form-control" id="navUsername" name="_username" placeholder="{{ 'form.username'|trans }}" required="required">
+                                </div>
+                                <div class="form-group form-group-sm">
+                                    <label class="sr-only" for="navPassword">{{ 'form.password'|trans }}</label>
+                                    <input type="password" class="form-control" id="navPassword" name="_password" placeholder="{{ 'form.password'|trans }}" required="required">
+                                </div> 
+                                <div class="form-group form-group-sm">
+                                    <a><input href="{{ path('fos_user_security_login') }}" class="btn btn-sm btn-success" type="submit" id="navSubmit" name="_submit" value={{ 'action.login' | trans }} /></a>                        
+                                    <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">{{ 'action.cancel'|trans }}</button>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endblock %}   
+    
+    {% block modal_logout %}
+        <div id="logoutModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="title-post">{{ 'modal.logout.label'|trans }} </h4>
+                    </div>
+                    <div class="modal-body">
+
+                        <form class="form-style" role="search">
+                            <p>{{ 'modal.logout.confirm'|trans }}</p>
+
+                            <div class="form-group">  
+                                <div class="btn">
+                                    <li>
+                                        <a class="btn btn-danger btn-sm" href="{{ path('fos_user_security_logout') }}"> 
+                                        <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> 
+                                        {{ 'action.logout'|trans }}</a>
+                                    </li>
+                                    <li>
+                                        <button type="button" class="btn btn-default btn-sm"
+                                            data-dismiss="modal">{{ 'action.cancel'|trans }}</button>
+                                    </li>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endblock %}
+{% endblock %}

@@ -10,16 +10,20 @@ modal:
         label: 'Login'
         remember: "Recorda'm"
     logout:
-        label: 'Login'
+        label: 'Logout'
         confirm: 'Segur que vols eixir?'
         
 form:
-    email:
-        label: 'Email'
-        placeholder: 'Email'
-    password:
-        label: 'Contrasenya'
-        placeholder: 'Contrasenya'
+    id:  'Id' 
+    name:  'Nom' 
+    username: 'Usuari'
+    description: 'Descripció' 
+    summary: 'Resum' 
+    firstname: 'Nom'
+    lastname: 'Cognom'
+    email: 'Email'
+    status: 'Estat'
+    password: 'Contrasenya'
 
 button:
     login: 'Login'
@@ -101,3 +105,28 @@ contact:
     body:
         label: 'Introdueix el missatge'
 
+usernav:
+    register:
+        header: "Registe d'usuario"
+        title: "Registro d'usuario"
+    login:
+        header: "Login d'usuario"
+        title: "Login d'usuario"
+    confirmation:
+        header: 'Confirmació de registro'
+        title: 'Confirmació de registro'
+    edit:
+        header: 'Editar el perfil'
+        title: 'Editar el perfil'
+    show:
+        header: "Perfil d'usuari"
+        title: "Perfil d'usuari"
+    pass:
+        header: 'Cambiar contrasenya'
+        title: 'Cambiar contrasenya'
+        
+link:
+    web: 'Website'
+    task: 'Intranet'
+action:
+    logout: 'Logout'

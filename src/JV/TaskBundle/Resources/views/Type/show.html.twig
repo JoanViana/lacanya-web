@@ -1,48 +1,49 @@
-{% extends 'base.html.twig' %}
+{% extends 'JVTaskBundle::show.html.twig' %}
+{% trans_default_domain 'JVTaskBundle' %} 
 
-{% block body %}
-    <h1>Type</h1>
-
-    <table>
-        <tbody>
+{% block title %}{{ parent() }} {{ 'type.show.title'|trans({'%typename%' : type.name }) }}{% endblock %}
+{% block table %}
+{{ parent() }}
+    {% block theader %}{{ 'type.show.header'|trans({'%typename%' : type.name }) }}{% endblock %}
+    {% block tbody %}
             <tr>
-                <th>Id</th>
+                <th>{{ 'form.id'|trans }}</th>
                 <td>{{ type.id }}</td>
             </tr>
             <tr>
-                <th>Name</th>
+                <th>{{ 'form.name'|trans }}</th>
                 <td>{{ type.name }}</td>
             </tr>
             <tr>
-                <th>Description</th>
+                <th>{{ 'form.description'|trans }}</th>
                 <td>{{ type.description }}</td>
             </tr>
             <tr>
-                <th>Createdat</th>
+                <th>{{ 'form.createdAt'|trans }}</th>
                 <td>{% if type.createdAt %}{{ type.createdAt|date('Y-m-d H:i:s') }}{% endif %}</td>
             </tr>
             <tr>
-                <th>Updatedat</th>
+                <th>{{ 'form.updatedAt'|trans }}</th>
                 <td>{% if type.updatedAt %}{{ type.updatedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
             </tr>
             <tr>
-                <th>Enabled</th>
-                <td>{% if type.enabled %}Yes{% else %}No{% endif %}</td>
+                <th>{{ 'form.enabled'|trans }}</th>
+                <td>{% if type.enabled %}{{ 'general.yes'|trans }}{% else %}{{ 'general.no'|trans }}{% endif %}</td>
             </tr>
-        </tbody>
-    </table>
-
-    <ul>
-        <li>
-            <a href="{{ path('type_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('type_edit', { 'id': type.id }) }}">Edit</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+            {% endblock %}
+    {% block tout %}
+        {% if is_granted('ROLE_APP_ADMIN') %}
+            <li>
+                <a class="btn btn-default btn-sm" href="{{ path('type_edit', { 'id': type.id }) }}">{{ 'action.edit'|trans }}</a>
+            </li>
+            <li>
+                {{ form_start(delete_form) }}
+                    <input class="btn btn-danger btn-sm" type="submit" value="{{ 'action.delete'|trans }}">
+                {{ form_end(delete_form) }}
+            </li>
+        {% endif %}
+            <li>
+                <a class="btn btn-default btn-sm" href="{{ path('type_index') }}">{{ 'action.backList'|trans }}</a>
+            </li>
+    {% endblock %}
 {% endblock %}

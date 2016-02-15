@@ -1,0 +1,16 @@
+{% extends 'JVTaskBundle::layout.html.twig' %}
+{% trans_default_domain 'JVTaskBundle' %} 
+
+{% block title %}la Canya Estudis - {% endblock %}
+{% block table %}
+    <div class="container">
+		<div class="col-md-12">
+			<div class="page-header margin-none">
+				<h2 class="padding-none">{% block theader %} {% endblock %}</h2>
+			</div>
+			{% block group %} 
+
+            {% endblock %}
+        </div>
+    </div>
+{% endblock %}

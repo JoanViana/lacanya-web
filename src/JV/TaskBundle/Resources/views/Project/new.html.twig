@@ -1,16 +1,73 @@
-{% extends 'base.html.twig' %}
+{% extends 'JVTaskBundle::newDetail.html.twig' %}
+{% trans_default_domain 'JVTaskBundle' %} 
 
-{% block body %}
-    <h1>Project creation</h1>
+{% block title %}{{ parent() }} {{ 'project.new.title'|trans }}{% endblock %}
+{% block theader %}{{ 'project.new.header'|trans }} {% endblock %}
+{% block form %}
+{{ form_start(form, { 'attr' : {'novalidate': 'novalidate', 'role' : 'form'} }) }}
+                <fieldset>
+                <div class="form-group">
+                    {{ form_label(form.name) }}
+                    {{ form_widget(form.name, { 'attr' : {'class' : 'form-control'} }) }}
+                    <span class="text-danger">{{ form_errors(form.name) }}</span>
+                </div>
+                
+                <div class="form-group">
+			        {{ form_label(form.category) }}
+			        {{ form_widget(form.category, {'attr': {'class': 'form-control'}}) }}
+			        <span class="text-danger">{{ form_errors(form.category) }}</span>
+			    </div>
+			    
+			    <div class="form-group">
+			        {{ form_label(form.summary) }}
+			        {{ form_widget(form.summary, {'attr': {'class': 'form-control' }}) }}
+			        <span class="text-danger">{{ form_errors(form.summary) }}</span>
+			    </div>
 
-    {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <input type="submit" value="Create" />
-    {{ form_end(form) }}
-
-    <ul>
-        <li>
-            <a href="{{ path('project_index') }}">Back to the list</a>
-        </li>
-    </ul>
+			    <div class="form-group">
+			        {{ form_label(form.remuneration) }}
+			        {{ form_widget(form.remuneration, {'attr': {'class': 'form-control' }}) }}
+			        <span class="text-danger">{{ form_errors(form.remuneration) }}</span>
+			    </div>
+			    
+			    <div class="form-group">
+			        {{ form_label(form.link) }}
+			        {{ form_widget(form.link, {'attr': {'class': 'form-control' }}) }}
+			        <span class="text-danger">{{ form_errors(form.link) }}</span>
+			    </div>
+			   <div class="form-group">
+			        {{ form_label(form.status) }}
+			        {{ form_widget(form.status, {'attr': {'class': 'form-control' }}) }}
+			        <span class="text-danger">{{ form_errors(form.status) }}</span>
+			    </div>
+			    <div class="form-group">
+			        {{ form_label(form.startDate) }}
+			        {{ form_widget(form.startDate, {'attr': {'class': 'input-group date' }}) }}
+			        <span class="text-danger">{{ form_errors(form.startDate) }}</span>
+			    </div>
+	            <div class="form-group">
+			        {{ form_label(form.endDate) }}
+			        {{ form_widget(form.endDate, {'attr': {'class': 'input-group date' }}) }}
+			        <span class="text-danger">{{ form_errors(form.endDate) }}</span>
+			    </div>
+			    <div class="form-group">
+			        {{ form_label(form.enabled) }}
+			        {{ form_widget(form.enabled, {'attr': {'class': 'form-control' }}) }}
+			        <span class="text-danger">{{ form_errors(form.enabled) }}</span>
+			    </div>
+			</fieldset>
+				<div class="row">
+					<div class="col-sm-12 text-center">
+					    <p>
+					        {{ form_widget(form.save, {'attr': {'class': 'btn btn-success'}}) }}
+					        {{ form_end(form) }}
+                                <button class="btn btn-default btn-sm" href="{{ path('project_index') }}">
+                                	  	{{ 'action.backList'|trans }}                       
+                                </button>
+                        </p>
+                	</div>
+				</div>
 {% endblock %}
+
+
+			

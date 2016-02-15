@@ -4,6 +4,7 @@ namespace JV\TaskBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security as Sec;
 use Symfony\Component\Security\Core\Security;
 use Symfony\Component\Security\Core\SecurityContextInterface;
 use Symfony\Component\Security\Core\Exception\AuthenticationException;
@@ -26,6 +27,7 @@ class UserController extends SecurityController
 
     /**
      * Lists all User entities.
+     * @Sec("has_role('ROLE_APP_ADMIN')")
      *
      */
     public function listAction()
@@ -35,7 +37,7 @@ class UserController extends SecurityController
         $users = $em->getRepository('JVTaskBundle:User')->findAll();
         
         if (count($users) === 0) {
-            return $this->render('JVTaskBundle:User:list.html.twig', array("flashnousers" => true));
+            return $this->render('JVTaskBundle:User:index.html.twig', array("flashnousers" => true));
         }
 
         return $this->render('JVTaskBundle:User:list.html.twig', array(
@@ -45,12 +47,17 @@ class UserController extends SecurityController
 
     /**
      * Creates a new User entity.
+     * @Sec("has_role('ROLE_APP_ADMIN')")
      *
      */
     public function newAction(Request $request)
     {
         $user = new User();
         $form = $this->createForm('JV\TaskBundle\Form\UserType', $user);
+        $encoder = $this->container->get('security.password_encoder');
+        $encoded = $encoder->encodePassword($user, $user->getPlainPassword());
+        $user->setPassword($encoded);
+        
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -69,6 +76,7 @@ class UserController extends SecurityController
 
     /**
      * Finds and displays a User entity.
+     * @Sec("has_role('ROLE_APP_ADMIN')")
      *
      */
     public function showAction(User $user)
@@ -83,12 +91,17 @@ class UserController extends SecurityController
 
     /**
      * Displays a form to edit an existing User entity.
+     * @Sec("has_role('ROLE_APP_ADMIN')")
      *
      */
     public function editAction(Request $request, User $user)
     {
         $deleteForm = $this->createDeleteForm($user);
         $editForm = $this->createForm('JV\TaskBundle\Form\UserType', $user);
+        $encoder = $this->container->get('security.password_encoder');
+        $encoded = $encoder->encodePassword($user, $user->getPlainPassword());
+        $user->setPassword($encoded);
+        
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
@@ -108,6 +121,7 @@ class UserController extends SecurityController
 
     /**
      * Deletes a User entity.
+     * @Sec("has_role('ROLE_APP_ADMIN')")
      *
      */
     public function deleteAction(Request $request, User $user)
@@ -130,6 +144,8 @@ class UserController extends SecurityController
      * @param User $user The User entity
      *
      * @return \Symfony\Component\Form\Form The form
+     * @Sec("has_role('ROLE_APP_ADMIN')")
+     *
      */
     private function createDeleteForm(User $user)
     {

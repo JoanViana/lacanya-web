@@ -10,16 +10,19 @@ modal:
         label: 'Login'
         remember: "Recuérdame"
     logout:
-        label: 'Login'
+        label: 'Logout'
         confirm: '¿Seguro que quieres salir?'
-        
 form:
-    email:
-        label: 'Email'
-        placeholder: 'Email'
-    password:
-        label: 'Contraseña'
-        placeholder: 'Contraseña'
+    id:  'Id' 
+    name:  'Nombre' 
+    username: 'Usuario'
+    description: 'Descripción' 
+    summary: 'Resumen' 
+    firstname: 'Nombre'
+    lastname: 'Apellido'
+    email: 'Email'
+    status: 'Estado'
+    password: 'Contraseña'
 
 button:
     login: 'Login'
@@ -99,3 +102,30 @@ contact:
         label: 'Introduce la razón'
     body:
         label: 'Introduce el mensaje'
+        
+usernav:
+    register:
+        header: 'Registro de usuario'
+        title: 'Registro de usuario'
+    login:
+        header: 'Login de usuario'
+        title: 'Login de usuario'
+    confirmation:
+        header: 'Confirmación de registro'
+        title: 'Confirmación de registro'
+    edit:
+        header: 'Editar el perfil'
+        title: 'Editar el perfil'
+    show:
+        header: 'Perfil de usuario'
+        title: 'Perfil de usuario'
+    pass:
+        header: 'Cambiar contraseña'
+        title: 'Cambiar contraseña'
+        
+link:
+    web: 'Website'
+    task: 'Intranet'
+    
+action:
+    logout: 'Logout'

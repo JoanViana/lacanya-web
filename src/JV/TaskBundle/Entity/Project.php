@@ -18,8 +18,7 @@ class Project
     
     public function __construct()
     {
-        $this->assignments = new ArrayCollection();
-    	$this->tasks = new ArrayCollection();
+        $this->tasks = new ArrayCollection();
     }
     
     /**
@@ -107,7 +106,7 @@ class Project
     /**
      * @var bool
      *
-     * @ORM\Column(name="Enabled", type="boolean")
+     * @ORM\Column(name="Enabled", type="boolean", nullable=true)
      * @Assert\NotBlank(message="as.nb")
      */
     private $enabled;
@@ -412,52 +411,11 @@ class Project
     }
     
     /**
-     * @ORM\OneToMany(targetEntity="Assignment", mappedBy="project", cascade={"persist","remove"})
-     * @Assert\NotBlank(message="as.nb")
-     */
-    protected $assignments;
-    
-    
-    /**
      * @ORM\OneToMany(targetEntity="Task", mappedBy="project", cascade={"persist","remove"})
      * @Assert\NotBlank(message="as.nb")
      */
     protected $tasks;
     
-    /**
-     * Add assignment
-     *
-     * @param \JV\TaskBundle\Entity\Assignment $assignment
-     *
-     * @return Project
-     */
-    public function addAssignment(\JV\TaskBundle\Entity\Assignment $assignment)
-    {
-        $this->assignments[] = $assignment;
-
-        return $this;
-    }
-
-    /**
-     * Remove assignment
-     *
-     * @param \JV\TaskBundle\Entity\Assignment $assignment
-     */
-    public function removeAssignment(\JV\TaskBundle\Entity\Assignment $assignment)
-    {
-        $this->assignments->removeElement($assignment);
-    }
-
-    /**
-     * Get assignments
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getAssignments()
-    {
-        return $this->assignments;
-    }
-
     /**
      * Add task
      *

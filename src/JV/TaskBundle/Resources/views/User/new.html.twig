@@ -1,16 +1,8 @@
-{% extends 'base.html.twig' %}
+{% extends 'JVTaskBundle::new.html.twig' %}
+{% trans_default_domain 'JVTaskBundle' %} 
 
-{% block body %}
-    <h1>User creation</h1>
-
-    {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <input type="submit" value="Create" />
-    {{ form_end(form) }}
-
-    <ul>
-        <li>
-            <a href="{{ path('user_index') }}">Back to the list</a>
-        </li>
-    </ul>
+{% block title %}{{ parent() }} {{ 'user.new.title'|trans }}{% endblock %}
+{% block theader %}{{ 'user.new.header'|trans }} {% endblock %}
+{% block tout %}
+    <a class="btn btn-default btn-sm" href="{{ path('user_index') }}">{{ 'action.backList'|trans }}</a>                       
 {% endblock %}

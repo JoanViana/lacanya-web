@@ -19,7 +19,7 @@ jv_task:
 
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
-    prefix : /{_locale}/intranet/admin/
+    prefix : /{_locale}/intranet/log/
     requirements:
         _locale: '%app.locales%'
 

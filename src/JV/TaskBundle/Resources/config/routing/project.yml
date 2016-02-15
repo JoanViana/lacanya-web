@@ -33,3 +33,27 @@ project_delete:
     methods:  DELETE
     requirements:
         id:  \d+ 
+    
+project_listByCategory:
+    path:     /{id}/listbycategory
+    defaults: { _controller: "JVTaskBundle:Project:listByCategory" }
+    methods:  GET
+    requirements:
+        id:  \d+ 
+
+project_listAllByCategory:
+    path:     /listallbycategory
+    defaults: { _controller: "JVTaskBundle:Project:listAllByCategory" }
+    methods:  GET
+
+project_listByUser:
+    path:     /{id}/listbyuser
+    defaults: { _controller: "JVTaskBundle:Project:listByUser" }
+    methods:  GET
+    requirements:
+        id:  \d+
+
+project_listAllByUser:
+    path:     /listallbyuser
+    defaults: { _controller: "JVTaskBundle:Project:listAllByUser" }
+    methods:  GET

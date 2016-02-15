@@ -10,16 +10,20 @@ modal:
         label: 'Login'
         remember: "Remember Me"
     logout:
-        label: 'Login'
+        label: 'Logout'
         confirm: 'Are you sure you want to quit?'
         
 form:
-    email:
-        label: 'Email'
-        placeholder: 'Email'
-    password:
-        label: 'Password'
-        placeholder: 'Password'
+    id:  'Id' 
+    name:  'Name' 
+    username: 'Username'
+    description: 'Description' 
+    summary: 'Summary' 
+    firstname: 'First Name'
+    lastname: 'Last Name'
+    email: 'Email'
+    status: 'Status'
+    password: 'Password'
 
 button:
     login: 'Login'
@@ -29,7 +33,8 @@ button:
     next: 'Next'
     save: 'Save'
     reset: 'Reset'
-
+action:
+    logout: 'Logout'
 about:
     quisom:
         content1: "We are a group of technicians from the world of architecture and engineering, residents Horta Sud, which result from living with cane, Arundo donax L. we developed interest in this plant species due to its potential as construction element. "
@@ -100,3 +105,30 @@ contact:
         label: 'Enter the reason'
     body:
         label: 'Write message'
+
+usernav:
+    register:
+        header: 'User registration'
+        title: 'User registration'
+    login:
+        header: 'Login'
+        title: 'Login'
+    confirmation:
+        header: 'Register confirmation'
+        title: 'Register confirmation'
+    edit:
+        header: 'Edit profile'
+        title: 'Edit profile'
+    show:
+        header: 'Profile'
+        title: 'Profile'
+    pass:
+        header: 'Change password'
+        title: 'Change password'
+        
+link:
+    web: 'Website'
+    task: 'Intranet'
+    
+action:
+logout: 'Logout'

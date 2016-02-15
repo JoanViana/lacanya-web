@@ -1,13 +1,47 @@
-#JVTaskBundle.es.yml 
-general:
-    product: 'Product'
+#JVTaskBundle.en.yml
+nav:
+    start: 'Home'
+    user: 'User' 
     category: 'Category'
-    person: 'Person'
-    user: 'User'
-    home: 'Home'
+    type: 'Type'
+    task: 'Task'
+    project: 'Project'
+modal:
+    login:
+        label: 'Login'
+        remember: "Remember Me"
+    logout:
+        label: 'Logout'
+        confirm: 'Are you sure you want to quit?'
+form:
+    id:  'Id' 
+    name:  'Name' 
+    username: 'Username'
+    description: 'Description' 
+    summary: 'Summary' 
+    firstname: 'First Name'
+    lastname: 'Last Name'
+    firstName: 'First Name'
+    lastName: 'Last Name'
+    email: 'Email'
+    status: 'Status'
+    password: 'Password'
+    remuneration: 'Remuneration' 
+    link: 'Link'
+    phone: 'Phone'
+    createdAt: 'Created at'
+    updatedAt: 'Updated at'
+    checked: 'Checked'
+    enabled: 'Enabled'
+    startdate: 'Start Date'
+    enddate: 'End Date'
+    startDate: 'Start Date'
+    endDate: 'End Date'
+    roles: 'Role'
+
 action:
+    label: 'Actions'
     list: 'List'
-    listProducts: 'List Products'
     new: 'New'
     show: 'Details'
     edit: 'Edit'
@@ -16,12 +50,16 @@ action:
     login: 'Login'
     logout: 'Logout'
     register: 'Register' 
-    save: 'Save' 
-    saveAndAdd: 'Save and continue'
-exp:
+    cancel: 'Cancel'
+    previous: 'Previous'
+    next: 'Next'
+    save: 'Save'
+    reset: 'Reset'
+    backList: 'Back to the list'
+ 
+general:
     yes: 'Yes'
     no: 'No'
-    by: 'by'
 flash:
     success: 'Success!'
     error: 'Error!'
@@ -49,21 +87,89 @@ flash:
         add: "Person %personname% stored"
         remove: "Person %personname% removed"
         update: "Person %personname% updated"
-      
-form:
-    emailUsername: 'Email or username'
-    password: 'Password'
-    category: 'Category'
-    username: 'User'
-    email: 'Email'
-    ch:
-        male: "Male"
-        female: "Female"
-link:
-    login:
-        email: 'Sign in by email'
-        username: 'Sign in by username'
+task:
+    status:
+        label: 'Status'
+        proposed: 'Proposed'
+        working: 'Working'
+        active: 'Active'
+        checked: 'Checked'
+        finished: 'Finished'
+        cancelled: 'Cancelled'
+    list:
+        title: 'Product list' 
+        header: 'Product list'
+    new:
+        title: 'New task' 
+        header: 'New task'
+    edit:
+        title: 'Edit task %taskname%' 
+        header: 'Edit task %taskname%'
+    show:
+        title: 'Details of task %taskname%' 
+        header: 'Details of task %taskname%'    
+    listByType:
+        title: 'List tasks of %typename% type' 
+        header: 'List tasks of %typename% type'
+    listAllByType:
+        title: 'List tasks by type' 
+        header: 'List tasks by type' 
+    listByProject:
+        title: 'List tasks of %projectname% project' 
+        header: 'List tasks of %projectname% project'
+    listAllByProject:
+        title: 'List tasks by project' 
+        header: 'List tasks by project' 
+    listByUser:
+        title: 'List tasks of %username% user' 
+        header: 'List tasks of %username% user'
+    listAllByUser:
+        title: 'List tasks by user' 
+        header: 'List tasks by user' 
+
+category: 
+    list:
+        title: 'Category list' 
+        header: 'Category list'
+    new:
+        title: 'New category' 
+        header: 'New category'
+    edit:
+        title: 'Edit category %categoryname%' 
+        header: 'Edit category %categoryname%'
+    show:
+        title: 'Details of category %categoryname%' 
+        header: 'Details of category %categoryname%' 
+
+type: 
+    list:
+        title: 'Type list' 
+        header: 'Type list'
+    new:
+        title: 'New type' 
+        header: 'New type'
+    edit:
+        title: 'Edit type %typename%' 
+        header: 'Edit type %typename%'
+    show:
+        title: 'Details of type %typename%' 
+        header: 'Details of type %typename%' 
+
 user:
+    list:
+        title: 'User list'
+        header: 'User list'
+    new:
+        title: 'New user' 
+        header: 'New user'
+    edit:
+        title: 'Edit user %username%' 
+        header: 'Edit user %username%'
+    show:
+        title: 'Details of user %username%' 
+        header: 'Details of user %username%'
+
+usernav:
     register:
         header: 'User registration'
         title: 'User registration'
@@ -82,105 +188,37 @@ user:
     pass:
         header: 'Change password'
         title: 'Change password'
-    
-
-product: 
-    id:  'Id' 
-    name:  'Name' 
-    description: 'Description' 
-    price: 'Price' 
-    category: 'Category' 
+        
+project:
+    status:
+        label: 'Status'
+        proposed: 'Proposed'
+        working: 'Working'
+        active: 'Active'
+        finished: 'Finished'
+        cancelled: 'Cancelled'
     list:
         title: 'Product list' 
         header: 'Product list'
     new:
-        title: 'New product' 
-        header: 'New product'
+        title: 'New project' 
+        header: 'New project'
     edit:
-        title: 'Edit product %productname%' 
-        header: 'Edit product %productname%'
+        title: 'Edit project %projectname%' 
+        header: 'Edit project %projectname%'
     show:
-        title: 'Details of product %productname%' 
-        header: 'Details of product %productname%'    
-    listByCat:
-        title: 'List products of %categoryname% category' 
-        header: 'List products of %categoryname% category'
-    listAllByCat:
-        title: 'List products by category' 
-        header: 'List products by category' 
-    create:
-        title: 'Create default product'
-        header: 'Create default product'
+        title: 'Details of project %projectname%' 
+        header: 'Details of project %projectname%'    
+    listByCategory:
+        title: 'List projects of %categoryname% category' 
+        header: 'List projects of %categoryname% category'
+    listAllByCategory:
+        title: 'List projects by category' 
+        header: 'List projects by category' 
 
-category: 
-    id:  'Id' 
-    name:  'Name' 
-    list:
-        title: 'Category list' 
-        header: 'Category list'
-    new:
-        title: 'New category' 
-        header: 'New category'
-    edit:
-        title: 'Edit category %categoryname%' 
-        header: 'Edit category %categoryname%'
-    show:
-        title: 'Details of category %categoryname%' 
-        header: 'Details of category %categoryname%' 
-    create:
-        title: 'Create default category'
-        header: 'Create default category'
-
-person: 
-    id:  'Id' 
-    name:  'Name' 
-    age: 'Age'
-    birthDate: 'Birth date'
-    height: 'Height'
-    email: 'Email'
-    phone: 'Phone'
-    gender: 'Gender'
-    descends: 'Descends'
-    vehicle: 'private vehicle'
-    preferredLanguage: 'Preferred language'
-    englishLevel: 'English Level'
-    personalWebSite: 'Personal website'
-    cardNumber: 'Card Number'
-    iban: 'IBAN'
-    list:
-        title: 'Person list' 
-        header: 'Person list'
-    new:
-        title: 'New person' 
-        header: 'New person'
-    edit:
-        title: 'Edit person %personname%' 
-        header: 'Edit person %personname%'
-    show:
-        title: 'Details of person %personname%' 
-        header: 'Details of person %personname%' 
-    create:
-        title: 'Create default person'
-        header: 'Create default person'
-
-user: 
-    id:  'Id' 
-    username:  'Username' 
-    password: 'Password'
-    role: 'Role'
-    role_user: 'User'
-    role_admin: 'Administrator'
-    email: 'Email'
-    list:
-        title: 'User list'
-        header: 'User list'
-    new:
-        title: 'New user' 
-        header: 'New user'
-    edit:
-        title: 'Edit user %username%' 
-        header: 'Edit user %username%'
-    show:
-        title: 'Details of user %username%' 
-        header: 'Details of user %username%'
-userdefaulttitle: 'Deafult credentials'
+link:
+    web: 'Website'
+    task: 'Intranet'
+    
+action:
+logout: 'Logout'

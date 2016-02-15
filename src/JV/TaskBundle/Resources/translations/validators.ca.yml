@@ -1,0 +1,11 @@
+as:
+    nb: 'Aquest camp no pot estr buit'
+    invalid: 'No és un valor vàlid'
+    date: 'Introdueix una data vàlida'
+    email: "L'email '{{ value }}' no és un email vàlid"
+    url: "La url '{{ value }}'no és una url vàlida"
+    card: "La tarjeta introduïda no es vàlid"
+    iban: "L'IBAN introduït no ás vàlid" 
+    descends:
+        min: 'La remuneració mínima és {{ limit }}'
+        max: 'La remuneració màxima és {{ limit }}'

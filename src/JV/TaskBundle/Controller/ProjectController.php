@@ -4,10 +4,12 @@ namespace JV\TaskBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 
 use JV\TaskBundle\Entity\Project;
 use JV\TaskBundle\Form\ProjectType;
 use JV\TaskBundle\Entity\Category;
+use JV\TaskBundle\Entity\User;
 
 /**
  * Project controller.
@@ -17,6 +19,7 @@ class ProjectController extends Controller
 {
     /**
      * Lists all Project entities.
+     * @Security("has_role('ROLE_APP_ADMIN'||'ROLE_USER')")
      *
      */
     public function listAction()
@@ -26,7 +29,7 @@ class ProjectController extends Controller
         $projects = $em->getRepository('JVTaskBundle:Project')->findAll();
 
         if (count($projects) === 0) {
-            return $this->render('JVTaskBundle:Project:list.html.twig', array("flashnoprojects" => true));
+            return $this->render('JVTaskBundle:Project:index.html.twig', array("flashnoprojects" => true));
         }
         
         return $this->render('JVTaskBundle:Project:list.html.twig', array(
@@ -36,6 +39,7 @@ class ProjectController extends Controller
 
     /**
      * Creates a new Project entity.
+     * @Security("has_role('ROLE_APP_ADMIN')")
      *
      */
     public function newAction(Request $request)
@@ -60,6 +64,7 @@ class ProjectController extends Controller
 
     /**
      * Finds and displays a Project entity.
+     * @Security("has_role('ROLE_APP_ADMIN'||'ROLE_USER')")
      *
      */
     public function showAction(Project $project)
@@ -74,6 +79,7 @@ class ProjectController extends Controller
 
     /**
      * Displays a form to edit an existing Project entity.
+     * @Security("has_role('ROLE_APP_ADMIN')")
      *
      */
     public function editAction(Request $request, Project $project)
@@ -99,6 +105,7 @@ class ProjectController extends Controller
 
     /**
      * Deletes a Project entity.
+     * @Security("has_role('ROLE_APP_ADMIN')")
      *
      */
     public function deleteAction(Request $request, Project $project)
@@ -121,6 +128,8 @@ class ProjectController extends Controller
      * @param Project $project The Project entity
      *
      * @return \Symfony\Component\Form\Form The form
+     * @Security("has_role('ROLE_APP_ADMIN')")
+     *
      */
     private function createDeleteForm(Project $project)
     {
@@ -130,16 +139,25 @@ class ProjectController extends Controller
             ->getForm()
         ;
     }
-
+    
+    /**
+     * 
+     * @Security("has_role('ROLE_APP_ADMIN'||'ROLE_USER')")
+     *
+     */
     public function listByCategoryAction(Category $category) {
 
         $projects = $category->getProjects();
-
-        return $this->render('JVTaskBundle:Project/listByCategory.html.twig', array('projects' => $projects,
+        return $this->render('JVTaskBundle:Project:listByCategory.html.twig', array('projects' => $projects,
         'category'=> $category
         ));
     }
 
+    /**
+     * 
+     * @Security("has_role('ROLE_APP_ADMIN'||'ROLE_USER')")
+     *
+     */
     public function listAllByCategoryAction() {
         
         $em = $this->getDoctrine()->getManager();
@@ -147,13 +165,11 @@ class ProjectController extends Controller
         $categories = $em->getRepository('JVTaskBundle:Category')->findAll();
         
         if (count($categories) === 0) {
-
-            return $this->render('JVTaskBundle:Project:list.html.twig', array('flashnocategories' => true));
+            return $this->render('JVTaskBundle:Project:index.html.twig', array('flashnocategories' => true));
         }
 
         return $this->render('JVTaskBundle:Project:listAllByCategory.html.twig', array('categories' => $categories,
         ));
     }
 
-    
 }

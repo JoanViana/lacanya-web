@@ -4,6 +4,8 @@ namespace JV\TaskBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+
 
 use JV\TaskBundle\Entity\Type;
 use JV\TaskBundle\Form\TypeType;
@@ -16,6 +18,7 @@ class TypeController extends Controller
 {
     /**
      * Lists all Type entities.
+     * @Security("has_role('ROLE_APP_ADMIN'||'ROLE_USER')")
      *
      */
     public function listAction()
@@ -25,7 +28,7 @@ class TypeController extends Controller
         $types = $em->getRepository('JVTaskBundle:Type')->findAll();
         
         if (count($types) === 0) {
-            return $this->render('JVTaskBundle:Type:list.html.twig', array("flashnotypes" => true));
+            return $this->render('JVTaskBundle:Type:index.html.twig', array("flashnotypes" => true));
         }
 
         return $this->render('JVTaskBundle:Type:list.html.twig', array(
@@ -35,6 +38,7 @@ class TypeController extends Controller
 
     /**
      * Creates a new Type entity.
+     * @Security("has_role('ROLE_APP_ADMIN')")
      *
      */
     public function newAction(Request $request)
@@ -59,6 +63,7 @@ class TypeController extends Controller
 
     /**
      * Finds and displays a Type entity.
+     * @Security("has_role('ROLE_APP_ADMIN'||'ROLE_USER')")
      *
      */
     public function showAction(Type $type)
@@ -73,6 +78,7 @@ class TypeController extends Controller
 
     /**
      * Displays a form to edit an existing Type entity.
+     * @Security("has_role('ROLE_APP_ADMIN')")
      *
      */
     public function editAction(Request $request, Type $type)
@@ -98,6 +104,7 @@ class TypeController extends Controller
 
     /**
      * Deletes a Type entity.
+     * @Security("has_role('ROLE_APP_ADMIN')")
      *
      */
     public function deleteAction(Request $request, Type $type)
@@ -120,6 +127,8 @@ class TypeController extends Controller
      * @param Type $type The Type entity
      *
      * @return \Symfony\Component\Form\Form The form
+     * @Security("has_role('ROLE_APP_ADMIN')")
+     *
      */
     private function createDeleteForm(Type $type)
     {

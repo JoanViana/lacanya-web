@@ -33,3 +33,39 @@ task_delete:
     methods:  DELETE
     requirements:
         id:  \d+ 
+
+task_listByType:
+    path:     /{id}/listbytype
+    defaults: { _controller: "JVTaskBundle:Task:listByType" }
+    methods:  GET
+    requirements:
+        id:  \d+ 
+
+task_listAllByType:
+    path:     /listallbytype
+    defaults: { _controller: "JVTaskBundle:Task:listAllByType" }
+    methods:  GET
+    
+task_listByProject:
+    path:     /{id}/listbyproject
+    defaults: { _controller: "JVTaskBundle:Task:listByProject" }
+    methods:  GET
+    requirements:
+        id:  \d+ 
+
+task_listAllByProject:
+    path:     /listallbyproject
+    defaults: { _controller: "JVTaskBundle:Task:listAllByProject" }
+    methods:  GET
+
+task_listByUser:
+    path:     /{id}/listbyuser
+    defaults: { _controller: "JVTaskBundle:Task:listByUser" }
+    methods:  GET
+    requirements:
+        id:  \d+
+
+task_listAllByUser:
+    path:     /listallbyuser
+    defaults: { _controller: "JVTaskBundle:Task:listAllByUser" }
+    methods:  GET

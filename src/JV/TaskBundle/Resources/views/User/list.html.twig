@@ -1,47 +1,47 @@
-{% extends 'base.html.twig' %}
+{% extends 'JVTaskBundle::list.html.twig' %}
+{% trans_default_domain 'JVTaskBundle' %} 
 
-{% block body %}
-    <h1>User list</h1>
+{% block title %}{{ parent() }} {{ 'user.list.title'|trans }}{% endblock %}
+{% block table %}
+{{ parent() }}
+    {% block theader %}{{ 'user.list.header'|trans }}{% endblock %}
+    {% block thead %}
 
-    <table>
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Firstname</th>
-                <th>Lastname</th>
-                <th>Phone</th>
-                <th>Createdat</th>
-                <th>Updatedat</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
+		<th>{{ 'form.id'|trans }}</th>
+		<th>{{ 'form.username'|trans }}</th>
+        <th>{{ 'form.email'|trans }}</th>
+        <th>{{ 'form.roles'|trans }}</th>
+        <th>{{ 'form.createdAt'|trans }}</th>
+        <th>{{ 'form.updatedAt'|trans }}</th>
+        <th>{{ 'form.enabled'|trans }}</th>
+        <th>{{ 'action.label'|trans }}</th>
+    {% endblock %}
+    {% block tbody %}
         {% for user in users %}
             <tr>
                 <td><a href="{{ path('user_show', { 'id': user.id }) }}">{{ user.id }}</a></td>
-                <td>{{ user.firstName }}</td>
-                <td>{{ user.lastName }}</td>
-                <td>{{ user.phone }}</td>
+                <td>{{ user.username }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.roles[0] }}</td>
                 <td>{% if user.createdAt %}{{ user.createdAt|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>{% if user.updatedAt %}{{ user.updatedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('user_show', { 'id': user.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('user_edit', { 'id': user.id }) }}">edit</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
+                <td>{% if user.enabled %}{{ 'general.yes'|trans }}{% else %}{{ 'general.no'|trans }}{% endif %}</td>
+                <td class="actions">
+                <ul>
+                    <li>
+                        <a class="btn btn-default btn-sm" href="{{ path('user_show', { 'id': user.id }) }}">{{ 'action.show'|trans }}</a>
+                    </li>
+                {% if is_granted('ROLE_APP_ADMIN') %}
+                    <li>
+                        <a class="btn btn-default btn-sm" href="{{ path('user_edit', { 'id': user.id }) }}">{{ 'action.edit'|trans }}</a>
+                    </li>
+                {% endif %}
+                </ul>
+            </td>
+        </tr>
         {% endfor %}
-        </tbody>
-    </table>
-
-    <ul>
-        <li>
-            <a href="{{ path('user_new') }}">Create a new entry</a>
-        </li>
-    </ul>
+    {% endblock %}
+    {% block tout %}
+        <a class="btn btn-default btn-sm" href="{{ path('user_new') }}">Create a new entry</a>
+    {% endblock %}
 {% endblock %}

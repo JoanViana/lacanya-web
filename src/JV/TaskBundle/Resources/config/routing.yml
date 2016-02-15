@@ -1,10 +1,6 @@
 jv_task_user:
     resource: "@JVTaskBundle/Resources/config/routing/user.yml"
     prefix:   /user
-    
-jv_task_assignment:
-    resource: "@JVTaskBundle/Resources/config/routing/assignment.yml"
-    prefix:   /assignment
 
 jv_task_project:
     resource: "@JVTaskBundle/Resources/config/routing/project.yml"
@@ -24,7 +20,7 @@ jv_task_type:
     
 jv_task_homepage:
     path:     /homepage
-    defaults: { _controller: JVTaskBundle:Default:index }
+    defaults: { _controller: JVTaskBundle:Task:list }
 
 fos_user_security_login_username:
     defaults: { _controller: JVTaskBundle:User:login }

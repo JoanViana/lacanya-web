@@ -1,0 +1,45 @@
+{% extends 'JVTaskBundle::list.html.twig' %}
+{% trans_default_domain 'JVTaskBundle' %} 
+
+{% block title %}{{ parent() }} {{ 'project.listByCategory.title'|trans({'%categoryname%' : category.name }) }}{% endblock %}
+{% block table %}
+{{ parent() }}
+    {% block theader %}{{ 'project.listByCategory.title'|trans({'%categoryname%' : category.name }) }}{% endblock %}
+    {% block thead %}
+
+		<th>{{ 'form.id'|trans }}</th>
+        <th>{{ 'form.name'|trans }}</th>
+        <th>{{ 'form.status'|trans }}</th>
+        <th>{{ 'form.endDate'|trans }}</th>
+        <th>{{ 'form.updatedAt'|trans }}</th>
+        <th>{{ 'form.enabled'|trans }}</th>
+        <th>{{ 'action.label'|trans }}</th>
+    {% endblock %}
+    {% block tbody %}
+        {% for project in projects %}
+            <tr>
+                <td><a href="{{ path('project_show', { 'id': project.id }) }}">{{ project.id }}</a></td>
+                <td>{{ project.name }}</td>
+                <td>{{ project.status }}</td>
+                <td>{% if project.endDate %}{{ project.endDate|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if project.updatedAt %}{{ project.updatedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if project.enabled %}{{ 'general.yes'|trans }}{% else %}{{ 'general.no'|trans }}{% endif %}</td>
+                <td class="actions">
+                <ul>
+                    <li>
+                        <a class="btn btn-default btn-sm" href="{{ path('project_show', { 'id': project.id }) }}">{{ 'action.show'|trans }}</a>
+                    </li>
+                {% if is_granted('ROLE_APP_ADMIN') %}
+                    <li>
+                        <a class="btn btn-default btn-sm" href="{{ path('project_edit', { 'id': project.id }) }}">{{ 'action.edit'|trans }}</a>
+                    </li>
+                {% endif %}
+                </ul>
+            </td>
+        </tr>
+        {% endfor %}
+    {% endblock %}
+    {% block tout %}
+        <a class="btn btn-default btn-sm" href="{{ path('project_new') }}">Create a new entry</a>
+    {% endblock %}
+{% endblock %}

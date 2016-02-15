@@ -1,47 +1,42 @@
-{% extends 'base.html.twig' %}
+{% extends 'JVTaskBundle::list.html.twig' %}
+{% trans_default_domain 'JVTaskBundle' %} 
 
-{% block body %}
-    <h1>Type list</h1>
+{% block title %}{{ parent() }} {{ 'type.list.title'|trans }}{% endblock %}
+{% block table %}
+{{ parent() }}
+    {% block theader %}{{ 'type.list.header'|trans }}{% endblock %}
+    {% block thead %}
 
-    <table>
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Createdat</th>
-                <th>Updatedat</th>
-                <th>Enabled</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for type in types %}
-            <tr>
-                <td><a href="{{ path('type_show', { 'id': type.id }) }}">{{ type.id }}</a></td>
-                <td>{{ type.name }}</td>
-                <td>{{ type.description }}</td>
-                <td>{% if type.createdAt %}{{ type.createdAt|date('Y-m-d H:i:s') }}{% endif %}</td>
-                <td>{% if type.updatedAt %}{{ type.updatedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
-                <td>{% if type.enabled %}Yes{% else %}No{% endif %}</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('type_show', { 'id': type.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('type_edit', { 'id': type.id }) }}">edit</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
+		<th>{{ 'form.id'|trans }}</th>
+        <th>{{ 'form.name'|trans }}</th>
+        <th>{{ 'form.updatedAt'|trans }}</th>
+        <th>{{ 'form.enabled'|trans }}</th>
+        <th>{{ 'action.label'|trans }}</th>
+    {% endblock %}
+    {% block tbody %}
+
+	    {% for type in types %}
+	    <tr>
+            <td><a href="{{ path('type_show', { 'id': type.id }) }}">{{ type.id }}</a></td>
+            <td>{{ type.name }}</td>
+            <td>{% if type.updatedAt %}{{ type.updatedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+            <td>{% if type.enabled %}{{ 'general.yes'|trans }}{% else %}{{ 'general.no'|trans }}{% endif %}</td>
+            <td class="actions">
+                <ul>
+                    <li>
+                        <a  class="btn btn-default btn-sm" href="{{ path('type_show', { 'id': type.id }) }}">{{ 'action.show'|trans }}</a>
+                    </li>
+                {% if is_granted('ROLE_APP_ADMIN') %}
+                    <li>
+                        <a class="btn btn-default btn-sm" href="{{ path('type_edit', { 'id': type.id }) }}">{{ 'action.edit'|trans }}</a>
+                    </li>
+                {% endif %}
+                </ul>
+            </td>
+        </tr>
         {% endfor %}
-        </tbody>
-    </table>
-
-    <ul>
-        <li>
-            <a href="{{ path('type_new') }}">Create a new entry</a>
-        </li>
-    </ul>
+    {% endblock %}
+    {% block tout %}
+        <a class="btn btn-default btn-sm" href="{{ path('type_new') }}">Create a new entry</a>
+    {% endblock %}
 {% endblock %}

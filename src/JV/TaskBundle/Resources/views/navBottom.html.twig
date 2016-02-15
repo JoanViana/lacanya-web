@@ -1,0 +1,61 @@
+  {% trans_default_domain 'JVTaskBundle' %} 
+    {% block navBottom %}        
+        <nav class="navbar navbar-fixed-bottom hidden-sm hidden-md hidden-lg">
+            <div class="container">
+                <div class="navbar-header">
+                    
+            {% if is_granted("IS_AUTHENTICATED_FULLY") %}
+                      <ul class="nav navbar-nav navbar-inverse navbar-right logout">
+                        <li id="logoutButton" class="dropdown">
+                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                               <span class="glyphicon glyphicon-user" aria-hidden="true"></span> 
+                               {{ app.user.username}} <span class="caret"></span></a>
+                          <ul class="dropdown-menu">
+                            <li><a href="{{ path('jv_web_index') }}">
+                                <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> 
+                                {{ 'link.task'|trans }}</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="{{ path('fos_user_profile_show') }}">
+                                <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> 
+                                {{ 'usernav.show.title'|trans }}</a></li>
+                            <li><a href="{{ path('fos_user_profile_edit') }}">
+                                <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                                {{ 'usernav.edit.title'|trans }}</a></li>
+                            <li><a href="{{ path('fos_user_change_password') }}"> 
+                            <span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> 
+                            {{ 'usernav.pass.title'|trans }}</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a data-toggle="modal" data-target="#logoutModal">
+                            <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> 
+                            {{ 'action.logout'|trans }}</a></li>
+                          </ul>
+                        </li>
+                      </ul>
+            {% else %}
+                    <ul class="nav navbar-nav login">
+                        <li id="loginButton"><a data-toggle="modal" data-target="#loginModal">
+                                <span class="glyphicon glyphicon-log-in"></span></a>
+                        </li>
+                    </ul>
+            {% endif %}
+            
+                    <ul class="nav navbar-nav navbar-right language">                    
+                        <li id="languageButton" class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            <span class="glyphicon glyphicon-flag"></span> {{ app.request.locale }} <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')|merge({'_locale': 'ca'})) }}">
+                                    ca</a></li>                          
+                                <li><a href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')|merge({'_locale': 'es'})) }}">
+                                    es</a></li>  
+                                <li><a href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')|merge({'_locale': 'en'})) }}">
+                                    en</a></li> 
+                            </ul>
+                        </li> 
+                    </ul>
+                    <!--<a class="navbar-brand" href="#inici_">laCanya estudis</a>-->
+
+                </div>
+            </div>
+        </nav>
+    {% endblock %}

@@ -11,6 +11,11 @@ var new_hide_time = 900;
 var new_show_time = 500;
 
 jQuery(document).ready(function ($) {
+    
+    $('.datepicker').datepicker({
+    format: 'mm/dd/yyyy',
+    startDate: '-3d'
+});
 
     $('.news-menu-link').click(function ()
     {

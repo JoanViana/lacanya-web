@@ -4,6 +4,8 @@ namespace JV\TaskBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+
 
 use JV\TaskBundle\Entity\Category;
 use JV\TaskBundle\Form\CategoryType;
@@ -16,6 +18,7 @@ class CategoryController extends Controller
 {
     /**
      * Lists all Category entities.
+     * @Security("has_role('ROLE_APP_ADMIN'||'ROLE_USER')")
      *
      */
     public function listAction()
@@ -25,7 +28,7 @@ class CategoryController extends Controller
         $categories = $em->getRepository('JVTaskBundle:Category')->findAll();
 
         if (count($categories) === 0) {
-            return $this->render('JVTaskBundle:Category:list.html.twig', array("flashnocategories" => true));
+            return $this->render('JVTaskBundle:Category:index.html.twig', array("flashnocategories" => true));
         }
 
         return $this->render('JVTaskBundle:Category:list.html.twig', array(
@@ -35,6 +38,7 @@ class CategoryController extends Controller
 
     /**
      * Creates a new Category entity.
+     * @Security("has_role('ROLE_APP_ADMIN')")
      *
      */
     public function newAction(Request $request)
@@ -59,6 +63,7 @@ class CategoryController extends Controller
 
     /**
      * Finds and displays a Category entity.
+     * @Security("has_role('ROLE_APP_ADMIN'||'ROLE_USER')")
      *
      */
     public function showAction(Category $category)
@@ -73,6 +78,7 @@ class CategoryController extends Controller
 
     /**
      * Displays a form to edit an existing Category entity.
+     * @Security("has_role('ROLE_APP_ADMIN')")
      *
      */
     public function editAction(Request $request, Category $category)
@@ -98,6 +104,7 @@ class CategoryController extends Controller
 
     /**
      * Deletes a Category entity.
+     * @Security("has_role('ROLE_APP_ADMIN')")
      *
      */
     public function deleteAction(Request $request, Category $category)
@@ -120,6 +127,8 @@ class CategoryController extends Controller
      * @param Category $category The Category entity
      *
      * @return \Symfony\Component\Form\Form The form
+     * @Security("has_role('ROLE_APP_ADMIN')")
+     *
      */
     private function createDeleteForm(Category $category)
     {

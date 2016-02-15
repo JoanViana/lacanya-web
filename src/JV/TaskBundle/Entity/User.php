@@ -6,12 +6,15 @@ use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * User
  *
  * @ORM\Table(name="fos_user")
  * @ORM\Entity(repositoryClass="JV\TaskBundle\Repository\UserRepository")
+ * @UniqueEntity("username")
+ * @UniqueEntity("email")
  * @ORM\HasLifecycleCallbacks()
  */
 
@@ -21,7 +24,6 @@ class User extends BaseUser
     {
         parent::__construct();
         $this->roles = array('ROLE_USER');
-    	$this->assignments = new ArrayCollection();
         $this->tasks = new ArrayCollection();
 
     }
@@ -34,7 +36,7 @@ class User extends BaseUser
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     protected $id;
-
+    
     /**
      * @var string
      *
@@ -221,51 +223,11 @@ class User extends BaseUser
     }
     
     /**
-     * @ORM\OneToMany(targetEntity="Assignment", mappedBy="user", cascade={"persist","remove"})
-     * @Assert\NotBlank(message="as.nb")
-     */
-    protected $assignments;
-    
-    /**
      * @ORM\OneToMany(targetEntity="Task", mappedBy="user", cascade={"persist","remove"})
      * @Assert\NotBlank(message="as.nb")
      */
     protected $tasks;
     
-    /**
-     * Add assignment
-     *
-     * @param \JV\TaskBundle\Entity\Assignment $assignment
-     *
-     * @return User
-     */
-    public function addAssignment(\JV\TaskBundle\Entity\Assignment $assignment)
-    {
-        $this->assignments[] = $assignment;
-
-        return $this;
-    }
-
-    /**
-     * Remove assignment
-     *
-     * @param \JV\TaskBundle\Entity\Assignment $assignment
-     */
-    public function removeAssignment(\JV\TaskBundle\Entity\Assignment $assignment)
-    {
-        $this->assignments->removeElement($assignment);
-    }
-
-    /**
-     * Get assignments
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getAssignments()
-    {
-        return $this->assignments;
-    }
-
     /**
      * Add task
      *

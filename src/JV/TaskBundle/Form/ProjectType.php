@@ -27,30 +27,30 @@ class ProjectType extends AbstractType
     {
         $builder
             ->add('name', TextType::class, array(
-                'label' => 'project.name.label'
+                'label' => 'form.name'
                 ,'required' => true
                 ,'empty_data' => null
                 ))
             ->add('category', EntityType::class, array(
                 'class' => 'JVTaskBundle:Category'
                 ,'choice_label' => 'name'
-                ,'label' => 'category.name.label'
+                ,'label' => 'nav.category'
                 ,'required' => true
                 ,'empty_data' => null
                 ))
             ->add('summary', TextareaType::class, array(
-                'label' => 'project.summary.label'
+                'label' => 'form.summary'
                 ,'required' => false
                 ))
             ->add('remuneration', MoneyType::class, array(
-                'label' => 'project.remuneration.label'
+                'label' => 'form.remuneration'
                 ,"currency" => "EUR"
                 ,"scale" => 2
                 ,"required" => true
                 ,"empty_data" => 0
                 ))
             ->add('link', UrlType::class, array(
-                'label' => 'project.link'
+                'label' => 'form.link'
                 ,"required" => false
                 ))
             ->add('status', ChoiceType::class, array(
@@ -60,36 +60,33 @@ class ProjectType extends AbstractType
                                    'project.status.active' => 'ACTIVE',
                                    'project.status.finished' => 'FINISHED',
                                    'project.status.cancelled' => 'CANCELLED')
-                ,'label' => 'project.status.label'
+                ,'label' => 'form.status'
                 ,'choices_as_values' => true
                 ,'multiple' => false
-                ,'expanded' => true
+                ,'expanded' => false
                 ,'required' => true
                 ,'empty_data' => null
                 ))
             ->add('startDate', DateTimeType::class, array(
                 "format" => "yyyy-MM-dd"
-                ,'label' => 'project.startdate.label'
+                ,'label' => 'form.startdate'
                 ,'required' => true
                 ,'empty_data' => null
                 ))
             ->add('endDate', DateTimeType::class, array(
                 "format" => "yyyy-MM-dd"
-                ,'label' => 'project.enddate.label'
+                ,'label' => 'form.enddate'
                 ,'required' => false
                 ))
             ->add('enabled', CheckboxType::class, array(
-                'label'    => 'project.enabled.label'
+                'label'    => 'form.enabled'
                 ,'required' =>false
                 ))
             ->add('save', SubmitType::class, array(
                 'attr' => array('class' => 'save')
-                ,'label' => 'button.save'
+                ,'label' => 'action.save'
                 ))
-            ->add('reset', ResetType::class, array(
-                'attr' => array('class' => 'reset')
-                ,'label' => 'button.reset'
-                ))
+
         ;
     }
     

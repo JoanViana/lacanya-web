@@ -61,7 +61,7 @@ class Type
     /**
      * @var bool
      *
-     * @ORM\Column(name="Enabled", type="boolean")
+     * @ORM\Column(name="Enabled", type="boolean", nullable=true)
      * @Assert\NotBlank(message="as.nb")
      */
     private $enabled;

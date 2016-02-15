@@ -44,32 +44,29 @@ class UserType extends AbstractType
                 'invalid_message' => 'fos_user.password.mismatch',
             ))
             ->add('firstName', TextType::class, array(
-                'label' => 'user.firstname.label'
+                'label' => 'form.firstname'
                 ,'required' => true
                 ,'empty_data' => null
                 ))
             ->add('lastName', TextType::class, array(
-                'label' => 'user.lastname.label'
+                'label' => 'form.lastname'
                 ,'required' => true
                 ,'empty_data' => null
                 ))
             ->add('phone', NumberType::class, array(
-                'label' => 'user.phone.label'
+                'label' => 'form.phone'
                 ,'required' => true
                 ,'empty_data' => null
                 ))
             ->add('enabled', CheckboxType::class, array(
-                'label'    => 'user.enabled.label'
+                'label'    => 'form.enabled'
                 ,'required' =>false
                 ))
             ->add('save', SubmitType::class, array(
                 'attr' => array('class' => 'save')
-                ,'label' => 'button.save'
+                ,'label' => 'action.save'
                 ))
-            ->add('reset', ResetType::class, array(
-                'attr' => array('class' => 'reset')
-                ,'label' => 'button.reset'
-                ))
+
         ;
     }
     

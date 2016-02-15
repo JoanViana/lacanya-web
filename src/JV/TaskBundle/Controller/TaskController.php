@@ -4,9 +4,14 @@ namespace JV\TaskBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+
 
 use JV\TaskBundle\Entity\Task;
 use JV\TaskBundle\Form\TaskType;
+use JV\TaskBundle\Entity\User;
+use JV\TaskBundle\Entity\Type;
+use JV\TaskBundle\Entity\Project;
 
 /**
  * Task controller.
@@ -16,6 +21,7 @@ class TaskController extends Controller
 {
     /**
      * Lists all Task entities.
+     * @Security("has_role('ROLE_APP_ADMIN'||'ROLE_USER')")
      *
      */
     public function listAction()
@@ -25,7 +31,7 @@ class TaskController extends Controller
         $tasks = $em->getRepository('JVTaskBundle:Task')->findAll();
         
         if (count($tasks) === 0) {
-            return $this->render('JVTaskBundle:Task:list.html.twig', array("flashnotasks" => true));
+            return $this->render('JVTaskBundle:Task:index.html.twig', array("flashnotasks" => true));
         }
         
         return $this->render('JVTaskBundle:Task:list.html.twig', array(
@@ -35,6 +41,7 @@ class TaskController extends Controller
 
     /**
      * Creates a new Task entity.
+     * @Security("has_role('ROLE_APP_ADMIN')")
      *
      */
     public function newAction(Request $request)
@@ -59,6 +66,7 @@ class TaskController extends Controller
 
     /**
      * Finds and displays a Task entity.
+     * @Security("has_role('ROLE_APP_ADMIN'||'ROLE_USER')")
      *
      */
     public function showAction(Task $task)
@@ -73,6 +81,7 @@ class TaskController extends Controller
 
     /**
      * Displays a form to edit an existing Task entity.
+     * @Security("has_role('ROLE_APP_ADMIN')")
      *
      */
     public function editAction(Request $request, Task $task)
@@ -98,6 +107,7 @@ class TaskController extends Controller
 
     /**
      * Deletes a Task entity.
+     * @Security("has_role('ROLE_APP_ADMIN')")
      *
      */
     public function deleteAction(Request $request, Task $task)
@@ -120,6 +130,8 @@ class TaskController extends Controller
      * @param Task $task The Task entity
      *
      * @return \Symfony\Component\Form\Form The form
+     * @Security("has_role('ROLE_APP_ADMIN')")
+     *
      */
     private function createDeleteForm(Task $task)
     {
@@ -130,6 +142,11 @@ class TaskController extends Controller
         ;
     }
     
+    /**
+     * 
+     * @Security("has_role('ROLE_APP_ADMIN'||'ROLE_USER')")
+     *
+     */
      public function listByTypeAction(Type $type) {
 
         $tasks = $type->getTasks();
@@ -139,6 +156,11 @@ class TaskController extends Controller
         ));
     }
 
+    /**
+     * 
+     * @Security("has_role('ROLE_APP_ADMIN'||'ROLE_USER')")
+     *
+     */
     public function listAllByTypeAction() {
         
         $em = $this->getDoctrine()->getManager();
@@ -147,13 +169,18 @@ class TaskController extends Controller
         
         if (count($types) === 0) {
 
-            return $this->render('JVTaskBundle:Task:list.html.twig', array('flashnotypes' => true));
+            return $this->render('JVTaskBundle:Task:index.html.twig', array('flashnotypes' => true));
         }
 
         return $this->render('JVTaskBundle:Task:listAllByType.html.twig', array('types' => $types,
         ));
     }
     
+    /**
+     * 
+     * @Security("has_role('ROLE_APP_ADMIN'||'ROLE_USER')")
+     *
+     */
     public function listByProjectAction(Project $project) {
 
         $tasks = $project->getTasks();
@@ -162,7 +189,12 @@ class TaskController extends Controller
         'project'=> $project
         ));
     }
-
+    
+    /**
+     * 
+     * @Security("has_role('ROLE_APP_ADMIN'||'ROLE_USER')")
+     *
+     */
     public function listAllByProjectAction() {
         
         $em = $this->getDoctrine()->getManager();
@@ -171,14 +203,20 @@ class TaskController extends Controller
         
         if (count($projects) === 0) {
 
-            return $this->render('JVTaskBundle:Task:list.html.twig', array('flashnoprojects' => true));
+            return $this->render('JVTaskBundle:Task:index.html.twig', array('flashnoprojects' => true));
         }
 
         return $this->render('JVTaskBundle:Task:listAllByProject.html.twig', array('projects' => $projects,
         ));
+        
     }
     
-    public function listByUserAction(User $user) {
+     /**
+     * 
+     * @Security("has_role('ROLE_APP_ADMIN'||'ROLE_USER')")
+     *
+     */
+     public function listByUserAction(User $user) {
 
         $tasks = $user->getTasks();
 
@@ -187,6 +225,11 @@ class TaskController extends Controller
         ));
     }
 
+    /**
+     * 
+     * @Security("has_role('ROLE_APP_ADMIN')")
+     *
+     */
     public function listAllByUserAction() {
         
         $em = $this->getDoctrine()->getManager();
@@ -195,7 +238,7 @@ class TaskController extends Controller
         
         if (count($users) === 0) {
 
-            return $this->render('JVTaskBundle:Task:list.html.twig', array('flashnousers' => true));
+            return $this->render('JVTaskBundle:Task:index.html.twig', array('flashnousers' => true));
         }
 
         return $this->render('JVTaskBundle:Task:listAllByUser.html.twig', array('users' => $users,

@@ -29,37 +29,37 @@ class TaskType extends AbstractType
     {
         $builder
             ->add('name', TextType::class, array(
-                'label' => 'task.name.label'
+                'label' => 'form.name'
                 ,'required' => true
                 ,'empty_data' => null
                 ))
             ->add('type', EntityType::class, array(
                 'class' => 'JVTaskBundle:Type'
                 ,'choice_label' => 'name'
-                ,'label' => 'type.name.label'
+                ,'label' => 'nav.type'
                 ,'required' => true
                 ,'empty_data' => null
                 ))
             ->add('project', EntityType::class, array(
                 'class' => 'JVTaskBundle:Project'
                 ,'choice_label' => 'name'
-                ,'label' => 'project.name.label'
+                ,'label' => 'nav.project'
                 ,'required' => true
                 ,'empty_data' => null
                 ))
             ->add('user', EntityType::class, array(
                 'class' => 'JVTaskBundle:User'
                 ,'choice_label' => 'username'
-                ,'label' => 'user.username.label'
+                ,'label' => 'form.username'
                 ,'required' => true
                 ,'empty_data' => null
                 ))
             ->add('summary', TextareaType::class, array(
-                'label' => 'task.summary.label'
+                'label' => 'form.summary'
                 ,'required' => false
                 ))
             ->add('link', UrlType::class, array(
-                'label' => 'task.link'
+                'label' => 'form.link'
                 ,"required" => false
                 ))
             ->add('status', ChoiceType::class, array(
@@ -70,40 +70,37 @@ class TaskType extends AbstractType
                                    'task.status.checked' => 'CHECKED',
                                    'task.status.finished' => 'FINISHED',
                                    'task.status.cancelled' => 'CANCELLED')
-                ,'label' => 'task.status.label'
+                ,'label' => 'form.status'
                 ,'choices_as_values' => true
                 ,'multiple' => false
-                ,'expanded' => true
+                ,'expanded' => false
                 ,'required' => true
                 ,'empty_data' => null
                 ))
             ->add('startDate', DateTimeType::class, array(
                 "format" => "yyyy-MM-dd"
-                ,'label' => 'task.startdate.label'
+                ,'label' => 'form.startdate'
                 ,'required' => true
                 ,'empty_data' => null
                 ))
             ->add('endDate', DateTimeType::class, array(
                 "format" => "yyyy-MM-dd"
-                ,'label' => 'task.enddate.label'
+                ,'label' => 'form.enddate'
                 ,'required' => false
                 ))
             ->add('enabled', CheckboxType::class, array(
-                'label'    => 'task.enabled.label'
+                'label'    => 'form.enabled'
                 ,'required' =>false
                 ))
             ->add('checked', CheckboxType::class, array(
-                'label'    => 'task.checked.label'
+                'label'    => 'form.checked'
                 ,'required' =>false
                 ))
             ->add('save', SubmitType::class, array(
                 'attr' => array('class' => 'save')
-                ,'label' => 'button.save'
+                ,'label' => 'action.save'
                 ))
-            ->add('reset', ResetType::class, array(
-                'attr' => array('class' => 'reset')
-                ,'label' => 'button.reset'
-                ))
+
         ;
     }
     

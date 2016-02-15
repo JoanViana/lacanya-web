@@ -10,30 +10,23 @@
                         <h4 class="title-post">{{ 'modal.login.label'|trans }}</h4>
                     </div>
                     <div class="modal-body">
-
-                        <form class="form-style" role="search">
-                            <div class="form-group">
-                                <label class="sr-only" for="exampleInputEmail">{{ 'form.email.label'|trans }}</label>
-                                <input type="email" class="form-control" id="exampleInputEmail" placeholder="{{ 'form.email.placeholder'|trans }}">
-
-                                <label class="sr-only" for="exampleInputPassword">{{ 'form.password.label'|trans }}</label>
-                                <input type="password" class="form-control" id="exampleInputPassword" placeholder="{{ 'form.password.placeholder'|trans }}">
-                            </div>
-                            <div class="form-group">                 
-                                <div class="checkbox">
-                                    <input type="checkbox">
-                                    <label>
-                                        {{ 'modal.login.remember'|trans }}
-                                    </label>
+                        <form class="form-style" action="{{ path("fos_user_security_check") }}" method="post" name='authenticate'>
+                            <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}" />
+                            <fieldset>
+                                <div class="form-group">
+                                    <label class="sr-only" for="navEmail">{{ 'form.username'|trans }}</label>
+                                    <input type="text" class="form-control" id="navUsername" name="_username" placeholder="{{ 'form.username'|trans }}" required="required">
                                 </div>
-                            </div>
-                            <div class="form-group">  
-                                <div class="btn">
-                                    <button type="submit" class="btn btn-success btn-sm">{{ 'button.login'|trans }}</button>
-                                    <button type="button" class="btn btn-danger btn-sm"
-                                            data-dismiss="modal">{{ 'button.cancel'|trans }}</button>
+                                <div class="form-group">
+                                    <label class="sr-only" for="navPassword">{{ 'form.password'|trans }}</label>
+                                    <input type="password" class="form-control" id="navPassword" name="_password" placeholder="{{ 'form.password'|trans }}" required="required">
+                                </div> 
+                                <div class="form-group">
+                                    <a><button href="{{ path('fos_user_security_login') }}" class="btn btn-success btn-sm" type="submit" id="navSubmit" name="_submit" >{{ 'button.login' | trans }}
+                                    </button></a>                        
+                                    <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">{{ 'button.cancel'|trans }}</button>
                                 </div>
-                            </div>
+                            </fieldset>
                         </form>
                     </div>
                 </div>
@@ -56,11 +49,21 @@
                             <p>{{ 'modal.logout.confirm'|trans }}</p>
 
                             <div class="form-group">  
-                                <div class="btn">
-                                    <button type="submit" class="btn btn-info btn-sm"
-                                            >{{ 'button.logout'|trans }}</button>
-                                    <button type="button" class="btn btn-danger btn-sm"
-                                            data-dismiss="modal">{{ 'button.cancel'|trans }}</button>
+                                <div class="actions">
+                                    <ul>
+                                        <li>
+                                            <button type="button" class="btn btn-danger btn-sm">
+                                                <a href="{{ path('fos_user_security_logout') }}"> 
+                                            <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
+                                            {{ 'button.logout'|trans }}</a>
+                                            </button>
+                                            
+                                        </li>
+                                        <li>
+                                            <button type="button" class="btn btn-default btn-sm"
+                                                data-dismiss="modal">{{ 'button.cancel'|trans }}</button>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                         </form>

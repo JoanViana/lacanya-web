@@ -22,25 +22,22 @@ class CategoryType extends AbstractType
     {
         $builder
             ->add('name', TextType::class, array(
-                'label' => 'category.name.label'
+                'label' => 'form.name'
                 ,'required' => true
                 ,'empty_data' => null
                 ))
             ->add('description', TextareaType::class, array(
-                'label' => 'category.description.label'
+                'label' => 'form.description'
                 ,'required' => false
                 ))
             ->add('enabled', CheckboxType::class, array(
-                'label'    => 'category.enabled.label'
+                'label'    => 'form.enabled'
                 ,'required' =>false
+                ,'empty_data' => false
                 ))
             ->add('save', SubmitType::class, array(
                 'attr' => array('class' => 'save')
-                ,'label' => 'button.save'
-                ))
-            ->add('reset', ResetType::class, array(
-                'attr' => array('class' => 'reset')
-                ,'label' => 'button.reset'
+                ,'label' => 'action.save'
                 ))
         ;
     }

@@ -1,48 +1,69 @@
-{% extends 'base.html.twig' %}
+{% extends 'JVTaskBundle::show.html.twig' %}
+{% trans_default_domain 'JVTaskBundle' %} 
 
-{% block body %}
-    <h1>User</h1>
-
-    <table>
-        <tbody>
+{% block title %}{{ parent() }} {{ 'user.show.title'|trans({'%username%' : user.username }) }}{% endblock %}
+{% block table %}
+{{ parent() }}
+    {% block theader %}{{ 'user.show.header'|trans({'%username%' : user.username }) }}{% endblock %}
+    {% block tbody %}
             <tr>
-                <th>Id</th>
+                <th>{{ 'form.id'|trans }}</th>
                 <td>{{ user.id }}</td>
             </tr>
             <tr>
-                <th>Firstname</th>
+                <th>{{ 'form.username'|trans }}</th>
+                <td>{{ user.username }}</td>
+            </tr>
+            <tr>
+                <th>{{ 'form.firstName'|trans }}</th>
                 <td>{{ user.firstName }}</td>
             </tr>
             <tr>
-                <th>Lastname</th>
-                <td>{{ user.lastName }}</td>
+                <th>{{ 'form.firstName'|trans }}</th>
+                <td>{{ user.firstName }}</td>
             </tr>
             <tr>
-                <th>Phone</th>
+                <th>{{ 'form.password'|trans }}</th>
+                <td>{{ user.password }}</td>
+            </tr>
+            <tr>
+                <th>{{ 'form.email'|trans }}</th>
+                <td>{{ user.email }}</td>
+            </tr>
+            <tr>
+                <th>{{ 'form.phone'|trans }}</th>
                 <td>{{ user.phone }}</td>
             </tr>
             <tr>
-                <th>Createdat</th>
+                <th>{{ 'form.roles'|trans }}</th>
+                <td>{{ user.roles[0] }}</td>
+            </tr>
+            <tr>
+                <th>{{ 'form.createdAt'|trans }}</th>
                 <td>{% if user.createdAt %}{{ user.createdAt|date('Y-m-d H:i:s') }}{% endif %}</td>
             </tr>
             <tr>
-                <th>Updatedat</th>
+                <th>{{ 'form.updatedAt'|trans }}</th>
                 <td>{% if user.updatedAt %}{{ user.updatedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
             </tr>
-        </tbody>
-    </table>
-
-    <ul>
-        <li>
-            <a href="{{ path('user_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('user_edit', { 'id': user.id }) }}">Edit</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+            <tr>
+                <th>{{ 'form.enabled'|trans }}</th>
+                <td>{% if user.enabled %}{{ 'general.yes'|trans }}{% else %}{{ 'general.no'|trans }}{% endif %}</td>
+            </tr>
+            {% endblock %}
+    {% block tout %}
+        {% if is_granted('ROLE_APP_ADMIN') %}
+            <li>
+                <a class="btn btn-default btn-sm" href="{{ path('user_edit', { 'id': user.id }) }}">{{ 'action.edit'|trans }}</a>
+            </li>
+            <li>
+                {{ form_start(delete_form) }}
+                    <input class="btn btn-danger btn-sm" type="submit" value="{{ 'action.delete'|trans }}">
+                {{ form_end(delete_form) }}
+            </li>
+        {% endif %}
+            <li>
+                <a class="btn btn-default btn-sm" href="{{ path('user_index') }}">{{ 'action.backList'|trans }}</a>
+            </li>
+    {% endblock %}
 {% endblock %}

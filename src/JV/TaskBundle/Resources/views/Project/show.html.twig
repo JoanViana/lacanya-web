@@ -1,68 +1,69 @@
-{% extends 'base.html.twig' %}
+{% extends 'JVTaskBundle::show.html.twig' %}
+{% trans_default_domain 'JVTaskBundle' %} 
 
-{% block body %}
-    <h1>Project</h1>
-
-    <table>
-        <tbody>
+{% block title %}{{ parent() }} {{ 'project.show.title'|trans({'%projectname%' : project.name }) }}{% endblock %}
+{% block table %}
+{{ parent() }}
+    {% block theader %}{{ 'project.show.header'|trans({'%projectname%' : project.name }) }}{% endblock %}
+    {% block tbody %}
             <tr>
-                <th>Id</th>
+                <th>{{ 'form.id'|trans }}</th>
                 <td>{{ project.id }}</td>
             </tr>
             <tr>
-                <th>Name</th>
+                <th>{{ 'form.name'|trans }}</th>
                 <td>{{ project.name }}</td>
             </tr>
             <tr>
-                <th>Summary</th>
+                <th>{{ 'form.summary'|trans }}</th>
                 <td>{{ project.summary }}</td>
             </tr>
             <tr>
-                <th>Remuneration</th>
+                <th>{{ 'form.remuneration'|trans }}</th>
                 <td>{{ project.remuneration }}</td>
             </tr>
             <tr>
-                <th>Link</th>
+                <th>{{ 'form.link'|trans }}</th>
                 <td>{{ project.link }}</td>
             </tr>
             <tr>
-                <th>Status</th>
+                <th>{{ 'form.status'|trans }}</th>
                 <td>{{ project.status }}</td>
             </tr>
             <tr>
-                <th>Startdate</th>
+                <th>{{ 'form.startDate'|trans }}</th>
                 <td>{% if project.startDate %}{{ project.startDate|date('Y-m-d H:i:s') }}{% endif %}</td>
             </tr>
             <tr>
-                <th>Enddate</th>
+                <th>{{ 'form.endDate'|trans }}</th>
                 <td>{% if project.endDate %}{{ project.endDate|date('Y-m-d H:i:s') }}{% endif %}</td>
             </tr>
             <tr>
-                <th>Createdat</th>
+                <th>{{ 'form.createdAt'|trans }}</th>
                 <td>{% if project.createdAt %}{{ project.createdAt|date('Y-m-d H:i:s') }}{% endif %}</td>
             </tr>
             <tr>
-                <th>Updatedat</th>
+                <th>{{ 'form.updatedAt'|trans }}</th>
                 <td>{% if project.updatedAt %}{{ project.updatedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
             </tr>
             <tr>
-                <th>Enabled</th>
-                <td>{% if project.enabled %}Yes{% else %}No{% endif %}</td>
+                <th>{{ 'form.enabled'|trans }}</th>
+                <td>{% if project.enabled %}{{ 'general.yes'|trans }}{% else %}{{ 'general.no'|trans }}{% endif %}</td>
             </tr>
-        </tbody>
-    </table>
-
-    <ul>
-        <li>
-            <a href="{{ path('project_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('project_edit', { 'id': project.id }) }}">Edit</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+            {% endblock %}
+    {% block tout %}
+        {% if is_granted('ROLE_APP_ADMIN') %}
+            <li>
+                <a class="btn btn-default btn-sm" href="{{ path('project_edit', { 'id': project.id }) }}">{{ 'action.edit'|trans }}</a>
+            </li>
+            <li>
+                {{ form_start(delete_form) }}
+                    <input class="btn btn-danger btn-sm" type="submit" value="{{ 'action.delete'|trans }}">
+                {{ form_end(delete_form) }}
+            </li>
+        {% endif %}
+            <li>
+                <a class="btn btn-default btn-sm" href="{{ path('project_index') }}">{{ 'action.backList'|trans }}</a>
+            </li>
+    {% endblock %}
 {% endblock %}
